@@ -213,7 +213,6 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
           <div class="check-item"><span class="ico">✓</span> Spec / concept page linked</div>
           <div class="check-item"><span class="ico">✓</span> BA happy-path test cases</div>
           <div class="check-item"><span class="ico">✓</span> Module, env &amp; provisioner known</div>
-          <div class="check-item"><span class="ico">✓</span> Test data plan (or TO ticket)</div>
         </div>
         <div class="gate-fail-banner">✕ Any gap → return to BA/PO (no QA points)</div>
       </div>
@@ -229,7 +228,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
         </div>
         <div class="gate-criteria-h">QA adds beyond BA happy-path</div>
         <div class="gate-checklist">
-          <div class="check-item"><span class="ico">✓</span> Negative &amp; boundary cases</div>
+          <div class="check-item"><span class="ico">✓</span> Negative &amp; edge cases</div>
           <div class="check-item"><span class="ico">✓</span> Error messages &amp; validations</div>
           <div class="check-item"><span class="ico">✓</span> Manual test checklist</div>
           <div class="check-item"><span class="ico">✓</span> Playwright: new vs extend suite</div>
@@ -248,11 +247,10 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
         </div>
         <div class="gate-criteria-h">Each role delivers its layer</div>
         <div class="gate-checklist">
-          <div class="check-item"><span class="ico">✓</span> Dev: unit &amp; API tests passing</div>
-          <div class="check-item"><span class="ico">✓</span> Build in target test environment</div>
+          <div class="check-item"><span class="ico">✓</span> Dev: Unit tests passing</div>
+          <div class="check-item"><span class="ico">✓</span> Build deployed to test environment</div>
           <div class="check-item"><span class="ico">✓</span> QA: Playwright / manual ready</div>
           <div class="check-item"><span class="ico">✓</span> TO: Golden Data / provisioner set</div>
-          <div class="check-item"><span class="ico">✓</span> Known blockers logged in Jira</div>
         </div>
       </div>
 

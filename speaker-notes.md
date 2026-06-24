@@ -66,14 +66,18 @@ If someone is unsure what RACI means, use this:
 
 ## EG-2 — When QA starts: entry gates
 
-**Walk the slide top → bottom:**
+**Layout:** 2×2 grid — each gate has a **central checklist** (large rows, not tiny tags).
 
-1. **Rule bar** — one sentence: no QA test phase until Gate 0 passes.
-2. **Pipeline (0 → 3)** — each gate: question, owner, tags. Gate 0 highlighted in coral + fail path below.
-3. **Squad QA vs Core QA** — who runs which gates.
-4. **Footnote pills** — three clarifications in one glance.
+**Gate 0 (6 items — ask leads which are mandatory):**
+- Jira story in sprint & linked epic
+- AC complete · Spec linked · BA happy-path
+- Module, env, provisioner known
 
-**Ask leads:** Is the Gate 0 fail path clear enough? What belongs on the Gate 0 checklist?
+**Gate 1:** negative & edge cases, error messages, …  
+**Gate 2:** Dev unit tests passing, build deployed to test env, …  
+**Gate 3 added:** Golden Data updated, defects triaged
+
+**Ask leads:** Which Gate 0 rows are must-have vs nice-to-have for your modules?
 
 ---
 
