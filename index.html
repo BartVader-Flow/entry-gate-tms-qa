@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entry Gate Concept — Draft for QA Lead Review</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --rf-dark:#0B4324;--rf-mid:#4F883B;--rf-light:#94C981;--rf-bg:#F0F5F0;
+  --rf-coral:#F26B43;--rf-text:#303032;--rf-muted:#5a5a5c;--rf-border:#c8d4c8;
+  --rf-white:#fff;--rf-gray:#f7f8f6;--rf-gray2:#e8ede8;
+}
+html,body{width:100%;height:100%;overflow:hidden;background:#1a1e1a;font-family:'Inter',sans-serif;color:var(--rf-text)}
+.deck{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.slides-viewport{width:min(1200px,96vw);height:min(675px,96vh);position:relative;overflow:hidden;border-radius:10px;box-shadow:0 20px 80px rgba(0,0,0,.55)}
+.slide{position:absolute;inset:0;background:var(--rf-bg);display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateX(64px);transition:opacity .32s ease,transform .32s ease;overflow:hidden}
+.slide.active{opacity:1;pointer-events:all;transform:translateX(0)}
+.slide.exit-left{opacity:0;transform:translateX(-64px)}
+.slide-header{background:var(--rf-dark);flex-shrink:0;padding:14px 40px 12px;display:flex;align-items:flex-end;justify-content:space-between}
+.slide-header h2{font-size:clamp(16px,1.9vw,22px);font-weight:700;color:#fff;line-height:1.2;max-width:82%}
+.slide-header .snum{font-size:11px;color:rgba(255,255,255,.4);white-space:nowrap}
+.slide-body{flex:1;min-height:0;overflow:hidden;padding:14px 40px 10px;display:flex;flex-direction:column;gap:10px}
+.slide-footer{flex-shrink:0;padding:7px 40px;border-top:1px solid var(--rf-border);display:flex;justify-content:space-between;font-size:10px;color:var(--rf-muted)}
+
+/* ── COVER ── */
+.cover{justify-content:center;padding:48px 56px;background:linear-gradient(135deg,var(--rf-dark) 0%,#0d5530 55%,var(--rf-mid) 100%);color:#fff}
+.cover .tag{display:inline-block;background:rgba(255,255,255,.15);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:4px;margin-bottom:16px;width:fit-content}
+.cover h1{font-size:clamp(32px,3.8vw,42px);font-weight:800;line-height:1.05;margin-bottom:8px}
+.cover .subtitle{font-size:clamp(15px,1.5vw,18px);opacity:.9;font-weight:500;margin-bottom:28px}
+.cover-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:720px}
+.cover-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:16px 18px}
+.cover-panel h3{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.7;margin-bottom:10px}
+.cover-panel ul{list-style:none;font-size:13px;line-height:1.45}
+.cover-panel li{padding:4px 0 4px 14px;position:relative;opacity:.92}
+.cover-panel li::before{content:'';position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
+.cover-nav{margin-top:24px;font-size:11px;opacity:.55;display:flex;gap:20px;flex-wrap:wrap}
+
+/* ── EG-1 compact ── */
+.raci-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;flex-shrink:0}
+.raci-cell{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:5px;padding:6px 8px;font-size:10px;line-height:1.35}
+.raci-cell b{font-size:13px;color:var(--rf-dark);margin-right:4px}
+.raci-cell em{display:block;font-size:9px;font-weight:600;color:var(--rf-mid);font-style:normal;text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
+.lifecycle{display:flex;gap:6px;flex-shrink:0}
+.lc-step{flex:1;background:var(--rf-gray2);border-radius:5px;padding:6px 8px;text-align:center;font-size:10px;font-weight:700;color:var(--rf-dark);border-left:3px solid var(--rf-mid)}
+.lc-step span{display:block;font-size:9px;font-weight:500;color:var(--rf-muted);margin-top:2px}
+.eg1-main{flex:1;min-height:0;display:grid;grid-template-columns:1.15fr .85fr;gap:10px}
+.card{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:6px;padding:10px 12px;min-height:0;display:flex;flex-direction:column}
+.card h3{font-size:10px;font-weight:700;color:var(--rf-dark);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0}
+table.raci{width:100%;border-collapse:collapse;font-size:10px;line-height:1.3}
+table.raci th{background:var(--rf-dark);color:#fff;text-align:left;padding:5px 7px;font-weight:600}
+table.raci td{padding:4px 7px;border-bottom:1px solid var(--rf-border);vertical-align:top}
+table.raci tr:nth-child(even) td{background:var(--rf-gray)}
+.bad{color:var(--rf-coral);font-weight:600;font-size:9px}
+.good{color:var(--rf-mid);font-weight:600;font-size:9px;white-space:nowrap}
+.shift-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:1;min-height:0}
+.shift-box{padding:8px 10px;border-radius:5px;font-size:10px;line-height:1.4}
+.shift-box .lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;display:block}
+.shift-box.ist{background:#fff3f0;border:1px solid #f5c4b8}
+.shift-box.ist .lbl{color:var(--rf-coral)}
+.shift-box.soll{background:#eef8ea;border:1px solid var(--rf-light)}
+.shift-box.soll .lbl{color:var(--rf-mid)}
+.takeaway-bar{flex-shrink:0;background:var(--rf-dark);color:#fff;padding:8px 12px;border-radius:5px;font-size:10px;line-height:1.4}
+.takeaway-bar strong{color:var(--rf-light)}
+
+/* ── EG-2 — clear pipeline ── */
+.eg2-rule{flex-shrink:0;background:var(--rf-white);border:2px solid var(--rf-mid);border-radius:6px;padding:10px 14px;font-size:12px;line-height:1.45;text-align:center}
+.eg2-rule strong{color:var(--rf-dark)}
+.eg2-rule .hl{color:var(--rf-coral);font-weight:700}
+.gate-flow{flex:1;min-height:0;display:flex;align-items:stretch;gap:0;padding:4px 0}
+.gate-step{flex:1;display:flex;flex-direction:column;position:relative;min-width:0}
+.gate-step:not(:last-child)::after{content:'›';position:absolute;right:-6px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:300;color:var(--rf-mid);z-index:2;line-height:1}
+.gate-box{flex:1;background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;margin:0 4px;padding:10px 10px 8px;display:flex;flex-direction:column;gap:6px}
+.gate-step:first-child .gate-box{margin-left:0;border-color:var(--rf-coral);border-width:2px;background:#fffcfb}
+.gate-step.g-last .gate-box{border-color:var(--rf-dark);background:var(--rf-gray)}
+.gate-head{display:flex;align-items:center;gap:8px}
+.gate-num{width:26px;height:26px;border-radius:50%;background:var(--rf-dark);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gate-step:first-child .gate-num{background:var(--rf-coral)}
+.gate-title{font-size:12px;font-weight:700;color:var(--rf-dark);line-height:1.2}
+.gate-q{font-size:10px;color:var(--rf-muted);line-height:1.35;font-style:italic}
+.gate-owner{font-size:10px;font-weight:600;color:var(--rf-mid);padding:4px 8px;background:var(--rf-gray);border-radius:4px;line-height:1.3}
+.gate-step:first-child .gate-owner{background:#fff0ec;color:var(--rf-coral)}
+.gate-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto}
+.tag{font-size:9px;padding:3px 6px;border-radius:3px;background:var(--rf-gray2);color:var(--rf-text);font-weight:500;line-height:1.2}
+.gate-fail{font-size:9px;font-weight:700;color:var(--rf-coral);text-align:center;margin-top:2px}
+.tracks-row{flex-shrink:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.track-card{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start}
+.track-icon{width:36px;height:36px;border-radius:6px;background:var(--rf-gray2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--rf-dark);flex-shrink:0;letter-spacing:-.02em}
+.track-card h4{font-size:11px;font-weight:700;color:var(--rf-dark);margin-bottom:3px}
+.track-card p{font-size:10px;color:var(--rf-muted);line-height:1.4}
+.track-card .when{font-size:9px;font-weight:600;color:var(--rf-mid);margin-top:4px}
+.eg2-footnotes{flex-shrink:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.fn{font-size:9px;color:var(--rf-muted);padding:4px 10px;background:var(--rf-gray);border-radius:20px}
+
+.nav-btn{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;z-index:20}
+.nav-btn:hover{background:rgba(255,255,255,.22)}
+.nav-btn:disabled{opacity:.25;cursor:default}
+.nav-prev{left:max(8px,calc(50% - 640px))}
+.nav-next{right:max(8px,calc(50% - 640px))}
+.progress{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:20}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer}
+.dot.active{background:var(--rf-light)}
+.counter{position:fixed;bottom:24px;right:24px;font-size:11px;color:rgba(255,255,255,.4);z-index:20}
+</style>
+</head>
+<body>
+<div class="deck">
+<div class="slides-viewport">
+
+<!-- COVER -->
+<div class="slide active cover">
+  <div class="tag">Draft · QA Lead review</div>
+  <h1>Entry Gate Concept</h1>
+  <p class="subtitle">TMS QA — who owns what, and when testing may start</p>
+  <div class="cover-grid">
+    <div class="cover-panel">
+      <h3>Why we need this</h3>
+      <ul>
+        <li>Incomplete stories often land on QA too early</li>
+        <li>Ownership for specs vs testing is unclear</li>
+        <li>Squad QA and Core QA need the same rules</li>
+      </ul>
+    </div>
+    <div class="cover-panel">
+      <h3>In this deck (2 slides)</h3>
+      <ul>
+        <li><strong>EG-1</strong> — Lifecycle, RACI, role split</li>
+        <li><strong>EG-2</strong> — Entry Gates 0–3</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cover-nav">
+    <span>→ Use arrow keys to navigate</span>
+    <span>Feedback welcome · Bart Gilissen</span>
+  </div>
+</div>
+
+<!-- EG-1 -->
+<div class="slide">
+  <div class="slide-header">
+    <h2>EG-1 — Lifecycle &amp; who owns what</h2>
+    <span class="snum">1 / 2</span>
+  </div>
+  <div class="slide-body">
+    <div class="raci-strip">
+      <div class="raci-cell"><em>Responsible</em><b>R</b>Does the work</div>
+      <div class="raci-cell"><em>Accountable</em><b>A</b>Owns the outcome (one role)</div>
+      <div class="raci-cell"><em>Consulted</em><b>C</b>Input before we decide</div>
+      <div class="raci-cell"><em>Informed</em><b>I</b>Updated after — no sign-off</div>
+    </div>
+    <div class="lifecycle">
+      <div class="lc-step">1 · Change<span>BA / PO / Dev</span></div>
+      <div class="lc-step">2 · Test<span>QA executes</span></div>
+      <div class="lc-step">3 · Handover<span>New → Core</span></div>
+      <div class="lc-step">4 · Maintain<span>Regression</span></div>
+    </div>
+    <div class="eg1-main">
+      <div class="card">
+        <h3>Target roles — stop assuming QA owns everything</h3>
+        <table class="raci">
+          <thead><tr><th>Activity</th><th>Wrong today</th><th>Target</th></tr></thead>
+          <tbody>
+            <tr><td>Story &amp; AC</td><td class="bad">QA chases stakeholders</td><td><span class="good">BA R · PO A</span></td></tr>
+            <tr><td>Happy-path cases</td><td class="bad">QA writes all</td><td><span class="good">BA R · QA C</span></td></tr>
+            <tr><td>Unit &amp; API tests</td><td class="bad">QA builds all</td><td><span class="good">Dev/SA R</span></td></tr>
+            <tr><td>Playwright &amp; manual</td><td>—</td><td><span class="good">QA R · BA C</span></td></tr>
+            <tr><td>Golden Data / env</td><td class="bad">QA ad hoc</td><td><span class="good">TO / Core R</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Requirements handoff</h3>
+        <div class="shift-row">
+          <div class="shift-box ist"><span class="lbl">As-is</span>QA chases missing specs and business rules.</div>
+          <div class="shift-box soll"><span class="lbl">Target</span>BA delivers testable input; QA checks at Gate 0; gaps go back to BA.</div>
+        </div>
+      </div>
+    </div>
+    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <strong>R</strong> for <em>how</em> we test a ready story — not for making an unready story testable.</div>
+  </div>
+  <div class="slide-footer">
+    <span>RACI: R = do · A = own · C = ask · I = tell</span>
+    <span>Rail-Flow · TMS QA</span>
+  </div>
+</div>
+
+<!-- EG-2 -->
+<div class="slide">
+  <div class="slide-header">
+    <h2>EG-2 — When QA starts (Entry Gates)</h2>
+    <span class="snum">2 / 2</span>
+  </div>
+  <div class="slide-body">
+    <div class="eg2-rule">
+      <strong>Rule:</strong> Lifecycle step 2 (<em>Test</em>) starts only <span class="hl">after Gate 0 passes</span>.
+      Before that, work stays with BA/PO — not with QA story points.
+    </div>
+
+    <div class="gate-flow">
+      <div class="gate-step">
+        <div class="gate-box">
+          <div class="gate-head">
+            <div class="gate-num">0</div>
+            <div>
+              <div class="gate-title">Intake check</div>
+              <div class="gate-q">Is the story testable?</div>
+            </div>
+          </div>
+          <div class="gate-owner">BA/PO deliver · QA validates</div>
+          <div class="gate-tags">
+            <span class="tag">AC complete</span>
+            <span class="tag">Spec linked</span>
+            <span class="tag">Happy-path cases</span>
+            <span class="tag">Module &amp; env</span>
+          </div>
+        </div>
+        <div class="gate-fail">✕ Fail → return to BA/PO</div>
+      </div>
+
+      <div class="gate-step">
+        <div class="gate-box">
+          <div class="gate-head">
+            <div class="gate-num">1</div>
+            <div>
+              <div class="gate-title">Test design</div>
+              <div class="gate-q">What else must we cover?</div>
+            </div>
+          </div>
+          <div class="gate-owner">Squad QA owns</div>
+          <div class="gate-tags">
+            <span class="tag">Negative &amp; edge</span>
+            <span class="tag">Manual plan</span>
+            <span class="tag">Extend Playwright</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gate-step">
+        <div class="gate-box">
+          <div class="gate-head">
+            <div class="gate-num">2</div>
+            <div>
+              <div class="gate-title">Build &amp; run</div>
+              <div class="gate-q">Can we execute tests?</div>
+            </div>
+          </div>
+          <div class="gate-owner">Dev · QA · TO in parallel</div>
+          <div class="gate-tags">
+            <span class="tag">Unit / API</span>
+            <span class="tag">PW / manual</span>
+            <span class="tag">Golden Data</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gate-step g-last">
+        <div class="gate-box">
+          <div class="gate-head">
+            <div class="gate-num">3</div>
+            <div>
+              <div class="gate-title">Handover</div>
+              <div class="gate-q">Ready for Core?</div>
+            </div>
+          </div>
+          <div class="gate-owner">Core QA owns</div>
+          <div class="gate-tags">
+            <span class="tag">Pipeline stable</span>
+            <span class="tag">PW merged</span>
+            <span class="tag">Regression OK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tracks-row">
+      <div class="track-card">
+        <div class="track-icon">SQ</div>
+        <div>
+          <h4>Squad QA</h4>
+          <p>New features &amp; customer deviations — manual testing and extending existing automation.</p>
+          <div class="when">Runs Gates 1–2 · assigned per squad</div>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">CQ</div>
+        <div>
+          <h4>Core QA</h4>
+          <p>Golden Data, regression, Playwright maintenance — protects the shared test base.</p>
+          <div class="when">Owns Gate 3 · no extra squad load (confirm)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eg2-footnotes">
+      <span class="fn">Not less testing — better input first</span>
+      <span class="fn">Gate 0 protects throughput</span>
+      <span class="fn">Squad assignment ≠ skip gates</span>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Gate 0 checklist &amp; reject workflow — TBD after your feedback</span>
+    <span>Rail-Flow · TMS QA</span>
+  </div>
+</div>
+
+</div>
+</div>
+
+<button class="nav-btn nav-prev" id="btnPrev" disabled>&#8592;</button>
+<button class="nav-btn nav-next" id="btnNext">&#8594;</button>
+<div class="progress" id="progress"></div>
+<div class="counter" id="counter"></div>
+
+<script>
+const slides=document.querySelectorAll('.slide');
+let cur=0;
+const btnPrev=document.getElementById('btnPrev');
+const btnNext=document.getElementById('btnNext');
+const progressEl=document.getElementById('progress');
+const counterEl=document.getElementById('counter');
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>goTo(i);progressEl.appendChild(d);});
+function goTo(n){if(n<0||n>=slides.length||n===cur)return;slides[cur].classList.remove('active');const p=cur;slides[p].classList.add('exit-left');setTimeout(()=>slides[p].classList.remove('exit-left'),400);cur=n;slides[cur].classList.add('active');updateUI();}
+function updateUI(){document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));btnPrev.disabled=cur===0;btnNext.disabled=cur===slides.length-1;counterEl.textContent=`${cur+1} / ${slides.length}`;}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')goTo(cur+1);if(e.key==='ArrowLeft')goTo(cur-1);});
+btnNext.onclick=()=>goTo(cur+1);btnPrev.onclick=()=>goTo(cur-1);
+</script>
+</body>
+</html>
