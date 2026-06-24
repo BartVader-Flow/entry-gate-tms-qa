@@ -49,29 +49,35 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a1e1a;font-family:
 .raci-mini b.r-a{background:var(--rf-dark)}
 .raci-mini b.r-c{background:var(--rf-light);color:var(--rf-dark)}
 .raci-mini b.r-i{background:var(--rf-gray2);color:var(--rf-muted);border:1px solid var(--rf-border)}
-.eg1-panel{flex:1;min-height:0;background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:10px 12px;display:grid;grid-template-columns:1.35fr .65fr;gap:12px;box-shadow:0 1px 3px rgba(11,67,36,.08)}
-.eg1-panel h3{font-size:10px;font-weight:700;color:var(--rf-dark);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
-table.raci{width:100%;border-collapse:collapse;font-size:11px;line-height:1.35}
-table.raci th{background:var(--rf-dark);color:#fff;text-align:left;padding:6px 8px;font-weight:600;font-size:10px}
-table.raci td{padding:5px 8px;border-bottom:1px solid var(--rf-border);vertical-align:middle}
+.eg1-panel{flex:1;min-height:0;background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:12px 14px;display:grid;grid-template-columns:1.15fr .85fr;gap:14px;box-shadow:0 1px 3px rgba(11,67,36,.08)}
+.eg1-panel h3{font-size:11px;font-weight:700;color:var(--rf-dark);margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
+.eg1-table-col{display:flex;flex-direction:column;min-height:0}
+.chip-legend{font-size:9px;color:var(--rf-muted);margin-bottom:6px;line-height:1.3}
+.chip-legend .dot-r,.chip-legend .dot-a,.chip-legend .dot-c{display:inline-block;width:8px;height:8px;border-radius:2px;margin:0 3px 0 8px;vertical-align:middle}
+.chip-legend .dot-r{background:#eef8ea;border:1px solid var(--rf-light);margin-left:0}
+.chip-legend .dot-a{background:var(--rf-dark)}
+.chip-legend .dot-c{background:var(--rf-bg);border:1px solid var(--rf-border)}
+table.raci{width:100%;border-collapse:collapse;font-size:13px;line-height:1.4;flex:1}
+table.raci th{background:var(--rf-dark);color:#fff;text-align:left;padding:8px 10px;font-weight:600;font-size:11px}
+table.raci td{padding:10px 10px;border-bottom:1px solid var(--rf-border);vertical-align:middle}
 table.raci tr:last-child td{border-bottom:none}
 table.raci tr:nth-child(even) td{background:var(--rf-gray)}
-.bad{color:var(--rf-coral);font-weight:600;font-size:10px;line-height:1.3}
-.muted{color:var(--rf-muted);font-size:10px}
-.role-target{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-.role-chip{display:inline-block;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;line-height:1.3;white-space:nowrap}
+.bad{color:var(--rf-coral);font-weight:600;font-size:12px;line-height:1.35}
+.muted{color:var(--rf-muted);font-size:12px}
+.role-target{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.role-chip{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:5px;line-height:1.2;white-space:nowrap}
 .role-chip.r{background:#eef8ea;color:var(--rf-mid);border:1px solid var(--rf-light)}
 .role-chip.a{background:var(--rf-dark);color:#fff}
 .role-chip.c{background:var(--rf-bg);color:var(--rf-dark);border:1px solid var(--rf-border)}
-.handoff-col{display:flex;flex-direction:column;min-height:0;border-left:1px solid var(--rf-border);padding-left:12px}
-.handoff-flow{flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:0}
-.shift-box{padding:9px 11px;border-radius:6px;font-size:10px;line-height:1.45}
-.shift-box .lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;display:block}
-.shift-box.ist{background:#fff3f0;border:1px solid #f5c4b8}
+.handoff-col{display:flex;flex-direction:column;min-height:0;border-left:1px solid var(--rf-border);padding-left:14px;background:var(--rf-gray);margin:-12px -14px -12px 0;padding:12px 14px 12px 14px;border-radius:0 7px 7px 0}
+.handoff-flow{flex:1;display:flex;flex-direction:column;justify-content:stretch;gap:8px;min-height:0}
+.shift-box{flex:1;display:flex;flex-direction:column;justify-content:center;padding:14px 14px;border-radius:8px;font-size:13px;line-height:1.5}
+.shift-box .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:block}
+.shift-box.ist{background:#fff;border:2px solid #f5c4b8;box-shadow:0 1px 2px rgba(242,107,67,.08)}
 .shift-box.ist .lbl{color:var(--rf-coral)}
-.shift-box.soll{background:#eef8ea;border:1px solid var(--rf-light)}
+.shift-box.soll{background:#fff;border:2px solid var(--rf-light);box-shadow:0 1px 2px rgba(79,136,59,.08)}
 .shift-box.soll .lbl{color:var(--rf-mid)}
-.handoff-arrow{text-align:center;font-size:18px;font-weight:800;color:var(--rf-mid);line-height:1;flex-shrink:0}
+.handoff-arrow{text-align:center;font-size:22px;font-weight:800;color:var(--rf-mid);line-height:1;flex-shrink:0;padding:2px 0}
 .takeaway-bar{flex-shrink:0;background:var(--rf-dark);color:#fff;padding:9px 14px;border-radius:6px;font-size:11px;line-height:1.45;text-align:center}
 .takeaway-bar strong{color:var(--rf-light)}
 .takeaway-bar .hl-r{color:var(--rf-light);font-weight:800}
@@ -173,25 +179,26 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       </div>
     </div>
     <div class="eg1-panel">
-      <div>
+      <div class="eg1-table-col">
         <h3>Target roles — stop assuming QA owns everything</h3>
+        <p class="chip-legend"><span class="dot-r"></span> Responsible · <span class="dot-a"></span> Accountable · <span class="dot-c"></span> Consulted</p>
         <table class="raci">
           <thead><tr><th>Activity</th><th>Wrong today</th><th>Target</th></tr></thead>
           <tbody>
-            <tr><td>Story &amp; AC</td><td class="bad">QA chases stakeholders</td><td><div class="role-target"><span class="role-chip r">BA R</span><span class="role-chip a">PO A</span></div></td></tr>
-            <tr><td>Happy-path cases</td><td class="bad">QA writes all</td><td><div class="role-target"><span class="role-chip r">BA R</span><span class="role-chip c">QA C</span></div></td></tr>
-            <tr><td>Unit &amp; API tests</td><td class="bad">QA builds all</td><td><div class="role-target"><span class="role-chip r">Dev/SA R</span></div></td></tr>
-            <tr><td>Playwright &amp; manual</td><td class="muted">—</td><td><div class="role-target"><span class="role-chip r">QA R</span><span class="role-chip c">BA C</span></div></td></tr>
-            <tr><td>Golden Data / env</td><td class="bad">QA ad hoc</td><td><div class="role-target"><span class="role-chip r">TO / Core R</span></div></td></tr>
+            <tr><td>Story &amp; AC</td><td class="bad">QA chases stakeholders</td><td><div class="role-target"><span class="role-chip r">BA</span><span class="role-chip a">PO</span></div></td></tr>
+            <tr><td>Happy-path cases</td><td class="bad">QA writes all</td><td><div class="role-target"><span class="role-chip r">BA</span><span class="role-chip c">QA</span></div></td></tr>
+            <tr><td>Unit &amp; API tests</td><td class="bad">QA builds all</td><td><div class="role-target"><span class="role-chip r">Dev / SA</span></div></td></tr>
+            <tr><td>Playwright &amp; manual</td><td class="muted">—</td><td><div class="role-target"><span class="role-chip r">QA</span><span class="role-chip c">BA</span></div></td></tr>
+            <tr><td>Golden Data / env</td><td class="bad">QA ad hoc</td><td><div class="role-target"><span class="role-chip r">TO / Core</span></div></td></tr>
           </tbody>
         </table>
       </div>
       <div class="handoff-col">
         <h3>Requirements handoff</h3>
         <div class="handoff-flow">
-          <div class="shift-box ist"><span class="lbl">As-is</span>QA chases missing specs and business rules.</div>
+          <div class="shift-box ist"><span class="lbl">As-is today</span>QA chases missing specs, acceptance criteria, and business rules before testing can start.</div>
           <div class="handoff-arrow">↓</div>
-          <div class="shift-box soll"><span class="lbl">Target</span>BA delivers testable input; QA checks at Gate 0; gaps go back to BA.</div>
+          <div class="shift-box soll"><span class="lbl">Target</span>BA delivers complete, testable input up front. QA validates at Gate 0 — any gap goes back to BA, not into QA story points.</div>
         </div>
       </div>
     </div>
