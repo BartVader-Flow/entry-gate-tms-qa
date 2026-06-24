@@ -65,33 +65,33 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .takeaway-bar strong{color:var(--rf-light)}
 
 /* ── EG-2 — clear pipeline ── */
-.eg2-rule{flex-shrink:0;background:var(--rf-white);border:2px solid var(--rf-mid);border-radius:6px;padding:10px 14px;font-size:12px;line-height:1.45;text-align:center}
+.eg2-rule{flex-shrink:0;background:var(--rf-white);border:2px solid var(--rf-mid);border-radius:6px;padding:8px 14px;font-size:11px;line-height:1.4;text-align:center}
 .eg2-rule strong{color:var(--rf-dark)}
 .eg2-rule .hl{color:var(--rf-coral);font-weight:700}
-.gate-flow{flex:1;min-height:0;display:flex;align-items:stretch;gap:0;padding:4px 0}
-.gate-step{flex:1;display:flex;flex-direction:column;position:relative;min-width:0}
-.gate-step:not(:last-child)::after{content:'›';position:absolute;right:-6px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:300;color:var(--rf-mid);z-index:2;line-height:1}
-.gate-box{flex:1;background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;margin:0 4px;padding:10px 10px 8px;display:flex;flex-direction:column;gap:6px}
-.gate-step:first-child .gate-box{margin-left:0;border-color:var(--rf-coral);border-width:2px;background:#fffcfb}
-.gate-step.g-last .gate-box{border-color:var(--rf-dark);background:var(--rf-gray)}
-.gate-head{display:flex;align-items:center;gap:8px}
-.gate-num{width:26px;height:26px;border-radius:50%;background:var(--rf-dark);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.gate-step:first-child .gate-num{background:var(--rf-coral)}
-.gate-title{font-size:12px;font-weight:700;color:var(--rf-dark);line-height:1.2}
-.gate-q{font-size:10px;color:var(--rf-muted);line-height:1.35;font-style:italic}
-.gate-owner{font-size:10px;font-weight:600;color:var(--rf-mid);padding:4px 8px;background:var(--rf-gray);border-radius:4px;line-height:1.3}
-.gate-step:first-child .gate-owner{background:#fff0ec;color:var(--rf-coral)}
-.gate-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto}
-.tag{font-size:9px;padding:3px 6px;border-radius:3px;background:var(--rf-gray2);color:var(--rf-text);font-weight:500;line-height:1.2}
-.gate-fail{font-size:9px;font-weight:700;color:var(--rf-coral);text-align:center;margin-top:2px}
-.tracks-row{flex-shrink:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.track-card{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start}
-.track-icon{width:36px;height:36px;border-radius:6px;background:var(--rf-gray2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--rf-dark);flex-shrink:0;letter-spacing:-.02em}
-.track-card h4{font-size:11px;font-weight:700;color:var(--rf-dark);margin-bottom:3px}
-.track-card p{font-size:10px;color:var(--rf-muted);line-height:1.4}
-.track-card .when{font-size:9px;font-weight:600;color:var(--rf-mid);margin-top:4px}
-.eg2-footnotes{flex-shrink:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-.fn{font-size:9px;color:var(--rf-muted);padding:4px 10px;background:var(--rf-gray);border-radius:20px}
+.gate-grid{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px}
+.gate-box{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;min-height:0}
+.gate-box.g0{border-color:var(--rf-coral);border-width:2px;background:#fffcfb}
+.gate-box.g3{border-color:var(--rf-dark);background:var(--rf-gray)}
+.gate-top{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.gate-num{width:28px;height:28px;border-radius:50%;background:var(--rf-dark);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gate-box.g0 .gate-num{background:var(--rf-coral)}
+.gate-meta{flex:1;min-width:0}
+.gate-title{font-size:13px;font-weight:700;color:var(--rf-dark);line-height:1.2}
+.gate-q{font-size:10px;color:var(--rf-muted);line-height:1.3;font-style:italic;margin-top:1px}
+.gate-owner{font-size:10px;font-weight:600;color:var(--rf-mid);flex-shrink:0;text-align:right;line-height:1.3;max-width:38%}
+.gate-criteria-h{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--rf-mid);text-align:center;padding:2px 0 0}
+.gate-checklist{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:2px 0}
+.check-item{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600;line-height:1.22;padding:5px 9px;background:var(--rf-gray2);border-radius:6px;border-left:3px solid var(--rf-mid)}
+.gate-box.g0 .check-item{background:#fff;border-left-color:var(--rf-coral)}
+.gate-box.g3 .check-item{background:var(--rf-white);border-left-color:var(--rf-dark)}
+.check-item .ico{color:var(--rf-mid);font-weight:800;font-size:11px;flex-shrink:0;width:14px;text-align:center}
+.gate-box.g0 .ico{color:var(--rf-coral)}
+.gate-fail-banner{flex-shrink:0;text-align:center;font-size:10px;font-weight:700;color:#fff;background:var(--rf-coral);padding:5px 8px;border-radius:4px;margin-top:2px}
+.eg2-bottom{flex-shrink:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.track-strip{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:6px;padding:8px 12px;display:flex;align-items:center;gap:10px}
+.track-badge{width:32px;height:32px;border-radius:6px;background:var(--rf-dark);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.track-strip p{font-size:10px;color:var(--rf-muted);line-height:1.35}
+.track-strip p strong{display:block;font-size:11px;color:var(--rf-dark);margin-bottom:2px}
 
 .nav-btn{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;z-index:20}
 .nav-btn:hover{background:rgba(255,255,255,.22)}
@@ -193,113 +193,102 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
   <div class="slide-body">
     <div class="eg2-rule">
-      <strong>Rule:</strong> Lifecycle step 2 (<em>Test</em>) starts only <span class="hl">after Gate 0 passes</span>.
-      Before that, work stays with BA/PO — not with QA story points.
+      <strong>Rule:</strong> Step 2 (<em>Test</em>) starts only <span class="hl">after Gate 0 passes</span> — checklist below must be green before QA picks up the story.
     </div>
 
-    <div class="gate-flow">
-      <div class="gate-step">
-        <div class="gate-box">
-          <div class="gate-head">
-            <div class="gate-num">0</div>
-            <div>
-              <div class="gate-title">Intake check</div>
-              <div class="gate-q">Is the story testable?</div>
-            </div>
+    <div class="gate-grid">
+      <div class="gate-box g0">
+        <div class="gate-top">
+          <div class="gate-num">0</div>
+          <div class="gate-meta">
+            <div class="gate-title">Intake check</div>
+            <div class="gate-q">Is the story testable?</div>
           </div>
-          <div class="gate-owner">BA/PO deliver · QA validates</div>
-          <div class="gate-tags">
-            <span class="tag">AC complete</span>
-            <span class="tag">Spec linked</span>
-            <span class="tag">Happy-path cases</span>
-            <span class="tag">Module &amp; env</span>
-          </div>
+          <div class="gate-owner">BA/PO deliver<br>QA validates</div>
         </div>
-        <div class="gate-fail">✕ Fail → return to BA/PO</div>
+        <div class="gate-criteria-h">Must have before QA starts</div>
+        <div class="gate-checklist">
+          <div class="check-item"><span class="ico">✓</span> Jira story in sprint &amp; linked epic</div>
+          <div class="check-item"><span class="ico">✓</span> Acceptance criteria complete</div>
+          <div class="check-item"><span class="ico">✓</span> Spec / concept page linked</div>
+          <div class="check-item"><span class="ico">✓</span> BA happy-path test cases</div>
+          <div class="check-item"><span class="ico">✓</span> Module, env &amp; provisioner known</div>
+          <div class="check-item"><span class="ico">✓</span> Test data plan (or TO ticket)</div>
+        </div>
+        <div class="gate-fail-banner">✕ Any gap → return to BA/PO (no QA points)</div>
       </div>
 
-      <div class="gate-step">
-        <div class="gate-box">
-          <div class="gate-head">
-            <div class="gate-num">1</div>
-            <div>
-              <div class="gate-title">Test design</div>
-              <div class="gate-q">What else must we cover?</div>
-            </div>
+      <div class="gate-box">
+        <div class="gate-top">
+          <div class="gate-num">1</div>
+          <div class="gate-meta">
+            <div class="gate-title">Test design</div>
+            <div class="gate-q">What else must we cover?</div>
           </div>
-          <div class="gate-owner">Squad QA owns</div>
-          <div class="gate-tags">
-            <span class="tag">Negative &amp; edge</span>
-            <span class="tag">Manual plan</span>
-            <span class="tag">Extend Playwright</span>
-          </div>
+          <div class="gate-owner">Squad QA<br>owns</div>
         </div>
-      </div>
-
-      <div class="gate-step">
-        <div class="gate-box">
-          <div class="gate-head">
-            <div class="gate-num">2</div>
-            <div>
-              <div class="gate-title">Build &amp; run</div>
-              <div class="gate-q">Can we execute tests?</div>
-            </div>
-          </div>
-          <div class="gate-owner">Dev · QA · TO in parallel</div>
-          <div class="gate-tags">
-            <span class="tag">Unit / API</span>
-            <span class="tag">PW / manual</span>
-            <span class="tag">Golden Data</span>
-          </div>
+        <div class="gate-criteria-h">QA adds beyond BA happy-path</div>
+        <div class="gate-checklist">
+          <div class="check-item"><span class="ico">✓</span> Negative &amp; boundary cases</div>
+          <div class="check-item"><span class="ico">✓</span> Error messages &amp; validations</div>
+          <div class="check-item"><span class="ico">✓</span> Manual test checklist</div>
+          <div class="check-item"><span class="ico">✓</span> Playwright: new vs extend suite</div>
+          <div class="check-item"><span class="ico">✓</span> Regression impact identified</div>
         </div>
       </div>
 
-      <div class="gate-step g-last">
-        <div class="gate-box">
-          <div class="gate-head">
-            <div class="gate-num">3</div>
-            <div>
-              <div class="gate-title">Handover</div>
-              <div class="gate-q">Ready for Core?</div>
-            </div>
+      <div class="gate-box">
+        <div class="gate-top">
+          <div class="gate-num">2</div>
+          <div class="gate-meta">
+            <div class="gate-title">Build &amp; run</div>
+            <div class="gate-q">Can we execute tests?</div>
           </div>
-          <div class="gate-owner">Core QA owns</div>
-          <div class="gate-tags">
-            <span class="tag">Pipeline stable</span>
-            <span class="tag">PW merged</span>
-            <span class="tag">Regression OK</span>
-          </div>
+          <div class="gate-owner">Dev · QA · TO<br>in parallel</div>
+        </div>
+        <div class="gate-criteria-h">Each role delivers its layer</div>
+        <div class="gate-checklist">
+          <div class="check-item"><span class="ico">✓</span> Dev: unit &amp; API tests passing</div>
+          <div class="check-item"><span class="ico">✓</span> Build in target test environment</div>
+          <div class="check-item"><span class="ico">✓</span> QA: Playwright / manual ready</div>
+          <div class="check-item"><span class="ico">✓</span> TO: Golden Data / provisioner set</div>
+          <div class="check-item"><span class="ico">✓</span> Known blockers logged in Jira</div>
         </div>
       </div>
-    </div>
 
-    <div class="tracks-row">
-      <div class="track-card">
-        <div class="track-icon">SQ</div>
-        <div>
-          <h4>Squad QA</h4>
-          <p>New features &amp; customer deviations — manual testing and extending existing automation.</p>
-          <div class="when">Runs Gates 1–2 · assigned per squad</div>
+      <div class="gate-box g3">
+        <div class="gate-top">
+          <div class="gate-num">3</div>
+          <div class="gate-meta">
+            <div class="gate-title">Handover to Core</div>
+            <div class="gate-q">Ready for regression ownership?</div>
+          </div>
+          <div class="gate-owner">Core QA<br>owns</div>
         </div>
-      </div>
-      <div class="track-card">
-        <div class="track-icon">CQ</div>
-        <div>
-          <h4>Core QA</h4>
-          <p>Golden Data, regression, Playwright maintenance — protects the shared test base.</p>
-          <div class="when">Owns Gate 3 · no extra squad load (confirm)</div>
+        <div class="gate-criteria-h">Exit criteria for Squad QA</div>
+        <div class="gate-checklist">
+          <div class="check-item"><span class="ico">✓</span> Feature stable in CI/CD pipeline</div>
+          <div class="check-item"><span class="ico">✓</span> Playwright merged to main suite</div>
+          <div class="check-item"><span class="ico">✓</span> Golden Data updated for module</div>
+          <div class="check-item"><span class="ico">✓</span> Regression run green</div>
+          <div class="check-item"><span class="ico">✓</span> Open defects triaged / accepted</div>
         </div>
       </div>
     </div>
 
-    <div class="eg2-footnotes">
-      <span class="fn">Not less testing — better input first</span>
-      <span class="fn">Gate 0 protects throughput</span>
-      <span class="fn">Squad assignment ≠ skip gates</span>
+    <div class="eg2-bottom">
+      <div class="track-strip">
+        <div class="track-badge">SQ</div>
+        <p><strong>Squad QA</strong> Gates 1–2 · new features, manual + extend Playwright · per squad</p>
+      </div>
+      <div class="track-strip">
+        <div class="track-badge">CQ</div>
+        <p><strong>Core QA</strong> Gate 3 · Golden Data, regression, PW maintenance · no extra squad load</p>
+      </div>
     </div>
   </div>
   <div class="slide-footer">
-    <span>Gate 0 checklist &amp; reject workflow — TBD after your feedback</span>
+    <span>Better input first · Gate 0 protects throughput · Squad ≠ skip gates · Checklist TBD with leads</span>
     <span>Rail-Flow · TMS QA</span>
   </div>
 </div>
