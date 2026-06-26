@@ -118,6 +118,9 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .qa-team-card strong{font-size:14px;font-weight:800;color:var(--rf-dark)}
 .qa-team-card.squad strong{color:var(--rf-mid)}
 .qa-team-card span{font-size:10px;color:var(--rf-muted);line-height:1.35}
+.qa-team-card.core ul{list-style:none;margin-top:4px;font-size:9px;line-height:1.32;color:var(--rf-text);font-weight:500}
+.qa-team-card.core li{padding:2px 0 2px 10px;position:relative}
+.qa-team-card.core li::before{content:'·';position:absolute;left:0;color:var(--rf-dark);font-weight:700}
 .qa-team-bridge{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:0 4px;min-width:88px}
 .qa-team-bridge .br-label{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-muted);text-align:center;line-height:1.25}
 .qa-team-bridge .br-arrows{font-size:16px;font-weight:800;color:var(--rf-light);line-height:1}
@@ -126,7 +129,11 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .qa-phases{flex:1;min-height:0;display:grid;grid-template-columns:1.05fr 1fr .95fr;gap:10px}
 .qa-phase{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:5px;min-height:0;box-shadow:0 1px 3px rgba(11,67,36,.06)}
 .qa-phase.shared{border-style:dashed;border-color:var(--rf-mid);background:linear-gradient(180deg,#fff 0%,#f8fbf7 100%)}
-.qa-phase.handover{border-color:var(--rf-dark);border-left:4px solid var(--rf-dark)}
+.qa-phase.handover{border-color:var(--rf-dark);border-left:4px solid var(--rf-dark);background:linear-gradient(180deg,#fff 0%,#f4f6f4 100%)}
+.qa-phase-sub{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--rf-dark);margin-top:4px;padding-top:5px;border-top:1px solid var(--rf-border)}
+.qa-phase-sub:first-of-type{margin-top:0;padding-top:0;border-top:none}
+.qa-phase.compact ul{font-size:10px;line-height:1.32}
+.qa-phase.compact li{padding:2px 0 2px 12px}
 .qa-phase-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:2px}
 .qa-phase-title{font-size:14px;font-weight:800;color:var(--rf-dark);line-height:1.2}
 .qa-phase-badge{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 7px;border-radius:4px;white-space:nowrap;flex-shrink:0;line-height:1.2}
@@ -145,6 +152,31 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .qa-transition .arrow-col .when{font-size:9px;font-weight:700;color:var(--rf-coral);text-transform:uppercase;letter-spacing:.04em;margin-top:2px;max-width:100px;line-height:1.25}
 .qa-transition .msg{font-size:11px;line-height:1.4;color:var(--rf-text);border-left:3px solid var(--rf-coral);padding-left:12px}
 .qa-transition .msg strong{color:var(--rf-dark)}
+
+/* ── Slide 5 — Quality layers ── */
+.layers-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
+.layers-intro strong{color:var(--rf-dark)}
+.layers-main{flex:1;min-height:0;display:grid;grid-template-columns:1.05fr .95fr;gap:10px}
+.layers-stack{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;box-shadow:0 1px 3px rgba(11,67,36,.06)}
+.layers-stack h3{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--rf-dark);margin-bottom:2px}
+.layer-row{display:grid;grid-template-columns:88px 1fr;gap:8px;align-items:stretch;padding:7px 9px;border-radius:6px;border:1px solid var(--rf-border);background:var(--rf-gray)}
+.layer-row.l-outcome{border-color:var(--rf-mid);background:#eef8ea;border-left:4px solid var(--rf-mid)}
+.layer-num{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--rf-mid);line-height:1.25;padding-top:1px}
+.layer-row.l-outcome .layer-num{color:var(--rf-dark)}
+.layer-body{font-size:10px;line-height:1.35;color:var(--rf-text)}
+.layer-body strong{display:block;font-size:11px;color:var(--rf-dark);margin-bottom:2px}
+.layer-body .owners{font-size:9px;color:var(--rf-muted);margin-top:3px}
+.layer-arrow{text-align:center;font-size:14px;font-weight:800;color:var(--rf-light);line-height:1;flex-shrink:0}
+.escalation-panel{background:var(--rf-white);border:2px solid var(--rf-dark);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;min-height:0;box-shadow:0 1px 3px rgba(11,67,36,.06)}
+.escalation-panel h3{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--rf-dark)}
+.escalation-panel .sub{font-size:9px;color:var(--rf-muted);line-height:1.35;margin-bottom:2px}
+.escalation-list{flex:1;min-height:0;display:flex;flex-direction:column;gap:5px;justify-content:space-evenly}
+.esc-item{display:flex;gap:8px;font-size:10px;line-height:1.32;padding:6px 8px;background:var(--rf-gray);border-radius:5px;border-left:3px solid var(--rf-mid)}
+.esc-item.coral{border-left-color:var(--rf-coral);background:#fffcfb}
+.esc-item strong{display:block;font-size:10px;color:var(--rf-dark);margin-bottom:1px}
+.esc-item span{color:var(--rf-text)}
+.layers-foot{flex-shrink:0;font-size:9px;color:var(--rf-muted);text-align:center;line-height:1.35;padding:0 8px}
+.layers-foot strong{color:var(--rf-dark)}
 
 .nav-btn{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;z-index:20}
 .nav-btn:hover{background:rgba(255,255,255,.22)}
@@ -181,11 +213,12 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       </ul>
     </div>
     <div class="cover-panel">
-      <h3>In this deck (3 slides)</h3>
+      <h3>In this deck (4 slides)</h3>
       <ul>
         <li><strong>Lifecycle &amp; ownership</strong> — roles, handover, hard reject</li>
         <li><strong>The Entry Gate</strong> — checklist for BA, PO, Dev &amp; QA</li>
-        <li><strong>QA workflow</strong> — internal (QA team only)</li>
+        <li><strong>QA workflow</strong> — internal (Squad &amp; Core QA)</li>
+        <li><strong>Quality layers</strong> — shared ownership across the team</li>
       </ul>
     </div>
   </div>
@@ -199,7 +232,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>Lifecycle &amp; who owns what</h2>
-    <span class="snum">1 / 3</span>
+    <span class="snum">1 / 4</span>
   </div>
   <div class="slide-body">
     <div class="eg1-top">
@@ -212,7 +245,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
         <div class="lc-arrow">→</div>
         <div class="lc-step">3 · Handover<span>Squad → Core</span></div>
         <div class="lc-arrow">→</div>
-        <div class="lc-step">4 · Maintain<span>Regression</span></div>
+        <div class="lc-step">4 · Maintain<span>Regression · module health</span></div>
       </div>
     </div>
     <div class="entry-callout">
@@ -259,10 +292,10 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
         </div>
       </div>
     </div>
-    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable.</div>
+    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Module health</strong> is a shared outcome across all quality layers (see slide 5).</div>
   </div>
   <div class="slide-footer">
-    <span>One Entry Gate at handover · Hard reject protects QA capacity</span>
+    <span>One Entry Gate at handover · ongoing health via quality layers</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
@@ -271,7 +304,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>The Entry Gate</h2>
-    <span class="snum">2 / 3</span>
+    <span class="snum">2 / 4</span>
   </div>
   <div class="slide-body">
     <div class="s3-rule">
@@ -332,7 +365,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>QA workflow (internal)</h2>
-    <span class="snum">3 / 3</span>
+    <span class="snum">3 / 4</span>
   </div>
   <div class="slide-body">
     <p class="workflow-intro"><strong>After QA accepts the story</strong> — not separate entry gates. Work sits in <strong>Squad QA</strong> or <strong>Core QA</strong>; steps may overlap; one colleague may cover several phases.</p>
@@ -349,70 +382,157 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
         </div>
         <div class="qa-team-card core">
           <strong>Core QA</strong>
-          <span>Cross-customer · Golden Data · regression · Playwright maintenance</span>
+          <span>Platform ownership — not only Playwright maintenance</span>
+          <ul>
+            <li>Golden Data with TO (provisioner-agnostic)</li>
+            <li>Suite architecture &amp; logical test flows</li>
+            <li>CI/CD segmentation · which tests run when</li>
+            <li>Root-cause on recurring failures (with Dev / SA)</li>
+            <li>Unit &amp; API support for business logic</li>
+          </ul>
         </div>
       </div>
 
       <div class="qa-shared-band"><em>Test design</em> and <em>Build &amp; run</em> — identical workflow whether execution sits in Squad QA or Core QA</div>
 
       <div class="qa-phases">
-        <div class="qa-phase shared">
+        <div class="qa-phase shared compact">
           <div class="qa-phase-head">
             <div class="qa-phase-title">Test design</div>
             <span class="qa-phase-badge both">Squad or Core</span>
           </div>
-          <div class="qa-phase-note">QA-owned scope beyond BA happy path</div>
+          <div class="qa-phase-note">QA scope beyond BA happy path</div>
           <ul>
-            <li class="new-item">QA test scope &amp; out of scope documented (beyond BA story scope)</li>
-            <li class="new-item">QA risk / priority noted (e.g. High / Medium / Low)</li>
-            <li>Negative &amp; edge cases</li>
-            <li>Error messages &amp; validations</li>
-            <li>Manual test checklist</li>
-            <li>Playwright: new vs extend suite</li>
-            <li>Regression impact identified</li>
+            <li class="new-item">QA test scope &amp; out of scope (beyond BA story scope)</li>
+            <li class="new-item">QA risk / priority (High / Medium / Low)</li>
+            <li>Negative &amp; edge cases · manual checklist</li>
+            <li>Playwright: new vs extend · regression impact</li>
           </ul>
         </div>
-        <div class="qa-phase shared">
+        <div class="qa-phase shared compact">
           <div class="qa-phase-head">
             <div class="qa-phase-title">Build &amp; run</div>
             <span class="qa-phase-badge both">Squad or Core</span>
           </div>
           <div class="qa-phase-note">Dev · QA · TO in parallel</div>
           <ul>
-            <li>Dev: Unit tests passing</li>
-            <li>Feature deployed to SD-TEST</li>
-            <li>QA: Playwright / manual ready</li>
+            <li>Dev: unit tests passing · deployed to SD-TEST</li>
+            <li>QA: Playwright / manual executed</li>
             <li>TO: Golden Data / provisioner set</li>
           </ul>
         </div>
-        <div class="qa-phase handover">
+        <div class="qa-phase handover compact">
           <div class="qa-phase-head">
-            <div class="qa-phase-title">Handover to Core</div>
-            <span class="qa-phase-badge squad-core">When needed</span>
+            <div class="qa-phase-title">Core QA ownership</div>
+            <span class="qa-phase-badge squad-core">Core-led</span>
           </div>
-          <div class="qa-phase-note">Squad QA → Core QA · formal handover</div>
+          <div class="qa-phase-sub">Ongoing platform</div>
           <ul>
-            <li>Feature stable in CI/CD pipeline</li>
-            <li>Playwright merged to main suite</li>
-            <li>Golden Data updated for module</li>
-            <li>Regression run green</li>
-            <li>Open defects triaged / accepted</li>
+            <li>Cross-provisioner regression &amp; Playwright maintenance</li>
+            <li>Support squads: fine-tune automation &amp; process</li>
+            <li>Fix recurring failure patterns at root cause</li>
+          </ul>
+          <div class="qa-phase-sub">Handover from Squad (when needed)</div>
+          <ul>
+            <li>Stable in CI/CD · merged to main suite</li>
+            <li>Golden Data updated · regression green</li>
+            <li>Defects triaged · Squad communicates handover</li>
           </ul>
         </div>
       </div>
 
       <div class="qa-transition">
-        <div class="from"><strong>Squad QA built it</strong> Designed &amp; executed while still squad- or customer-specific</div>
+        <div class="from"><strong>Squad → Core</strong> When rollout goes multi-customer</div>
         <div class="arrow-col">
           <div class="arr">→</div>
-          <div class="when">Rollout to several customers</div>
+          <div class="when">Active comms</div>
         </div>
-        <div class="msg"><strong>Squad QA must actively communicate</strong> the move to Core QA — no silent handover. Core QA picks up ownership for cross-customer regression &amp; maintenance.</div>
+        <div class="msg"><strong>No silent handover.</strong> Squad QA flags the move; Core QA owns cross-customer regression, Golden Data, and long-term suite health.</div>
       </div>
     </div>
   </div>
   <div class="slide-footer">
-    <span>Squad or Core · active handover communication when scope goes multi-customer</span>
+    <span>Core QA: platform + handover · Squad: feature delivery · QA team only</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 5 — Quality layers -->
+<div class="slide">
+  <div class="slide-header">
+    <h2>Quality layers &amp; shared ownership</h2>
+    <span class="snum">4 / 4</span>
+  </div>
+  <div class="slide-body">
+    <p class="layers-intro"><strong>Quality is a team responsibility</strong> — stacked layers, each with dedicated ownership. Goal: know if a module is healthy (PO defines normal behaviour) — not only “QA said OK for five minutes.”</p>
+
+    <div class="layers-main">
+      <div class="layers-stack">
+        <h3>Test framework — quality layers</h3>
+        <div class="layer-row">
+          <div class="layer-num">Layer 1<br>Dev loop</div>
+          <div class="layer-body">
+            <strong>Developer loop</strong>
+            Unit tests · local Docker · partial dataset use
+            <div class="owners">Owner: <strong>Dev / SA</strong></div>
+          </div>
+        </div>
+        <div class="layer-arrow">↓</div>
+        <div class="layer-row">
+          <div class="layer-num">Layer 2<br>PR loop</div>
+          <div class="layer-body">
+            <strong>Pull request loop</strong>
+            GitHub checks · SonarQube · Tech Guardian · code review
+            <div class="owners">Owner: <strong>Dev / SA</strong></div>
+          </div>
+        </div>
+        <div class="layer-arrow">↓</div>
+        <div class="layer-row">
+          <div class="layer-num">Layer 3<br>Pipeline</div>
+          <div class="layer-body">
+            <strong>CI/CD pipeline</strong>
+            Unit + API + Playwright + Golden Data — integrated run
+            <div class="owners">Owner: <strong>Dev · TO · Squad QA · Core QA</strong></div>
+          </div>
+        </div>
+        <div class="layer-arrow">↓</div>
+        <div class="layer-row l-outcome">
+          <div class="layer-num">Outcome</div>
+          <div class="layer-body">
+            <strong>Module health</strong>
+            e.g. “Module X is 90% / 100% healthy” — expected behaviour defined by PO
+            <div class="owners">Accountable: <strong>PO</strong> · measured across all layers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="escalation-panel">
+        <h3>When standard QA is not enough</h3>
+        <p class="sub">After story-level QA — who acts next</p>
+        <div class="escalation-list">
+          <div class="esc-item">
+            <div><strong>Recurring test / pipeline failures</strong><span>Core QA drives root-cause · Dev / SA fix at source layer</span></div>
+          </div>
+          <div class="esc-item coral">
+            <div><strong>High-impact defects</strong><span>QA escalates with severity &amp; business impact — clear tickets, not fluffy; equal authority to PO / Dev</span></div>
+          </div>
+          <div class="esc-item">
+            <div><strong>Unclear “healthy” module behaviour</strong><span>PO defines normal behaviour · BA / spec updated</span></div>
+          </div>
+          <div class="esc-item">
+            <div><strong>Data / environment gaps</strong><span>TO + Core QA on Golden Data · Dev on deploy / config</span></div>
+          </div>
+          <div class="esc-item">
+            <div><strong>Business logic at scale</strong><span>Prefer unit &amp; API tests over repeated Playwright runs</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="layers-foot"><strong>Collaboration required</strong> — if one layer stays red, module health is unknown. Additional layers (risk, security) will follow.</p>
+  </div>
+  <div class="slide-footer">
+    <span>Shared quality · not QA-only · aligns with Entry Gate &amp; QA workflow</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
