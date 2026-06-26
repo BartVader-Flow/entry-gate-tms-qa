@@ -118,9 +118,10 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .qa-team-card strong{font-size:14px;font-weight:800;color:var(--rf-dark)}
 .qa-team-card.squad strong{color:var(--rf-mid)}
 .qa-team-card span{font-size:10px;color:var(--rf-muted);line-height:1.35}
-.qa-team-card.core ul{list-style:none;margin-top:4px;font-size:9px;line-height:1.32;color:var(--rf-text);font-weight:500}
-.qa-team-card.core li{padding:2px 0 2px 10px;position:relative}
-.qa-team-card.core li::before{content:'·';position:absolute;left:0;color:var(--rf-dark);font-weight:700}
+.qa-team-card.core ul,.qa-team-card.squad ul{list-style:none;margin-top:4px;font-size:9px;line-height:1.32;color:var(--rf-text);font-weight:500}
+.qa-team-card.core li,.qa-team-card.squad li{padding:2px 0 2px 10px;position:relative}
+.qa-team-card.core li::before,.qa-team-card.squad li::before{content:'·';position:absolute;left:0;color:var(--rf-dark);font-weight:700}
+.qa-team-card.squad li::before{color:var(--rf-mid)}
 .qa-team-bridge{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:0 4px;min-width:88px}
 .qa-team-bridge .br-label{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-muted);text-align:center;line-height:1.25}
 .qa-team-bridge .br-arrows{font-size:16px;font-weight:800;color:var(--rf-light);line-height:1}
@@ -374,7 +375,15 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <div class="qa-team-row">
         <div class="qa-team-card squad">
           <strong>Squad QA</strong>
-          <span>Squad-scoped features · manual + Playwright · per squad / unique team setup</span>
+          <span>Feature delivery — squad &amp; customer-specific scope</span>
+          <ul>
+            <li>Create &amp; maintain customer-specific test cases</li>
+            <li>Manual testing where automation is not yet in place</li>
+            <li>Primary focus: new implementations in the squad</li>
+            <li>Extend regression coverage (Playwright) for squad scope</li>
+            <li>Entry Gate: validate story handover · accept or reject</li>
+            <li>Signal Core QA when scope goes multi-customer</li>
+          </ul>
         </div>
         <div class="qa-team-bridge">
           <span class="br-label">Either team runs<br>the same steps</span>
@@ -464,7 +473,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
     <span class="snum">4 / 4</span>
   </div>
   <div class="slide-body">
-    <p class="layers-intro"><strong>Quality is a team responsibility</strong> — stacked layers, each with dedicated ownership. Goal: know if a module is healthy (PO defines normal behaviour) — not only “QA said OK for five minutes.”</p>
+    <p class="layers-intro"><strong>Quality is a team responsibility.</strong> Dev, BA, PO, TO, and QA each own a part of testing — in development, in the pipeline, and before release. No single role carries quality alone.</p>
 
     <div class="layers-main">
       <div class="layers-stack">
@@ -514,7 +523,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
             <div><strong>Recurring test / pipeline failures</strong><span>Core QA drives root-cause · Dev / SA fix at source layer</span></div>
           </div>
           <div class="esc-item coral">
-            <div><strong>High-impact defects</strong><span>QA escalates with severity &amp; business impact — clear tickets, not fluffy; equal authority to PO / Dev</span></div>
+            <div><strong>High-impact defects</strong><span>QA escalates with severity &amp; business impact</span></div>
           </div>
           <div class="esc-item">
             <div><strong>Unclear “healthy” module behaviour</strong><span>PO defines normal behaviour · BA / spec updated</span></div>
