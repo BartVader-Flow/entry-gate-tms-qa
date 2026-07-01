@@ -37,7 +37,34 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a1e1a;font-family:
 .cover-panel li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
 .cover-nav{margin-top:20px;font-size:11px;opacity:.55;display:flex;gap:20px;flex-wrap:wrap}
 
-/* ── Slide 2 — lifecycle ── */
+/* ── Slide 2 — responsibility comic ── */
+.comic-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
+.comic-intro strong{color:var(--rf-dark)}
+.comic-strip{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:stretch}
+.comic-panel{background:var(--rf-white);border:3px solid var(--rf-dark);border-radius:4px;padding:8px 7px 7px;display:flex;flex-direction:column;gap:5px;min-height:0;box-shadow:3px 3px 0 rgba(11,67,36,.15);position:relative}
+.comic-panel::after{content:'';position:absolute;inset:4px;border:1px solid var(--rf-border);border-radius:2px;pointer-events:none}
+.comic-title{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--rf-dark);text-align:center;line-height:1.25;padding-bottom:4px;border-bottom:2px solid var(--rf-dark)}
+.comic-scene{flex:1;min-height:0;display:flex;flex-direction:column;gap:4px;justify-content:space-between}
+.comic-before,.comic-after{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px 4px;border-radius:4px;text-align:center;min-height:0}
+.comic-before{background:#fff3f0;border:1px dashed #f5c4b8}
+.comic-after{background:#eef8ea;border:1px dashed var(--rf-light)}
+.comic-lbl{font-size:7px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-muted)}
+.comic-before .comic-lbl{color:var(--rf-coral)}
+.comic-after .comic-lbl{color:var(--rf-mid)}
+.comic-actors{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}
+.comic-avatar{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:#fff;border:2px solid var(--rf-dark);flex-shrink:0}
+.comic-avatar.ba{background:#5b8def}.comic-avatar.po{background:#8b5cf6}.comic-avatar.dev{background:#64748b}.comic-avatar.qa{background:var(--rf-coral)}.comic-avatar.to{background:#0ea5e9}.comic-avatar.sa{background:#475569}
+.comic-bubble{font-size:8px;line-height:1.25;font-weight:600;color:var(--rf-text);padding:4px 6px;background:#fff;border:1px solid var(--rf-border);border-radius:8px;position:relative;max-width:100%}
+.comic-bubble.bad{border-color:#f5c4b8;color:var(--rf-coral)}
+.comic-bubble.good{border-color:var(--rf-light);color:var(--rf-dark)}
+.comic-arrow-mid{text-align:center;font-size:14px;font-weight:800;color:var(--rf-mid);line-height:1;flex-shrink:0}
+.comic-foot{flex-shrink:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.comic-legend{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:6px;padding:7px 10px;font-size:9px;line-height:1.35;color:var(--rf-muted)}
+.comic-legend strong{color:var(--rf-dark)}
+.comic-takeaway{background:var(--rf-dark);color:#fff;padding:7px 10px;border-radius:6px;font-size:10px;line-height:1.35;text-align:center}
+.comic-takeaway strong{color:var(--rf-light)}
+
+/* ── Slide 3 — lifecycle ── */
 .eg1-top{flex-shrink:0;display:flex;flex-direction:column;gap:6px}
 .lc-flow{display:flex;align-items:center;gap:0}
 .lc-flow .lc-step{flex:1;background:var(--rf-white);border:1px solid var(--rf-border);border-radius:6px;padding:6px 8px;text-align:center;font-size:10px;font-weight:700;color:var(--rf-dark);border-left:3px solid var(--rf-mid);box-shadow:0 1px 2px rgba(11,67,36,.06)}
@@ -85,7 +112,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .takeaway-bar strong{color:var(--rf-light)}
 .takeaway-bar .hl-r{color:var(--rf-light);font-weight:800}
 
-/* ── Slide 3 — Entry Gate (all roles) ── */
+/* ── Slide 4 — Entry Gate (all roles) ── */
 .s3-rule{flex-shrink:0;background:var(--rf-white);border:2px solid var(--rf-mid);border-radius:6px;padding:7px 14px;font-size:11px;line-height:1.4;text-align:center}
 .s3-rule strong{color:var(--rf-dark)}
 .s3-rule .hl{color:var(--rf-coral);font-weight:700}
@@ -107,10 +134,10 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .entry-scope-note{flex-shrink:0;font-size:9px;color:var(--rf-muted);text-align:center;line-height:1.35;padding:0 8px}
 .entry-scope-note strong{color:var(--rf-dark)}
 
-/* ── Slide 4 — QA workflow (internal) ── */
+/* ── Slide 5 — QA workflow (internal) ── */
 .workflow-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 8px}
 .workflow-intro strong{color:var(--rf-dark)}
-.qa-workflow-main{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px}
+.qa-workflow-main{flex:1;min-height:0;display:flex;flex-direction:column;gap:6px}
 .qa-team-row{flex-shrink:0;display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
 .qa-team-card{background:var(--rf-white);border:2px solid var(--rf-border);border-radius:8px;padding:10px 14px;display:flex;flex-direction:column;gap:4px;box-shadow:0 1px 3px rgba(11,67,36,.06)}
 .qa-team-card.squad{border-color:var(--rf-mid);border-top:4px solid var(--rf-mid)}
@@ -127,8 +154,8 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .qa-team-bridge .br-arrows{font-size:16px;font-weight:800;color:var(--rf-light);line-height:1}
 .qa-shared-band{flex-shrink:0;background:linear-gradient(90deg,rgba(79,136,59,.12) 0%,rgba(11,67,36,.08) 50%,rgba(79,136,59,.12) 100%);border:1px solid var(--rf-light);border-radius:6px;padding:6px 14px;text-align:center;font-size:10px;font-weight:600;color:var(--rf-dark);line-height:1.35}
 .qa-shared-band em{font-style:normal;color:var(--rf-mid);font-weight:700}
-.qa-phases{flex:1;min-height:0;display:grid;grid-template-columns:1.05fr 1fr .95fr;gap:10px}
-.qa-phase{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:5px;min-height:0;box-shadow:0 1px 3px rgba(11,67,36,.06)}
+.qa-phases{flex:1;min-height:0;display:grid;grid-template-columns:1.05fr 1fr .95fr;gap:8px}
+.qa-phase{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;min-height:0;box-shadow:0 1px 3px rgba(11,67,36,.06)}
 .qa-phase.shared{border-style:dashed;border-color:var(--rf-mid);background:linear-gradient(180deg,#fff 0%,#f8fbf7 100%)}
 .qa-phase.handover{border-color:var(--rf-dark);border-left:4px solid var(--rf-dark);background:linear-gradient(180deg,#fff 0%,#f4f6f4 100%)}
 .qa-phase-sub{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--rf-dark);margin-top:4px;padding-top:5px;border-top:1px solid var(--rf-border)}
@@ -145,7 +172,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .qa-phase li{padding:4px 0 4px 13px;position:relative}
 .qa-phase li::before{content:'·';position:absolute;left:2px;color:var(--rf-mid);font-weight:700;font-size:13px}
 .qa-phase li.new-item{font-weight:600}
-.qa-transition{flex-shrink:0;display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;background:var(--rf-white);border:2px solid var(--rf-coral);border-radius:8px;padding:10px 14px}
+.qa-transition{flex-shrink:0;display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;background:var(--rf-white);border:2px solid var(--rf-coral);border-radius:8px;padding:8px 12px}
 .qa-transition .from,.qa-transition .to{font-size:11px;line-height:1.35;color:var(--rf-text)}
 .qa-transition .from strong,.qa-transition .to strong{display:block;font-size:12px;color:var(--rf-dark);margin-bottom:3px}
 .qa-transition .arrow-col{text-align:center;flex-shrink:0}
@@ -153,14 +180,27 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .qa-transition .arrow-col .when{font-size:9px;font-weight:700;color:var(--rf-coral);text-transform:uppercase;letter-spacing:.04em;margin-top:2px;max-width:100px;line-height:1.25}
 .qa-transition .msg{font-size:11px;line-height:1.4;color:var(--rf-text);border-left:3px solid var(--rf-coral);padding-left:12px}
 .qa-transition .msg strong{color:var(--rf-dark)}
+.qa-leads-row{flex-shrink:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.qa-lead-card{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:7px;padding:8px 10px;display:flex;flex-direction:column;gap:3px;min-height:0}
+.qa-lead-card.squad-lead{border-left:4px solid var(--rf-mid)}
+.qa-lead-card.core-lead{border-left:4px solid var(--rf-dark)}
+.qa-lead-card .lead-name{font-size:11px;font-weight:800;color:var(--rf-dark);line-height:1.2}
+.qa-lead-card.squad-lead .lead-name{color:var(--rf-mid)}
+.qa-lead-card .lead-role{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-muted);margin-bottom:2px}
+.qa-lead-card ul{list-style:none;font-size:8px;line-height:1.28;color:var(--rf-text);font-weight:500}
+.qa-lead-card li{padding:1px 0 1px 9px;position:relative}
+.qa-lead-card li::before{content:'·';position:absolute;left:0;font-weight:700;color:var(--rf-mid)}
+.qa-lead-card.core-lead li::before{color:var(--rf-dark)}
+.qa-lead-card .lead-more{font-size:7px;font-style:italic;color:var(--rf-muted);margin-top:2px;padding-top:3px;border-top:1px dashed var(--rf-border)}
 
-/* ── Slide 5 — Quality layers ── */
+/* ── Slide 6 — Quality layers ── */
 .layers-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
 .layers-intro strong{color:var(--rf-dark)}
 .layers-main{flex:1;min-height:0;display:grid;grid-template-columns:1.05fr .95fr;gap:10px}
-.layers-stack{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;box-shadow:0 1px 3px rgba(11,67,36,.06)}
+.layers-stack{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;gap:4px;box-shadow:0 1px 3px rgba(11,67,36,.06)}
+.layer-row{display:grid;grid-template-columns:88px 1fr;gap:8px;align-items:stretch;padding:5px 7px;border-radius:6px;border:1px solid var(--rf-border);background:var(--rf-gray)}
 .layers-stack h3{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--rf-dark);margin-bottom:2px}
-.layer-row{display:grid;grid-template-columns:88px 1fr;gap:8px;align-items:stretch;padding:7px 9px;border-radius:6px;border:1px solid var(--rf-border);background:var(--rf-gray)}
+.layer-row.l-env{border-color:#0ea5e9;background:#f0f9ff;border-left:4px solid #0ea5e9}
 .layer-row.l-outcome{border-color:var(--rf-mid);background:#eef8ea;border-left:4px solid var(--rf-mid)}
 .layer-num{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--rf-mid);line-height:1.25;padding-top:1px}
 .layer-row.l-outcome .layer-num{color:var(--rf-dark)}
@@ -214,12 +254,13 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       </ul>
     </div>
     <div class="cover-panel">
-      <h3>In this deck (4 slides)</h3>
+      <h3>In this deck (5 slides)</h3>
       <ul>
         <li><strong>Lifecycle &amp; ownership</strong> — roles, handover, hard reject</li>
+        <li><strong>Responsibility shift</strong> — visual guide (comic) per activity</li>
         <li><strong>The Entry Gate</strong> — checklist for BA, PO, Dev &amp; QA</li>
-        <li><strong>QA workflow</strong> — internal (Squad &amp; Core QA)</li>
-        <li><strong>Quality layers</strong> — shared ownership across the team</li>
+        <li><strong>QA workflow</strong> — Squad &amp; Core QA + QA leads</li>
+        <li><strong>Quality layers</strong> — four layers · shared ownership</li>
       </ul>
     </div>
   </div>
@@ -229,11 +270,11 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
 </div>
 
-<!-- Slide 2 — Lifecycle -->
+<!-- Slide 1 — Lifecycle -->
 <div class="slide">
   <div class="slide-header">
     <h2>Lifecycle &amp; who owns what</h2>
-    <span class="snum">1 / 4</span>
+    <span class="snum">1 / 5</span>
   </div>
   <div class="slide-body">
     <div class="eg1-top">
@@ -293,10 +334,113 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
         </div>
       </div>
     </div>
-    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Module health</strong> is a shared outcome across all quality layers (see slide 5).</div>
+    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per activity → slide 2.</strong> Module health via quality layers (slide 5).</div>
   </div>
   <div class="slide-footer">
     <span>One Entry Gate at handover · ongoing health via quality layers</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 2 — Responsibility shift (comic) -->
+<div class="slide">
+  <div class="slide-header">
+    <h2>Responsibility shift — at a glance</h2>
+    <span class="snum">2 / 5</span>
+  </div>
+  <div class="slide-body">
+    <p class="comic-intro"><strong>Target roles</strong> from slide 1 — what changes for each activity. <strong>Wrong today</strong> → <strong>Target</strong> (RACI chips on slide 1).</p>
+
+    <div class="comic-strip">
+      <div class="comic-panel">
+        <div class="comic-title">Story &amp; AC</div>
+        <div class="comic-scene">
+          <div class="comic-before">
+            <span class="comic-lbl">Wrong today</span>
+            <div class="comic-actors"><span class="comic-avatar qa">QA</span></div>
+            <div class="comic-bubble bad">Chases BA &amp; PO for specs</div>
+          </div>
+          <div class="comic-arrow-mid">↓</div>
+          <div class="comic-after">
+            <span class="comic-lbl">Target</span>
+            <div class="comic-actors"><span class="comic-avatar ba">BA</span><span class="comic-avatar po">PO</span></div>
+            <div class="comic-bubble good">Complete &amp; testable before QA</div>
+          </div>
+        </div>
+      </div>
+      <div class="comic-panel">
+        <div class="comic-title">Happy path</div>
+        <div class="comic-scene">
+          <div class="comic-before">
+            <span class="comic-lbl">Wrong today</span>
+            <div class="comic-actors"><span class="comic-avatar qa">QA</span></div>
+            <div class="comic-bubble bad">QA writes all cases</div>
+          </div>
+          <div class="comic-arrow-mid">↓</div>
+          <div class="comic-after">
+            <span class="comic-lbl">Target</span>
+            <div class="comic-actors"><span class="comic-avatar ba">BA</span><span class="comic-avatar qa">QA</span></div>
+            <div class="comic-bubble good">BA delivers path · QA adds depth</div>
+          </div>
+        </div>
+      </div>
+      <div class="comic-panel">
+        <div class="comic-title">Unit &amp; API</div>
+        <div class="comic-scene">
+          <div class="comic-before">
+            <span class="comic-lbl">Wrong today</span>
+            <div class="comic-actors"><span class="comic-avatar qa">QA</span></div>
+            <div class="comic-bubble bad">QA builds all tests</div>
+          </div>
+          <div class="comic-arrow-mid">↓</div>
+          <div class="comic-after">
+            <span class="comic-lbl">Target</span>
+            <div class="comic-actors"><span class="comic-avatar dev">Dev</span><span class="comic-avatar sa">SA</span></div>
+            <div class="comic-bubble good">Dev / SA own logic tests</div>
+          </div>
+        </div>
+      </div>
+      <div class="comic-panel">
+        <div class="comic-title">Playwright &amp; manual</div>
+        <div class="comic-scene">
+          <div class="comic-before">
+            <span class="comic-lbl">Today</span>
+            <div class="comic-actors"><span class="comic-avatar qa">QA</span></div>
+            <div class="comic-bubble">QA executes · others rarely involved</div>
+          </div>
+          <div class="comic-arrow-mid">↓</div>
+          <div class="comic-after">
+            <span class="comic-lbl">Target</span>
+            <div class="comic-actors"><span class="comic-avatar qa">QA</span><span class="comic-avatar ba">BA</span><span class="comic-avatar po">PO</span></div>
+            <div class="comic-bubble good">QA runs · BA/PO/SA consulted</div>
+          </div>
+        </div>
+      </div>
+      <div class="comic-panel">
+        <div class="comic-title">Golden Data / env</div>
+        <div class="comic-scene">
+          <div class="comic-before">
+            <span class="comic-lbl">Wrong today</span>
+            <div class="comic-actors"><span class="comic-avatar qa">QA</span></div>
+            <div class="comic-bubble bad">Ad hoc data setup</div>
+          </div>
+          <div class="comic-arrow-mid">↓</div>
+          <div class="comic-after">
+            <span class="comic-lbl">Target</span>
+            <div class="comic-actors"><span class="comic-avatar to">TO</span><span class="comic-avatar qa">Core</span></div>
+            <div class="comic-bubble good">TO + Core QA · repeatable data</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comic-foot">
+      <div class="comic-legend"><strong>How to read:</strong> Each panel = one row from the RACI table (slide 1). BA/PO/Dev deliver upstream · QA validates at Entry Gate and owns test execution — not upstream spec work.</div>
+      <div class="comic-takeaway"><strong>Validation before code</strong> — repeatable checks in quality layers, not one-off QA heroics.</div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Comic draft v1 — refine with BA / Dev / PO feedback</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
@@ -305,7 +449,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>The Entry Gate</h2>
-    <span class="snum">2 / 4</span>
+    <span class="snum">3 / 5</span>
   </div>
   <div class="slide-body">
     <div class="s3-rule">
@@ -347,7 +491,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
           <div class="check-group-items">
             <div class="check-item"><span class="ico">✓</span> Dependencies done or mocked · no blockers on story</div>
             <div class="check-item"><span class="ico">✓</span> Integrations: target envs vs env for testing documented</div>
-            <div class="check-item"><span class="ico">✓</span> Known risks / open points listed (BA / PO)</div>
+            <div class="check-item"><span class="ico">✓</span> Known risks / open points listed (BA / PO) · not a blocker for QA start</div>
           </div>
         </div>
       </div>
@@ -366,7 +510,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>QA workflow (internal)</h2>
-    <span class="snum">3 / 4</span>
+    <span class="snum">4 / 5</span>
   </div>
   <div class="slide-body">
     <p class="workflow-intro"><strong>After QA accepts the story</strong> — not separate entry gates. Work sits in <strong>Squad QA</strong> or <strong>Core QA</strong>; steps may overlap; one colleague may cover several phases.</p>
@@ -399,6 +543,30 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
             <li>Root-cause on recurring failures (with Dev / SA)</li>
             <li>Unit &amp; API support for business logic</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="qa-leads-row">
+        <div class="qa-lead-card squad-lead">
+          <span class="lead-role">Squad QA Lead</span>
+          <span class="lead-name">Irem</span>
+          <ul>
+            <li>Orchestrate squad QAs · named entry point per squad (+ backup)</li>
+            <li>Ensure squads are heard · requirements flow into QA</li>
+            <li>Customer / project-specific cases &amp; release prep (with Emre)</li>
+          </ul>
+          <span class="lead-more">More responsibilities — to be completed with Irem</span>
+        </div>
+        <div class="qa-lead-card core-lead">
+          <span class="lead-role">Core QA Lead</span>
+          <span class="lead-name">Emre</span>
+          <ul>
+            <li>Orchestrate core QA · module-level validations &amp; automation</li>
+            <li>Translate squad input into repeatable core coverage</li>
+            <li>Golden Data &amp; standard-process demos (with TO / SA)</li>
+            <li>Release prep with Irem · sales / onboarding support (standard vs custom)</li>
+          </ul>
+          <span class="lead-more">More responsibilities — to be completed with Emre</span>
         </div>
       </div>
 
@@ -470,38 +638,55 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>Quality layers &amp; shared ownership</h2>
-    <span class="snum">4 / 4</span>
+    <span class="snum">5 / 5</span>
   </div>
   <div class="slide-body">
-    <p class="layers-intro"><strong>Quality is a team responsibility.</strong> Dev, BA, PO, TO, and QA each own a part of testing — in development, in the pipeline, and before release. No single role carries quality alone.</p>
+    <p class="layers-intro"><strong>Quality is a team responsibility.</strong> Four layers in dev/test — then the pipeline runs the same way on every environment. No single role carries quality alone.</p>
 
     <div class="layers-main">
       <div class="layers-stack">
-        <h3>Test framework — quality layers</h3>
+        <h3>Four quality layers (Pablo alignment)</h3>
         <div class="layer-row">
           <div class="layer-num">Layer 1<br>Dev loop</div>
           <div class="layer-body">
             <strong>Developer loop</strong>
-            Unit tests · local Docker · partial dataset use
-            <div class="owners">Owner: <strong>Dev / SA</strong></div>
+            Unit tests · local Docker · partial dataset
+            <div class="owners">Owner: <strong>Dev</strong> (not SA)</div>
           </div>
         </div>
         <div class="layer-arrow">↓</div>
         <div class="layer-row">
           <div class="layer-num">Layer 2<br>PR loop</div>
           <div class="layer-body">
-            <strong>Pull request loop</strong>
-            GitHub checks · SonarQube · Tech Guardian · code review
-            <div class="owners">Owner: <strong>Dev / SA</strong></div>
+            <strong>Pull request — developer</strong>
+            GitHub checks · Tech Guardian · code review · <em>technical</em> guidelines
+            <div class="owners">Owner: <strong>Dev</strong> · SonarQube <em>not</em> here</div>
           </div>
         </div>
         <div class="layer-arrow">↓</div>
         <div class="layer-row">
-          <div class="layer-num">Layer 3<br>Pipeline</div>
+          <div class="layer-num">Layer 3<br>Merge</div>
+          <div class="layer-body">
+            <strong>Merge to main — system architect</strong>
+            SonarQube · <em>company</em> guidelines · merge to main branch
+            <div class="owners">Owner: <strong>SA</strong></div>
+          </div>
+        </div>
+        <div class="layer-arrow">↓</div>
+        <div class="layer-row">
+          <div class="layer-num">Layer 4<br>Pipeline</div>
           <div class="layer-body">
             <strong>CI/CD pipeline</strong>
             Unit + API + Playwright + Golden Data — integrated run
             <div class="owners">Owner: <strong>Dev · TO · Squad QA · Core QA</strong></div>
+          </div>
+        </div>
+        <div class="layer-arrow">↓</div>
+        <div class="layer-row l-env">
+          <div class="layer-num">After L4</div>
+          <div class="layer-body">
+            <strong>Repeat on all environments</strong>
+            Layers 1–4 focus on dev/test · pipeline is environment-independent and can be re-run on acceptance, staging, production
           </div>
         </div>
         <div class="layer-arrow">↓</div>
@@ -538,7 +723,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       </div>
     </div>
 
-    <p class="layers-foot"><strong>Collaboration required</strong> — if one layer stays red, module health is unknown. Additional layers (risk, security) will follow.</p>
+    <p class="layers-foot"><strong>Layers 1–3:</strong> technical vs company guidelines (Dev PR vs SA merge). <strong>Layer 4+:</strong> same pipeline on every env. Risk / financial impact mapping — follow-up (Pablo).</p>
   </div>
   <div class="slide-footer">
     <span>Shared quality · not QA-only · aligns with Entry Gate &amp; QA workflow</span>
