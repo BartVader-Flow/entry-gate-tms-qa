@@ -37,46 +37,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a1e1a;font-family:
 .cover-panel li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
 .cover-nav{margin-top:20px;font-size:11px;opacity:.55;display:flex;gap:20px;flex-wrap:wrap}
 
-/* ── Slide 2 — comic strip ── */
-.comic-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 12px}
-.comic-intro strong{color:var(--rf-dark)}
-.comic-hero{flex:1;min-height:0;display:flex;flex-direction:column;gap:6px;background:linear-gradient(180deg,#fffef8 0%,#f7f4ea 100%);border:3px solid var(--rf-dark);border-radius:6px;padding:8px 10px 6px;box-shadow:4px 4px 0 rgba(11,67,36,.12);position:relative}
-.comic-art{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;background:#fff;border:2px solid var(--rf-dark);border-radius:4px;padding:4px;overflow:hidden}
-.comic-art img{width:100%;height:100%;object-fit:contain;display:block}
-.comic-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(11,67,36,.04) 0 1px,transparent 1px);background-size:8px 8px;pointer-events:none;border-radius:4px}
-.comic-hero-head{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:3px solid var(--rf-dark);padding-bottom:6px;margin-bottom:2px;position:relative;z-index:1}
-.comic-hero-head h3{font-size:13px;font-weight:900;color:var(--rf-dark);letter-spacing:.02em;text-transform:uppercase}
-.comic-hero-head .chip{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border:2px solid var(--rf-dark);border-radius:99px;background:#fff}
-.comic-row{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;position:relative;z-index:1}
-.comic-cell{background:#fff;border:3px solid var(--rf-dark);border-radius:4px;padding:6px 5px 5px;display:flex;flex-direction:column;gap:4px;min-height:0;box-shadow:2px 2px 0 rgba(11,67,36,.1)}
-.comic-cell-num{font-size:7px;font-weight:900;color:#fff;background:var(--rf-dark);width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.comic-cell-art{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;padding:2px 2px 0;position:relative}
-.comic-char{display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0}
-.comic-char .head{width:22px;height:22px;border-radius:50%;border:2px solid var(--rf-dark);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:900;color:#fff}
-.comic-char .body{width:18px;height:14px;border:2px solid var(--rf-dark);border-radius:3px 3px 6px 6px;margin-top:-2px}
-.comic-char.ba .head{background:#5b8def}.comic-char.po .head{background:#8b5cf6}.comic-char.qa .head{background:var(--rf-coral)}
-.comic-char-row{display:flex;align-items:flex-end;justify-content:center;gap:6px;width:100%}
-.speech{position:relative;background:#fff;border:2px solid var(--rf-dark);border-radius:10px;padding:5px 7px;font-size:7px;font-weight:700;line-height:1.28;text-align:center;color:var(--rf-text);max-width:100%;box-shadow:1px 1px 0 rgba(11,67,36,.15)}
-.speech::after{content:'';position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--rf-dark);border-bottom:0}
-.speech::before{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#fff;border-bottom:0;z-index:1}
-.speech.left-tail::after{left:18%;transform:none}
-.speech.left-tail::before{left:18%;transform:none}
-.speech.right-tail::after{left:auto;right:18%;transform:none}
-.speech.right-tail::before{left:auto;right:18%;transform:none}
-.comic-prop-stack{display:flex;flex-direction:column;align-items:center;gap:0;margin:2px 0}
-.comic-doc{width:34px;height:6px;border:2px solid var(--rf-dark);border-radius:1px;background:#fff;margin-top:-3px;position:relative}
-.comic-doc:nth-child(1){transform:rotate(-4deg);z-index:3;background:#eef8ea}
-.comic-doc:nth-child(2){transform:rotate(2deg);z-index:2;background:#fff}
-.comic-doc:nth-child(3){transform:rotate(-1deg);z-index:1;background:#fffcfb}
-.comic-doc-label{font-size:6px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--rf-dark);margin-top:4px;text-align:center;line-height:1.2}
-.comic-handoff{font-size:18px;font-weight:900;color:var(--rf-mid);line-height:1;animation:none}
-.comic-screen{width:42px;height:28px;border:2px solid var(--rf-dark);border-radius:3px;background:#0b4324;position:relative;overflow:hidden}
-.comic-screen::after{content:'▶ PW';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;color:var(--rf-light)}
-.comic-cell-cap{font-size:7px;font-weight:600;color:var(--rf-muted);text-align:center;line-height:1.25;padding-top:2px;border-top:1px dashed var(--rf-border)}
-.comic-next{flex-shrink:0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;font-size:9px;color:var(--rf-muted)}
-.comic-next .lbl{font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-dark)}
-.comic-next .pill{padding:2px 8px;border:1px dashed var(--rf-border);border-radius:99px;background:var(--rf-white);font-size:8px}
-.comic-next .pill.active{border-style:solid;border-color:var(--rf-dark);background:#fffef8;font-weight:700;color:var(--rf-dark)}
+/* ── Responsibility shift (illustrated) ── */
+.slide-header .head-block{display:flex;flex-direction:column;gap:3px;min-width:0}
+.slide-header .shift-topic{font-size:11px;font-weight:600;color:rgba(255,255,255,.78);letter-spacing:.02em;line-height:1.2}
+.slide-body.shift{padding:0 6px;gap:0}
+.slide-body.shift + .slide-footer{padding:4px 40px}
+.shift-frame{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px}
+.shift-frame img{width:100%;height:100%;object-fit:contain;display:block}
 
 /* ── Slide 3 — lifecycle ── */
 .eg1-top{flex-shrink:0;display:flex;flex-direction:column;gap:6px}
@@ -268,10 +235,10 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       </ul>
     </div>
     <div class="cover-panel">
-      <h3>In this deck (5 slides)</h3>
+      <h3>In this deck (6 slides)</h3>
       <ul>
         <li><strong>Lifecycle &amp; ownership</strong> — roles, handover, hard reject</li>
-        <li><strong>Entry Gate comics</strong> — illustrated guide per RACI row (starting Story &amp; AC)</li>
+        <li><strong>Responsibility shift</strong> — Story &amp; AC · Happy-path (illustrated)</li>
         <li><strong>The Entry Gate</strong> — checklist for BA, PO, Dev &amp; QA</li>
         <li><strong>QA workflow</strong> — Squad &amp; Core QA + QA leads</li>
         <li><strong>Quality layers</strong> — four layers · shared ownership</li>
@@ -288,7 +255,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>Lifecycle &amp; who owns what</h2>
-    <span class="snum">1 / 5</span>
+    <span class="snum">1 / 6</span>
   </div>
   <div class="slide-body">
     <div class="eg1-top">
@@ -348,7 +315,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
         </div>
       </div>
     </div>
-    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per activity → slide 2.</strong> Module health via quality layers (slide 5).</div>
+    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–3</strong> (more to follow). Module health via quality layers (slide 6).</div>
   </div>
   <div class="slide-footer">
     <span>One Entry Gate at handover · ongoing health via quality layers</span>
@@ -356,45 +323,51 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
 </div>
 
-<!-- Slide 2 — Comic: Story & AC -->
+<!-- Slide 2 — Responsibility shift: Story & AC -->
 <div class="slide">
   <div class="slide-header">
-    <h2>Responsibility shift — comic guide</h2>
-    <span class="snum">2 / 5</span>
-  </div>
-  <div class="slide-body">
-    <p class="comic-intro"><strong>Entry Gate in pictures</strong> — what BA &amp; PO must deliver for <strong>Story &amp; AC</strong> before QA may start. Slide 1 = RACI table · here = illustrated guide (Comic 1 of 5).</p>
-
-    <div class="comic-hero">
-      <div class="comic-hero-head">
-        <h3>Story &amp; AC — testable before the gate</h3>
-        <span class="chip">Comic 1 of 5</span>
-      </div>
-      <div class="comic-art">
-        <img src="assets/comic-story-ac-entry-gate.png" alt="Comic strip: BA and PO prepare testable Story and AC; QA validates at Entry Gate — accept or hard reject before testing starts">
-      </div>
+    <div class="head-block">
+      <h2>Responsibility shift</h2>
+      <span class="shift-topic">Story &amp; AC · BA writes · PO accountable</span>
     </div>
-
-    <div class="comic-next">
-      <span class="lbl">More comics:</span>
-      <span class="pill active">Story &amp; AC</span>
-      <span class="pill">Happy path</span>
-      <span class="pill">Unit &amp; API</span>
-      <span class="pill">Playwright</span>
-      <span class="pill">Golden Data</span>
+    <span class="snum">2 / 6</span>
+  </div>
+  <div class="slide-body shift">
+    <div class="shift-frame">
+      <img src="assets/comic-story-ac-entry-gate.png" alt="Story and AC: BA and PO deliver testable acceptance criteria; QA validates at Entry Gate — accept or hard reject">
     </div>
   </div>
   <div class="slide-footer">
-    <span>Illustrated Entry Gate · Story &amp; AC only · Comics 2–5 follow same pattern</span>
+    <span>RACI row 1 · Illustrated 1 of 5</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
 
-<!-- Slide 3 — Entry Gate (all roles) -->
+<!-- Slide 3 — Responsibility shift: Happy-path -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="head-block">
+      <h2>Responsibility shift</h2>
+      <span class="shift-topic">Happy-path cases · BA writes · QA consulted</span>
+    </div>
+    <span class="snum">3 / 6</span>
+  </div>
+  <div class="slide-body shift">
+    <div class="shift-frame">
+      <img src="assets/comic-happy-path-entry-gate.png" alt="Happy-path cases: BA delivers full path with steps and test data; QA consults on coverage and validates at Entry Gate">
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>RACI row 2 · Illustrated 2 of 5</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 4 — Entry Gate (all roles) -->
 <div class="slide">
   <div class="slide-header">
     <h2>The Entry Gate</h2>
-    <span class="snum">3 / 5</span>
+    <span class="snum">4 / 6</span>
   </div>
   <div class="slide-body">
     <div class="s3-rule">
@@ -455,7 +428,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>QA workflow (internal)</h2>
-    <span class="snum">4 / 5</span>
+    <span class="snum">5 / 6</span>
   </div>
   <div class="slide-body">
     <p class="workflow-intro"><strong>After QA accepts the story</strong> — not separate entry gates. Work sits in <strong>Squad QA</strong> or <strong>Core QA</strong>; steps may overlap; one colleague may cover several phases.</p>
@@ -581,7 +554,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>Quality layers &amp; shared ownership</h2>
-    <span class="snum">5 / 5</span>
+    <span class="snum">6 / 6</span>
   </div>
   <div class="slide-body">
     <p class="layers-intro"><strong>Quality is a team responsibility.</strong> Four layers in dev/test — then the pipeline runs the same way on every environment. No single role carries quality alone.</p>
