@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-5">
+<meta name="deploy-version" content="20260701-6">
 <title>QA Entry Gate Concept</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -18,9 +18,14 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a1e1a;font-family:
 .slide{position:absolute;inset:0;background:var(--rf-bg);display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateX(64px);transition:opacity .32s ease,transform .32s ease;overflow:hidden}
 .slide.active{opacity:1;pointer-events:all;transform:translateX(0)}
 .slide.exit-left{opacity:0;transform:translateX(-64px)}
-.slide-header{background:var(--rf-dark);flex-shrink:0;padding:14px 40px 12px;display:flex;align-items:flex-end;justify-content:space-between}
+.slide-header{background:var(--rf-dark);flex-shrink:0;padding:14px 40px 12px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
 .slide-header h2{font-size:clamp(16px,1.9vw,22px);font-weight:700;color:#fff;line-height:1.2;max-width:82%}
-.slide-header .snum{font-size:11px;color:rgba(255,255,255,.4);white-space:nowrap}
+.slide-header .snum{font-size:11px;color:rgba(255,255,255,.4);white-space:nowrap;flex-shrink:0}
+.slide-header.shift-header{align-items:flex-start;padding:11px 40px 10px;min-height:58px}
+.slide-header.shift-header h2{font-size:clamp(17px,2vw,23px);font-weight:800;max-width:none;line-height:1.15;white-space:nowrap}
+.slide-header.shift-header .head-block{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.slide-header.shift-header .shift-topic{font-size:11px;font-weight:600;color:rgba(255,255,255,.78);letter-spacing:.02em;line-height:1.25;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slide-header.shift-header .snum{align-self:flex-start;margin-top:2px}
 .slide-body{flex:1;min-height:0;overflow:hidden;padding:12px 40px 8px;display:flex;flex-direction:column;gap:8px}
 .slide-footer{flex-shrink:0;padding:7px 40px;border-top:1px solid var(--rf-border);display:flex;justify-content:space-between;font-size:10px;color:var(--rf-muted)}
 
@@ -38,11 +43,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a1e1a;font-family:
 .cover-nav{margin-top:20px;font-size:11px;opacity:.55;display:flex;gap:20px;flex-wrap:wrap}
 
 /* ── Responsibility shift (illustrated) ── */
-.slide-header .head-block{display:flex;flex-direction:column;gap:3px;min-width:0}
-.slide-header .shift-topic{font-size:11px;font-weight:600;color:rgba(255,255,255,.78);letter-spacing:.02em;line-height:1.2}
 .slide-body.shift{padding:0 6px;gap:0}
 .slide-body.shift + .slide-footer{padding:4px 40px}
-.shift-frame{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px}
+.shift-frame{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px;background:#fffef8}
 .shift-frame img{width:100%;height:100%;object-fit:contain;display:block}
 
 /* ── Slide 3 — lifecycle ── */
@@ -325,7 +328,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 
 <!-- Slide 2 — Responsibility shift: Story & AC -->
 <div class="slide">
-  <div class="slide-header">
+  <div class="slide-header shift-header">
     <div class="head-block">
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Story &amp; AC · BA writes · PO accountable</span>
@@ -334,7 +337,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
-      <img src="assets/comic-01-story-ac.png?v=20260701-4" alt="Story and AC: BA and PO deliver testable acceptance criteria; QA validates at Entry Gate">
+      <img src="assets/comic-01-story-ac.png?v=20260701-6" alt="Story and AC: BA and PO deliver testable acceptance criteria; QA validates at Entry Gate">
     </div>
   </div>
   <div class="slide-footer">
@@ -345,7 +348,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 
 <!-- Slide 3 — Responsibility shift: Happy-path -->
 <div class="slide">
-  <div class="slide-header">
+  <div class="slide-header shift-header">
     <div class="head-block">
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Happy-path cases · BA writes · QA consulted</span>
@@ -354,7 +357,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
-      <img src="assets/comic-02-happy-path.png?v=20260701-4" alt="Happy-path cases: BA delivers full path; QA consults; Entry Gate validates — target state only">
+      <img src="assets/comic-02-happy-path.png?v=20260701-6" alt="Happy-path cases: BA delivers full path; QA consults; Entry Gate validates — target state only">
     </div>
   </div>
   <div class="slide-footer">
@@ -365,7 +368,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 
 <!-- Slide 4 — Responsibility shift: Unit & API -->
 <div class="slide">
-  <div class="slide-header">
+  <div class="slide-header shift-header">
     <div class="head-block">
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Unit &amp; API tests · Dev / SA writes</span>
@@ -374,7 +377,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
-      <img src="assets/comic-03-unit-api.png?v=20260701-4" alt="Unit and API tests: Dev and SA deliver tests with the change; QA verifies coverage at Entry Gate">
+      <img src="assets/comic-03-unit-api.png?v=20260701-6" alt="Unit and API tests: Dev and SA deliver tests with the change; QA verifies coverage at Entry Gate">
     </div>
   </div>
   <div class="slide-footer">
@@ -385,7 +388,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 
 <!-- Slide 5 — Responsibility shift: Playwright & manual -->
 <div class="slide">
-  <div class="slide-header">
+  <div class="slide-header shift-header">
     <div class="head-block">
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Playwright &amp; manual · QA writes · BA consulted</span>
@@ -394,7 +397,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
-      <img src="assets/comic-04-playwright.png?v=20260701-4" alt="Playwright and manual: QA owns execution; BA consulted; PO and SA informed">
+      <img src="assets/comic-04-playwright.png?v=20260701-6" alt="Playwright and manual: QA owns execution; BA consulted; PO and SA informed">
     </div>
   </div>
   <div class="slide-footer">
@@ -405,7 +408,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 
 <!-- Slide 6 — Responsibility shift: Golden Data -->
 <div class="slide">
-  <div class="slide-header">
+  <div class="slide-header shift-header">
     <div class="head-block">
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Golden Data / env · TO / Core provides</span>
@@ -414,7 +417,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
-      <img src="assets/comic-05-golden-data.png?v=20260701-4" alt="Golden Data and environment: TO and Core maintain data; story references it; QA validates at Entry Gate">
+      <img src="assets/comic-05-golden-data.png?v=20260701-6" alt="Golden Data and environment: TO and Core maintain data; story references it; QA validates at Entry Gate">
     </div>
   </div>
   <div class="slide-footer">
