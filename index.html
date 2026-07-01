@@ -37,32 +37,44 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a1e1a;font-family:
 .cover-panel li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
 .cover-nav{margin-top:20px;font-size:11px;opacity:.55;display:flex;gap:20px;flex-wrap:wrap}
 
-/* ── Slide 2 — responsibility comic ── */
-.comic-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
+/* ── Slide 2 — comic strip ── */
+.comic-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 12px}
 .comic-intro strong{color:var(--rf-dark)}
-.comic-strip{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:stretch}
-.comic-panel{background:var(--rf-white);border:3px solid var(--rf-dark);border-radius:4px;padding:8px 7px 7px;display:flex;flex-direction:column;gap:5px;min-height:0;box-shadow:3px 3px 0 rgba(11,67,36,.15);position:relative}
-.comic-panel::after{content:'';position:absolute;inset:4px;border:1px solid var(--rf-border);border-radius:2px;pointer-events:none}
-.comic-title{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--rf-dark);text-align:center;line-height:1.25;padding-bottom:4px;border-bottom:2px solid var(--rf-dark)}
-.comic-scene{flex:1;min-height:0;display:flex;flex-direction:column;gap:4px;justify-content:space-between}
-.comic-before,.comic-after{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px 4px;border-radius:4px;text-align:center;min-height:0}
-.comic-before{background:#fff3f0;border:1px dashed #f5c4b8}
-.comic-after{background:#eef8ea;border:1px dashed var(--rf-light)}
-.comic-lbl{font-size:7px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-muted)}
-.comic-before .comic-lbl{color:var(--rf-coral)}
-.comic-after .comic-lbl{color:var(--rf-mid)}
-.comic-actors{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}
-.comic-avatar{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:#fff;border:2px solid var(--rf-dark);flex-shrink:0}
-.comic-avatar.ba{background:#5b8def}.comic-avatar.po{background:#8b5cf6}.comic-avatar.dev{background:#64748b}.comic-avatar.qa{background:var(--rf-coral)}.comic-avatar.to{background:#0ea5e9}.comic-avatar.sa{background:#475569}
-.comic-bubble{font-size:8px;line-height:1.25;font-weight:600;color:var(--rf-text);padding:4px 6px;background:#fff;border:1px solid var(--rf-border);border-radius:8px;position:relative;max-width:100%}
-.comic-bubble.bad{border-color:#f5c4b8;color:var(--rf-coral)}
-.comic-bubble.good{border-color:var(--rf-light);color:var(--rf-dark)}
-.comic-arrow-mid{text-align:center;font-size:14px;font-weight:800;color:var(--rf-mid);line-height:1;flex-shrink:0}
-.comic-foot{flex-shrink:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.comic-legend{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:6px;padding:7px 10px;font-size:9px;line-height:1.35;color:var(--rf-muted)}
-.comic-legend strong{color:var(--rf-dark)}
-.comic-takeaway{background:var(--rf-dark);color:#fff;padding:7px 10px;border-radius:6px;font-size:10px;line-height:1.35;text-align:center}
-.comic-takeaway strong{color:var(--rf-light)}
+.comic-hero{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#fffef8 0%,#f7f4ea 100%);border:3px solid var(--rf-dark);border-radius:6px;padding:10px 12px 8px;box-shadow:4px 4px 0 rgba(11,67,36,.12);position:relative}
+.comic-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(11,67,36,.04) 0 1px,transparent 1px);background-size:8px 8px;pointer-events:none;border-radius:4px}
+.comic-hero-head{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:3px solid var(--rf-dark);padding-bottom:6px;margin-bottom:2px;position:relative;z-index:1}
+.comic-hero-head h3{font-size:13px;font-weight:900;color:var(--rf-dark);letter-spacing:.02em;text-transform:uppercase}
+.comic-hero-head .chip{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border:2px solid var(--rf-dark);border-radius:99px;background:#fff}
+.comic-row{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;position:relative;z-index:1}
+.comic-cell{background:#fff;border:3px solid var(--rf-dark);border-radius:4px;padding:6px 5px 5px;display:flex;flex-direction:column;gap:4px;min-height:0;box-shadow:2px 2px 0 rgba(11,67,36,.1)}
+.comic-cell-num{font-size:7px;font-weight:900;color:#fff;background:var(--rf-dark);width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.comic-cell-art{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;padding:2px 2px 0;position:relative}
+.comic-char{display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0}
+.comic-char .head{width:22px;height:22px;border-radius:50%;border:2px solid var(--rf-dark);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:900;color:#fff}
+.comic-char .body{width:18px;height:14px;border:2px solid var(--rf-dark);border-radius:3px 3px 6px 6px;margin-top:-2px}
+.comic-char.ba .head{background:#5b8def}.comic-char.po .head{background:#8b5cf6}.comic-char.qa .head{background:var(--rf-coral)}
+.comic-char-row{display:flex;align-items:flex-end;justify-content:center;gap:6px;width:100%}
+.speech{position:relative;background:#fff;border:2px solid var(--rf-dark);border-radius:10px;padding:5px 7px;font-size:7px;font-weight:700;line-height:1.28;text-align:center;color:var(--rf-text);max-width:100%;box-shadow:1px 1px 0 rgba(11,67,36,.15)}
+.speech::after{content:'';position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--rf-dark);border-bottom:0}
+.speech::before{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#fff;border-bottom:0;z-index:1}
+.speech.left-tail::after{left:18%;transform:none}
+.speech.left-tail::before{left:18%;transform:none}
+.speech.right-tail::after{left:auto;right:18%;transform:none}
+.speech.right-tail::before{left:auto;right:18%;transform:none}
+.comic-prop-stack{display:flex;flex-direction:column;align-items:center;gap:0;margin:2px 0}
+.comic-doc{width:34px;height:6px;border:2px solid var(--rf-dark);border-radius:1px;background:#fff;margin-top:-3px;position:relative}
+.comic-doc:nth-child(1){transform:rotate(-4deg);z-index:3;background:#eef8ea}
+.comic-doc:nth-child(2){transform:rotate(2deg);z-index:2;background:#fff}
+.comic-doc:nth-child(3){transform:rotate(-1deg);z-index:1;background:#fffcfb}
+.comic-doc-label{font-size:6px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--rf-dark);margin-top:4px;text-align:center;line-height:1.2}
+.comic-handoff{font-size:18px;font-weight:900;color:var(--rf-mid);line-height:1;animation:none}
+.comic-screen{width:42px;height:28px;border:2px solid var(--rf-dark);border-radius:3px;background:#0b4324;position:relative;overflow:hidden}
+.comic-screen::after{content:'▶ PW';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;color:var(--rf-light)}
+.comic-cell-cap{font-size:7px;font-weight:600;color:var(--rf-muted);text-align:center;line-height:1.25;padding-top:2px;border-top:1px dashed var(--rf-border)}
+.comic-next{flex-shrink:0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;font-size:9px;color:var(--rf-muted)}
+.comic-next .lbl{font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-dark)}
+.comic-next .pill{padding:2px 8px;border:1px dashed var(--rf-border);border-radius:99px;background:var(--rf-white);font-size:8px}
+.comic-next .pill.active{border-style:solid;border-color:var(--rf-dark);background:#fffef8;font-weight:700;color:var(--rf-dark)}
 
 /* ── Slide 3 — lifecycle ── */
 .eg1-top{flex-shrink:0;display:flex;flex-direction:column;gap:6px}
@@ -257,7 +269,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h3>In this deck (5 slides)</h3>
       <ul>
         <li><strong>Lifecycle &amp; ownership</strong> — roles, handover, hard reject</li>
-        <li><strong>Responsibility shift</strong> — visual guide (comic) per activity</li>
+        <li><strong>Responsibility shift</strong> — comic strips per RACI row (starting Story &amp; AC)</li>
         <li><strong>The Entry Gate</strong> — checklist for BA, PO, Dev &amp; QA</li>
         <li><strong>QA workflow</strong> — Squad &amp; Core QA + QA leads</li>
         <li><strong>Quality layers</strong> — four layers · shared ownership</li>
@@ -342,105 +354,84 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
 </div>
 
-<!-- Slide 2 — Responsibility shift (comic) -->
+<!-- Slide 2 — Comic: Story & AC -->
 <div class="slide">
   <div class="slide-header">
-    <h2>Responsibility shift — at a glance</h2>
+    <h2>Responsibility shift — comic guide</h2>
     <span class="snum">2 / 5</span>
   </div>
   <div class="slide-body">
-    <p class="comic-intro">Who owns each activity — <strong>today</strong> vs <strong>target</strong> (matches the RACI table on slide 1).</p>
+    <p class="comic-intro">Visual story for each RACI row on slide 1 — <strong>no duplicate table</strong>. First strip: <strong>Story &amp; AC</strong> + happy-path handover to QA automation.</p>
 
-    <div class="comic-strip">
-      <div class="comic-panel">
-        <div class="comic-title">Story &amp; AC</div>
-        <div class="comic-scene">
-          <div class="comic-before">
-            <span class="comic-lbl">Wrong today</span>
-            <div class="comic-actors"><span class="comic-avatar qa">QA</span></div>
-            <div class="comic-bubble bad">Chases BA &amp; PO for specs</div>
-          </div>
-          <div class="comic-arrow-mid">↓</div>
-          <div class="comic-after">
-            <span class="comic-lbl">Target</span>
-            <div class="comic-actors"><span class="comic-avatar ba">BA</span><span class="comic-avatar po">PO</span></div>
-            <div class="comic-bubble good">Complete &amp; testable before QA</div>
-          </div>
-        </div>
+    <div class="comic-hero">
+      <div class="comic-hero-head">
+        <h3>Story &amp; AC · Happy path handover</h3>
+        <span class="chip">Comic 1 of 5</span>
       </div>
-      <div class="comic-panel">
-        <div class="comic-title">Happy path</div>
-        <div class="comic-scene">
-          <div class="comic-before">
-            <span class="comic-lbl">Wrong today</span>
-            <div class="comic-actors"><span class="comic-avatar qa">QA</span></div>
-            <div class="comic-bubble bad">QA writes all cases</div>
+
+      <div class="comic-row">
+        <div class="comic-cell">
+          <span class="comic-cell-num">1</span>
+          <div class="comic-cell-art">
+            <div class="speech left-tail">Story is ready — AC must be testable!</div>
+            <div class="comic-char-row">
+              <div class="comic-char ba"><div class="head">BA</div><div class="body"></div></div>
+              <div class="comic-char po"><div class="head">PO</div><div class="body"></div></div>
+            </div>
           </div>
-          <div class="comic-arrow-mid">↓</div>
-          <div class="comic-after">
-            <span class="comic-lbl">Target</span>
-            <div class="comic-actors"><span class="comic-avatar ba">BA</span><span class="comic-avatar qa">QA</span></div>
-            <div class="comic-bubble good">BA delivers path · QA adds depth</div>
-          </div>
+          <div class="comic-cell-cap">BA writes · PO accountable</div>
         </div>
-      </div>
-      <div class="comic-panel">
-        <div class="comic-title">Unit &amp; API</div>
-        <div class="comic-scene">
-          <div class="comic-before">
-            <span class="comic-lbl">Wrong today</span>
-            <div class="comic-actors"><span class="comic-avatar qa">QA</span></div>
-            <div class="comic-bubble bad">QA builds all tests</div>
+
+        <div class="comic-cell">
+          <span class="comic-cell-num">2</span>
+          <div class="comic-cell-art">
+            <div class="comic-prop-stack">
+              <div class="comic-doc"></div>
+              <div class="comic-doc"></div>
+              <div class="comic-doc"></div>
+            </div>
+            <div class="comic-doc-label">Happy path steps<br>Test data · Scope · AC</div>
+            <div class="speech">Full test-case pack — not just a one-liner in Jira</div>
           </div>
-          <div class="comic-arrow-mid">↓</div>
-          <div class="comic-after">
-            <span class="comic-lbl">Target</span>
-            <div class="comic-actors"><span class="comic-avatar dev">Dev</span><span class="comic-avatar sa">SA</span></div>
-            <div class="comic-bubble good">Dev / SA own logic tests</div>
-          </div>
+          <div class="comic-cell-cap">Complete handover package</div>
         </div>
-      </div>
-      <div class="comic-panel">
-        <div class="comic-title">Playwright &amp; manual</div>
-        <div class="comic-scene">
-          <div class="comic-before">
-            <span class="comic-lbl">Today</span>
-            <div class="comic-actors"><span class="comic-avatar qa">QA</span></div>
-            <div class="comic-bubble">QA executes · others rarely involved</div>
+
+        <div class="comic-cell">
+          <span class="comic-cell-num">3</span>
+          <div class="comic-cell-art">
+            <div class="comic-char-row">
+              <div class="comic-char ba"><div class="head">BA</div><div class="body"></div></div>
+              <span class="comic-handoff">→</span>
+              <div class="comic-char qa"><div class="head">QA</div><div class="body"></div></div>
+            </div>
+            <div class="speech right-tail">Here — implement this in automation</div>
           </div>
-          <div class="comic-arrow-mid">↓</div>
-          <div class="comic-after">
-            <span class="comic-lbl">Target</span>
-            <div class="comic-actors"><span class="comic-avatar qa">QA</span><span class="comic-avatar ba">BA</span><span class="comic-avatar po">PO</span></div>
-            <div class="comic-bubble good">QA runs · BA/PO/SA consulted</div>
-          </div>
+          <div class="comic-cell-cap">Handover at Entry Gate</div>
         </div>
-      </div>
-      <div class="comic-panel">
-        <div class="comic-title">Golden Data / env</div>
-        <div class="comic-scene">
-          <div class="comic-before">
-            <span class="comic-lbl">Wrong today</span>
-            <div class="comic-actors"><span class="comic-avatar qa">QA</span></div>
-            <div class="comic-bubble bad">Ad hoc data setup</div>
+
+        <div class="comic-cell">
+          <span class="comic-cell-num">4</span>
+          <div class="comic-cell-art">
+            <div class="comic-screen"></div>
+            <div class="comic-char qa"><div class="head">QA</div><div class="body"></div></div>
+            <div class="speech">Playwright + regression — QA adds depth, not the spec</div>
           </div>
-          <div class="comic-arrow-mid">↓</div>
-          <div class="comic-after">
-            <span class="comic-lbl">Target</span>
-            <div class="comic-actors"><span class="comic-avatar to">TO</span><span class="comic-avatar qa">Core</span></div>
-            <div class="comic-bubble good">TO + Core QA · repeatable data</div>
-          </div>
+          <div class="comic-cell-cap">QA automates &amp; extends</div>
         </div>
       </div>
     </div>
 
-    <div class="comic-foot">
-      <div class="comic-legend"><strong>How to read:</strong> Each panel = one row from the RACI table (slide 1). BA/PO/Dev deliver upstream · QA validates at Entry Gate and owns test execution — not upstream spec work.</div>
-      <div class="comic-takeaway"><strong>Validation before code</strong> — repeatable checks in quality layers, not one-off QA heroics.</div>
+    <div class="comic-next">
+      <span class="lbl">More comics:</span>
+      <span class="pill active">Story &amp; AC</span>
+      <span class="pill">Happy path</span>
+      <span class="pill">Unit &amp; API</span>
+      <span class="pill">Playwright</span>
+      <span class="pill">Golden Data</span>
     </div>
   </div>
   <div class="slide-footer">
-    <span>Each panel = one RACI row · validation before code</span>
+    <span>Slide 1 = RACI table · Slide 2 = visual stories per row</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
