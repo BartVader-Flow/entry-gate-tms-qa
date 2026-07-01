@@ -40,9 +40,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a1e1a;font-family:
 /* ── Slide 2 — comic strip ── */
 .comic-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 12px}
 .comic-intro strong{color:var(--rf-dark)}
-.comic-hero{flex:1;min-height:340px;display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#fffef8 0%,#f7f4ea 100%);border:3px solid var(--rf-dark);border-radius:6px;padding:10px 12px 8px;box-shadow:4px 4px 0 rgba(11,67,36,.12);position:relative}
-.comic-svg-wrap{flex:1;min-height:280px;display:flex;align-items:stretch;position:relative;z-index:1}
-.comic-svg{width:100%;height:100%;min-height:280px;display:block}
+.comic-hero{flex:1;min-height:0;display:flex;flex-direction:column;gap:6px;background:linear-gradient(180deg,#fffef8 0%,#f7f4ea 100%);border:3px solid var(--rf-dark);border-radius:6px;padding:8px 10px 6px;box-shadow:4px 4px 0 rgba(11,67,36,.12);position:relative}
+.comic-art{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;background:#fff;border:2px solid var(--rf-dark);border-radius:4px;padding:4px;overflow:hidden}
+.comic-art img{width:100%;height:100%;object-fit:contain;display:block}
 .comic-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(11,67,36,.04) 0 1px,transparent 1px);background-size:8px 8px;pointer-events:none;border-radius:4px}
 .comic-hero-head{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:3px solid var(--rf-dark);padding-bottom:6px;margin-bottom:2px;position:relative;z-index:1}
 .comic-hero-head h3{font-size:13px;font-weight:900;color:var(--rf-dark);letter-spacing:.02em;text-transform:uppercase}
@@ -271,7 +271,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h3>In this deck (5 slides)</h3>
       <ul>
         <li><strong>Lifecycle &amp; ownership</strong> — roles, handover, hard reject</li>
-        <li><strong>Responsibility shift</strong> — comic strips per RACI row (starting Story &amp; AC)</li>
+        <li><strong>Entry Gate comics</strong> — illustrated guide per RACI row (starting Story &amp; AC)</li>
         <li><strong>The Entry Gate</strong> — checklist for BA, PO, Dev &amp; QA</li>
         <li><strong>QA workflow</strong> — Squad &amp; Core QA + QA leads</li>
         <li><strong>Quality layers</strong> — four layers · shared ownership</li>
@@ -363,86 +363,15 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
     <span class="snum">2 / 5</span>
   </div>
   <div class="slide-body">
-    <p class="comic-intro">Slide <strong>3 / 6</strong> in the deck (after cover + lifecycle). Four-panel comic for <strong>Story &amp; AC</strong> — use → or arrow key.</p>
+    <p class="comic-intro"><strong>Entry Gate in pictures</strong> — what BA &amp; PO must deliver for <strong>Story &amp; AC</strong> before QA may start. Slide 1 = RACI table · here = illustrated guide (Comic 1 of 5).</p>
 
     <div class="comic-hero">
       <div class="comic-hero-head">
-        <h3>Story &amp; AC · Happy path handover</h3>
+        <h3>Story &amp; AC — testable before the gate</h3>
         <span class="chip">Comic 1 of 5</span>
       </div>
-
-      <div class="comic-svg-wrap" role="img" aria-label="Four-panel comic: BA and PO prepare testable story and happy-path test case, hand over to QA, QA implements Playwright automation">
-        <svg class="comic-svg" viewBox="0 0 1080 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <defs>
-            <style>
-              .p{border:3px solid #0B4324;fill:#fff}
-              .cap{font:600 11px Inter,sans-serif;fill:#5a5a5c;text-anchor:middle}
-              .bubble{fill:#fff;stroke:#0B4324;stroke-width:2.5}
-              .btxt{font:700 11.5px Inter,sans-serif;fill:#303032}
-              .num{fill:#0B4324;font:800 12px Inter,sans-serif;text-anchor:middle}
-              .lbl{font:800 10px Inter,sans-serif;fill:#fff;text-anchor:middle}
-            </style>
-          </defs>
-          <!-- Panel 1 -->
-          <rect class="p" x="4" y="4" width="260" height="248" rx="4"/>
-          <circle cx="24" cy="24" r="12" fill="#0B4324"/><text class="num" x="24" y="28">1</text>
-          <rect class="bubble" x="18" y="36" width="224" height="44" rx="10"/>
-          <polygon class="bubble" points="52,80 44,92 60,80"/>
-          <text class="btxt" x="130" y="56" text-anchor="middle">Story ready — AC must</text>
-          <text class="btxt" x="130" y="72" text-anchor="middle">be testable!</text>
-          <circle cx="88" cy="168" r="22" fill="#5b8def" stroke="#0B4324" stroke-width="2.5"/>
-          <text class="lbl" x="88" y="173">BA</text>
-          <rect x="76" y="188" width="24" height="28" rx="6" fill="#5b8def" stroke="#0B4324" stroke-width="2.5"/>
-          <circle cx="168" cy="168" r="22" fill="#8b5cf6" stroke="#0B4324" stroke-width="2.5"/>
-          <text class="lbl" x="168" y="173">PO</text>
-          <rect x="156" y="188" width="24" height="28" rx="6" fill="#8b5cf6" stroke="#0B4324" stroke-width="2.5"/>
-          <text class="cap" x="132" y="238">BA writes · PO accountable</text>
-
-          <!-- Panel 2 -->
-          <rect class="p" x="274" y="4" width="260" height="248" rx="4"/>
-          <circle cx="294" cy="24" r="12" fill="#0B4324"/><text class="num" x="294" y="28">2</text>
-          <rect x="332" y="118" width="144" height="12" rx="2" fill="#eef8ea" stroke="#0B4324" stroke-width="2" transform="rotate(-4 404 124)"/>
-          <rect x="332" y="128" width="144" height="12" rx="2" fill="#fff" stroke="#0B4324" stroke-width="2"/>
-          <rect x="332" y="138" width="144" height="12" rx="2" fill="#fffcfb" stroke="#0B4324" stroke-width="2" transform="rotate(2 404 144)"/>
-          <text class="btxt" x="404" y="108" text-anchor="middle" font-size="10">Happy path · Test data · AC</text>
-          <rect class="bubble" x="296" y="168" width="216" height="48" rx="10"/>
-          <text class="btxt" x="404" y="188" text-anchor="middle">Full test-case pack —</text>
-          <text class="btxt" x="404" y="204" text-anchor="middle">not a one-liner in Jira</text>
-          <text class="cap" x="404" y="238">Complete handover package</text>
-
-          <!-- Panel 3 -->
-          <rect class="p" x="544" y="4" width="260" height="248" rx="4"/>
-          <circle cx="564" cy="24" r="12" fill="#0B4324"/><text class="num" x="564" y="28">3</text>
-          <circle cx="612" cy="178" r="22" fill="#5b8def" stroke="#0B4324" stroke-width="2.5"/>
-          <text class="lbl" x="612" y="183">BA</text>
-          <rect x="600" y="198" width="24" height="28" rx="6" fill="#5b8def" stroke="#0B4324" stroke-width="2.5"/>
-          <text x="674" y="188" font-size="28" font-weight="800" fill="#4F883B" text-anchor="middle">→</text>
-          <circle cx="736" cy="178" r="22" fill="#F26B43" stroke="#0B4324" stroke-width="2.5"/>
-          <text class="lbl" x="736" y="183">QA</text>
-          <rect x="724" y="198" width="24" height="28" rx="6" fill="#F26B43" stroke="#0B4324" stroke-width="2.5"/>
-          <rect class="bubble" x="568" y="52" width="212" height="44" rx="10"/>
-          <polygon class="bubble" points="720,96 732,108 712,96"/>
-          <text class="btxt" x="674" y="72" text-anchor="middle">Hand over at Entry Gate —</text>
-          <text class="btxt" x="674" y="88" text-anchor="middle">implement in automation</text>
-          <text class="cap" x="674" y="238">Handover at Entry Gate</text>
-
-          <!-- Panel 4 -->
-          <rect class="p" x="814" y="4" width="260" height="248" rx="4"/>
-          <circle cx="834" cy="24" r="12" fill="#0B4324"/><text class="num" x="834" y="28">4</text>
-          <rect x="872" y="118" width="140" height="88" rx="6" fill="#0B4324" stroke="#0B4324" stroke-width="2.5"/>
-          <text fill="#94C981" font="800 14px Inter,sans-serif" x="942" y="168" text-anchor="middle">▶ PW</text>
-          <circle cx="942" cy="218" r="22" fill="#F26B43" stroke="#0B4324" stroke-width="2.5"/>
-          <text class="lbl" x="942" y="223">QA</text>
-          <rect x="930" y="238" width="24" height="28" rx="6" fill="#F26B43" stroke="#0B4324" stroke-width="2.5"/>
-          <rect class="bubble" x="836" y="36" width="216" height="44" rx="10"/>
-          <text class="btxt" x="944" y="56" text-anchor="middle">Playwright + regression —</text>
-          <text class="btxt" x="944" y="72" text-anchor="middle">QA adds depth, not the spec</text>
-          <text class="cap" x="944" y="238">QA automates &amp; extends</text>
-
-          <!-- bottom strip -->
-          <rect x="4" y="258" width="1072" height="38" rx="4" fill="#eef8ea" stroke="#0B4324" stroke-width="2"/>
-          <text font="700 12px Inter,sans-serif" fill="#0B4324" x="540" y="282" text-anchor="middle">Target: BA/PO deliver a complete happy-path test case before QA starts automation — not the other way around</text>
-        </svg>
+      <div class="comic-art">
+        <img src="assets/comic-story-ac-entry-gate.png" alt="Comic strip: BA and PO prepare testable Story and AC; QA validates at Entry Gate — accept or hard reject before testing starts">
       </div>
     </div>
 
@@ -456,7 +385,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
     </div>
   </div>
   <div class="slide-footer">
-    <span>Slide 1 = RACI table · Slide 2 = visual stories per row</span>
+    <span>Illustrated Entry Gate · Story &amp; AC only · Comics 2–5 follow same pattern</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
