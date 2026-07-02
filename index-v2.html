@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-6">
+<meta name="deploy-version" content="20260701-v2-7">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -213,36 +213,46 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .layers-foot{flex-shrink:0;font-size:9px;color:var(--rf-muted);text-align:center;line-height:1.35;padding:0 8px}
 .layers-foot strong{color:var(--rf-dark)}
 
-/* ── v2: Four pillars (classical temple) ── */
-.slide-body.slide-body-pillars{gap:6px;padding-bottom:6px}
-.pillars-intro{flex-shrink:0;font-size:10px;color:var(--rf-muted);line-height:1.35;text-align:center;padding:0 12px}
+/* ── v2: Four pillars (classical temple — wide low columns) ── */
+.slide-body.slide-body-pillars{gap:5px;padding-bottom:5px}
+.pillars-intro{flex-shrink:0;font-size:10px;color:var(--rf-muted);line-height:1.32;text-align:center;padding:0 8px}
 .pillars-temple{flex:1;min-height:0;display:flex;flex-direction:column;align-items:stretch;overflow:hidden}
-.pillars-pediment{flex-shrink:0;display:flex;flex-direction:column;align-items:center;padding:0 8px}
-.pediment-roof{width:min(520px,72%);height:0;border-left:42px solid transparent;border-right:42px solid transparent;border-bottom:18px solid #d9cdb8;filter:drop-shadow(0 1px 0 #b8a888)}
-.pediment-entablature{width:100%;background:linear-gradient(180deg,#faf6ee 0%,#ebe3d4 100%);border:2px solid #c4b595;border-top:none;border-radius:0 0 4px 4px;padding:7px 14px 8px;text-align:center;box-shadow:0 2px 0 rgba(180,160,120,.35),inset 0 1px 0 rgba(255,255,255,.65)}
-.pediment-entablature span{font-family:'Cinzel',Georgia,serif;font-weight:800;font-size:clamp(11px,1.15vw,15px);letter-spacing:.14em;text-transform:uppercase;color:var(--rf-dark);line-height:1.25;text-shadow:0 1px 0 rgba(255,255,255,.6)}
-.pillars-colonnade{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:end;padding:6px 4px 2px;background:linear-gradient(180deg,rgba(235,227,212,.55) 0%,transparent 28px)}
-.greek-column{display:flex;flex-direction:column;align-items:center;min-height:0;height:100%;max-width:100%}
-.greek-column .col-capital{width:72%;flex-shrink:0;height:11px;background:linear-gradient(180deg,#fff9f0,#e8dcc8);border:2px solid #c4b595;border-bottom:1px solid #b8a888;border-radius:3px 3px 0 0;box-shadow:inset 0 -3px 0 #d4c4a8}
-.greek-column .col-shaft{flex:1;width:52%;min-height:0;background:repeating-linear-gradient(90deg,#f2ebe0 0,#f2ebe0 7px,#e8dfd2 7px,#e8dfd2 14px),linear-gradient(180deg,#f5efe6,#ddd0bc);border-left:2px solid #c4b595;border-right:2px solid #c4b595;position:relative;box-shadow:inset 2px 0 4px rgba(255,255,255,.35),inset -2px 0 4px rgba(0,0,0,.04)}
-.greek-column .col-plaque{position:absolute;inset:6px 3px 6px;display:flex;flex-direction:column;gap:3px;background:rgba(255,255,255,.94);border:1px solid var(--rf-border);border-radius:5px;padding:6px 7px;box-shadow:0 1px 4px rgba(11,67,36,.08);overflow:hidden}
-.greek-column.col-first .col-capital,.greek-column.col-first .col-base{border-color:var(--rf-coral);box-shadow:inset 0 -3px 0 rgba(242,107,67,.25)}
-.greek-column.col-first .col-plaque{border-color:#f5c4b8;background:#fffcfb}
-.greek-column .col-num{font-size:7px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-mid);line-height:1.2}
+.pillars-pediment{flex-shrink:0;display:flex;flex-direction:column;align-items:center;padding:0 6px 2px;position:relative;width:100%}
+.pediment-roof{width:min(680px,88%);height:0;border-left:72px solid transparent;border-right:72px solid transparent;border-bottom:32px solid #e8dcc8;filter:drop-shadow(0 3px 0 #8b6914) drop-shadow(0 1px 0 #fff);position:relative}
+.pediment-roof::after{content:'';position:absolute;left:50%;top:100%;transform:translate(-50%,-100%);width:0;height:0;border-left:66px solid transparent;border-right:66px solid transparent;border-bottom:26px solid #f5efe6;pointer-events:none}
+.pediment-frieze{width:100%;height:5px;background:repeating-linear-gradient(90deg,#c4b595 0,#c4b595 8px,#faf6ee 8px,#faf6ee 16px);border-left:3px solid #8b6914;border-right:3px solid #8b6914;box-sizing:border-box}
+.pediment-entablature{width:100%;background:linear-gradient(180deg,#fff9f0 0%,#ebe3d4 100%);border:3px solid #8b6914;border-top:none;border-radius:0 0 6px 6px;padding:10px 18px 11px;text-align:center;box-shadow:0 4px 0 #b8a888,inset 0 2px 0 rgba(255,255,255,.7);position:relative}
+.pediment-entablature::before,.pediment-entablature::after{content:'';position:absolute;top:50%;width:14px;height:14px;border:2px solid #8b6914;border-radius:50% 50% 40% 40%;background:#faf6ee;transform:translateY(-50%)}
+.pediment-entablature::before{left:10px;box-shadow:inset -2px 0 0 #d4c4a8}
+.pediment-entablature::after{right:10px;box-shadow:inset 2px 0 0 #d4c4a8}
+.pediment-entablature span{font-family:'Cinzel',Georgia,serif;font-weight:800;font-size:clamp(12px,1.35vw,17px);letter-spacing:.16em;text-transform:uppercase;color:var(--rf-dark);line-height:1.2;text-shadow:1px 1px 0 #fff,-1px -1px 0 rgba(139,105,20,.15),0 2px 0 rgba(139,105,20,.25)}
+.pillars-colonnade{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:end;padding:4px 2px 0;background:linear-gradient(180deg,rgba(235,227,212,.45) 0%,transparent 22px)}
+.greek-column{display:flex;flex-direction:column;align-items:center;min-height:0;width:100%}
+.greek-column .col-capital{width:92%;flex-shrink:0;height:15px;background:linear-gradient(180deg,#fff9f0 0%,#e8dcc8 55%,#d4c4a8 100%);border:2px solid #8b6914;border-bottom:1px solid #6b5420;border-radius:4px 4px 0 0;box-shadow:inset 0 -4px 0 rgba(180,160,120,.5),0 1px 0 #fff;position:relative}
+.greek-column .col-capital::before,.greek-column .col-capital::after{content:'';position:absolute;top:-3px;width:10px;height:10px;border:2px solid #8b6914;border-radius:50%;background:#faf6ee}
+.greek-column .col-capital::before{left:6px}
+.greek-column .col-capital::after{right:6px}
+.greek-column .col-plaque{width:100%;flex-shrink:0;display:flex;flex-direction:column;gap:4px;background:rgba(255,255,255,.97);border:2px solid #8b6914;border-radius:6px;padding:8px 9px;box-shadow:2px 3px 0 rgba(139,105,20,.22),inset 0 1px 0 rgba(255,255,255,.9);min-height:0}
+.greek-column.col-first .col-capital{border-color:var(--rf-coral);box-shadow:inset 0 -4px 0 rgba(242,107,67,.35),0 1px 0 #fff}
+.greek-column.col-first .col-capital::before,.greek-column.col-first .col-capital::after{border-color:var(--rf-coral)}
+.greek-column.col-first .col-plaque{border-color:var(--rf-coral);background:#fffcfb;box-shadow:2px 3px 0 rgba(242,107,67,.2)}
+.greek-column .col-shaft{width:78%;flex-shrink:0;height:10px;background:repeating-linear-gradient(90deg,#e8dfd2 0,#e8dfd2 6px,#ddd0bc 6px,#ddd0bc 12px);border-left:2px solid #8b6914;border-right:2px solid #8b6914}
+.greek-column .col-num{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-mid);line-height:1.2}
 .greek-column.col-first .col-num{color:var(--rf-coral)}
-.greek-column .col-title{font-size:10px;font-weight:800;color:var(--rf-dark);line-height:1.15}
+.greek-column .col-title{font-size:11px;font-weight:800;color:var(--rf-dark);line-height:1.15}
 .greek-column.col-first .col-title{color:var(--rf-coral)}
-.greek-column .col-text{font-size:8.5px;line-height:1.32;color:var(--rf-text);flex:1;min-height:0;overflow:hidden}
-.greek-column .col-owner{font-size:7.5px;color:var(--rf-muted);line-height:1.28;margin-top:auto;padding-top:2px;border-top:1px dashed var(--rf-border)}
+.greek-column .col-text{font-size:9px;line-height:1.38;color:var(--rf-text)}
+.greek-column .col-owner{font-size:8px;color:var(--rf-muted);line-height:1.32;margin-top:2px;padding-top:4px;border-top:1px dashed var(--rf-border)}
 .greek-column .col-owner strong{color:var(--rf-dark);font-weight:700}
-.greek-column .col-base{width:80%;flex-shrink:0;height:9px;background:linear-gradient(180deg,#e8dcc8,#cfc0a8);border:2px solid #c4b595;border-top:1px solid #b8a888;border-radius:0 0 3px 3px}
-.pillars-hub-wide{flex-shrink:0;background:var(--rf-dark);color:#fff;border-radius:8px;padding:10px 16px;display:grid;grid-template-columns:130px 1fr;gap:14px;align-items:start}
-.pillars-hub-wide h3{font-family:'Cinzel',Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rf-light);line-height:1.3;padding-top:2px}
-.pillars-hub-wide .hub-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
-.pillars-hub-wide .hub-copy p{font-size:10px;line-height:1.4;opacity:.93}
-.pillars-hub-wide .hub-copy ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:9px;line-height:1.35;opacity:.88}
-.pillars-hub-wide .hub-copy li{padding-left:10px;position:relative}
-.pillars-hub-wide .hub-copy li::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--rf-light)}
+.greek-column .col-base{width:96%;flex-shrink:0;height:11px;background:linear-gradient(180deg,#e8dcc8,#b8a888);border:2px solid #8b6914;border-top:1px solid #6b5420;border-radius:0 0 4px 4px;box-shadow:0 2px 0 rgba(139,105,20,.25)}
+.greek-column.col-first .col-base{border-color:var(--rf-coral)}
+.pillars-hub-wide{flex:0 0 34%;min-height:118px;background:var(--rf-dark);color:#fff;border-radius:8px;padding:14px 20px 16px;display:grid;grid-template-columns:145px 1fr;gap:18px;align-items:stretch;border:2px solid rgba(148,201,129,.35);box-shadow:0 2px 8px rgba(11,67,36,.12)}
+.pillars-hub-wide h3{font-family:'Cinzel',Georgia,serif;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--rf-light);line-height:1.35;display:flex;align-items:center;padding-right:8px;border-right:1px solid rgba(255,255,255,.15)}
+.pillars-hub-wide .hub-copy{display:flex;flex-direction:column;justify-content:center;gap:10px;min-width:0}
+.pillars-hub-wide .hub-copy p{font-size:11px;line-height:1.45;opacity:.95}
+.pillars-hub-wide .hub-copy ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px 12px;font-size:10px;line-height:1.38;opacity:.9}
+.pillars-hub-wide .hub-copy li{padding:6px 8px 6px 14px;position:relative;background:rgba(255,255,255,.06);border-radius:5px;border:1px solid rgba(255,255,255,.1)}
+.pillars-hub-wide .hub-copy li::before{content:'';position:absolute;left:6px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
 
 /* ── v2: Transition ── */
 .transition-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
@@ -422,7 +432,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
   <div class="cover-nav">
     <span>→ Arrow keys · <a href="index.html" style="color:rgba(255,255,255,.75)">Original deck (v1)</a></span>
-    <span>Build 20260701-v2-6 · hard-refresh if slide 7 looks outdated</span>
+    <span>Build 20260701-v2-7 · hard-refresh if slide 7 looks outdated</span>
     <span>Bart Gilissen · Rail-Flow QA</span>
   </div>
 </div>
@@ -610,55 +620,52 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
     <div class="pillars-temple">
       <div class="pillars-pediment">
         <div class="pediment-roof" aria-hidden="true"></div>
+        <div class="pediment-frieze" aria-hidden="true"></div>
         <div class="pediment-entablature"><span>Four pillars = how we test</span></div>
       </div>
       <div class="pillars-colonnade">
         <div class="greek-column col-first">
           <div class="col-capital" aria-hidden="true"></div>
-          <div class="col-shaft">
-            <div class="col-plaque">
-              <span class="col-num">Pillar 1 · build first</span>
-              <strong class="col-title">Golden data set</strong>
-              <p class="col-text">Repeatable provisioner-agnostic data across environments. Dev unit tests and QA Playwright share the same base.</p>
-              <span class="col-owner">Owner: <strong>TO · Core QA · SA</strong> · QA validates at Entry Gate</span>
-            </div>
+          <div class="col-plaque">
+            <span class="col-num">Pillar 1 · build first</span>
+            <strong class="col-title">Golden data set</strong>
+            <p class="col-text">Repeatable provisioner-agnostic data across SD-TEST, acceptance, and prod-like paths. Same IDs and scenarios for Dev unit tests and QA Playwright — no ad-hoc data per tester.</p>
+            <span class="col-owner">Owner: <strong>TO · Core QA · SA</strong> · QA validates reference at Entry Gate</span>
           </div>
+          <div class="col-shaft" aria-hidden="true"></div>
           <div class="col-base" aria-hidden="true"></div>
         </div>
         <div class="greek-column">
           <div class="col-capital" aria-hidden="true"></div>
-          <div class="col-shaft">
-            <div class="col-plaque">
-              <span class="col-num">Pillar 2</span>
-              <strong class="col-title">Unit testing</strong>
-              <p class="col-text">Developer loop · SA top volatile packages · root-cause fixes before handover.</p>
-              <span class="col-owner">Owner: <strong>Dev · SA</strong> · QA verifies at Entry Gate</span>
-            </div>
+          <div class="col-plaque">
+            <span class="col-num">Pillar 2</span>
+            <strong class="col-title">Unit testing</strong>
+            <p class="col-text">Developer loop before handover: SA targets top volatile packages. Failures fixed at root cause — not patched over in Playwright or manual retests.</p>
+            <span class="col-owner">Owner: <strong>Dev · SA</strong> · QA verifies coverage at Entry Gate</span>
           </div>
+          <div class="col-shaft" aria-hidden="true"></div>
           <div class="col-base" aria-hidden="true"></div>
         </div>
         <div class="greek-column">
           <div class="col-capital" aria-hidden="true"></div>
-          <div class="col-shaft">
-            <div class="col-plaque">
-              <span class="col-num">Pillar 3</span>
-              <strong class="col-title">API testing</strong>
-              <p class="col-text">Business logic at scale — prefer API over repeated Playwright where possible.</p>
-              <span class="col-owner">Owner: <strong>Dev · SA</strong> · QA consults on risk hotspots</span>
-            </div>
+          <div class="col-plaque">
+            <span class="col-num">Pillar 3</span>
+            <strong class="col-title">API testing</strong>
+            <p class="col-text">Business logic at scale — API tests run faster and stabler than UI. Prefer API where possible; reserve Playwright for what only the UI can prove.</p>
+            <span class="col-owner">Owner: <strong>Dev · SA</strong> · QA consults on risk hotspots &amp; gaps</span>
           </div>
+          <div class="col-shaft" aria-hidden="true"></div>
           <div class="col-base" aria-hidden="true"></div>
         </div>
         <div class="greek-column">
           <div class="col-capital" aria-hidden="true"></div>
-          <div class="col-shaft">
-            <div class="col-plaque">
-              <span class="col-num">Pillar 4</span>
-              <strong class="col-title">Playwright automation</strong>
-              <p class="col-text">Built on golden data · input/output like a procedure · improve in cycles after baseline.</p>
-              <span class="col-owner">Owner: <strong>QA</strong> · BA consulted · Squad or Core executes</span>
-            </div>
+          <div class="col-plaque">
+            <span class="col-num">Pillar 4</span>
+            <strong class="col-title">Playwright automation</strong>
+            <p class="col-text">Built on golden data only. Design like a procedure (input → expected output). Baseline first, then improve in cycles — no one-off scripts that rot.</p>
+            <span class="col-owner">Owner: <strong>QA</strong> · BA consulted · Squad or Core executes</span>
           </div>
+          <div class="col-shaft" aria-hidden="true"></div>
           <div class="col-base" aria-hidden="true"></div>
         </div>
       </div>
@@ -666,11 +673,11 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
     <div class="pillars-hub-wide">
       <h3>Single entry point</h3>
       <div class="hub-copy">
-        <p>Strategy hub (Confluence) — links deployment, sprint cadence, Entry Gate checklist, Playwright methodology, golden data pages. <strong>One place to start</strong> when information is scattered.</p>
+        <p>Strategy hub (Confluence) — one index page linking deployment rules, sprint cadence, Entry Gate checklist, Playwright methodology, and golden-data standards. <strong>Start here</strong> when the team asks “where is the official process?” instead of hunting scattered docs.</p>
         <ul>
-          <li>Q3–Q4 stepping stone — updated as process matures</li>
-          <li>QA leads maintain links when sub-docs change</li>
-          <li>Flag gaps to Bart / Pablo if story diverges</li>
+          <li>Q3–Q4 stepping stone — living doc, updated as the framework matures</li>
+          <li>QA leads (Irem · Emre) maintain links when sub-pages move or change</li>
+          <li>Flag gaps to Bart / Pablo when a story no longer matches the hub</li>
         </ul>
       </div>
     </div>
