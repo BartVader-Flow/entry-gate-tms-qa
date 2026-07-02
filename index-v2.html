@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-7">
+<meta name="deploy-version" content="20260701-v2-8">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -393,7 +393,8 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 .progress{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:20}
 .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer}
 .dot.active{background:var(--rf-light)}
-.counter{position:fixed;bottom:24px;right:24px;font-size:11px;color:rgba(255,255,255,.4);z-index:20}
+.counter{position:fixed;bottom:24px;right:24px;font-size:11px;color:rgba(255,255,255,.4);z-index:20;text-align:right;line-height:1.35}
+.build-stamp{position:fixed;bottom:42px;right:24px;font-size:10px;font-weight:700;letter-spacing:.04em;color:var(--rf-light);background:rgba(11,67,36,.85);padding:3px 8px;border-radius:4px;border:1px solid rgba(148,201,129,.45);z-index:20;font-family:'Inter',sans-serif}
 </style>
 </head>
 <body>
@@ -432,7 +433,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
   <div class="cover-nav">
     <span>→ Arrow keys · <a href="index.html" style="color:rgba(255,255,255,.75)">Original deck (v1)</a></span>
-    <span>Build 20260701-v2-7 · hard-refresh if slide 7 looks outdated</span>
+    <span>Build 20260701-v2-8 · green badge bottom-right shows live version</span>
     <span>Bart Gilissen · Rail-Flow QA</span>
   </div>
 </div>
@@ -683,7 +684,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
     </div>
   </div>
   <div class="slide-footer">
-    <span>Deterministic = repeatable feedback loop · not one-off firefighting</span>
+    <span>Deterministic = repeatable feedback loop · layout v2-7 wide columns</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
@@ -1133,10 +1134,14 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <button class="nav-btn nav-prev" id="btnPrev" disabled>&#8592;</button>
 <button class="nav-btn nav-next" id="btnNext">&#8594;</button>
 <div class="progress" id="progress"></div>
+<div class="build-stamp" id="buildStamp" title="Deployed build — if this does not match the latest release, hard-refresh or add ?v=… to the URL">…</div>
 <div class="counter" id="counter"></div>
 
 <script>
 const slides=document.querySelectorAll('.slide');
+const DEPLOY_VER=document.querySelector('meta[name="deploy-version"]')?.content||'unknown';
+document.getElementById('buildStamp').textContent=DEPLOY_VER;
+document.title=`QA Entry Gate — Rollout v2 (${DEPLOY_VER})`;
 let cur=0;
 const btnPrev=document.getElementById('btnPrev');
 const btnNext=document.getElementById('btnNext');
