@@ -1157,6 +1157,7 @@ const DEPLOY_VER=document.querySelector('meta[name="deploy-version"]')?.content|
 const buildStampEl=document.getElementById('buildStamp');
 const staleBannerEl=document.getElementById('deployStaleBanner');
 const VERSION_JSON_URL='https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/version.json';
+const MIRROR_URL='https://cdn.jsdelivr.net/gh/BartVader-Flow/entry-gate-tms-qa@gh-pages/index-v2.html';
 buildStampEl.textContent=DEPLOY_VER+' · checking…';
 document.title=`QA Entry Gate — Rollout v2 (${DEPLOY_VER})`;
 fetch(`${VERSION_JSON_URL}?t=${Date.now()}`,{cache:'no-store'}).then(r=>r.ok?r.json():null).then(v=>{
@@ -1169,7 +1170,7 @@ fetch(`${VERSION_JSON_URL}?t=${Date.now()}`,{cache:'no-store'}).then(r=>r.ok?r.j
   buildStampEl.textContent=DEPLOY_VER+' · STALE';
   buildStampEl.classList.add('stale');
   staleBannerEl.classList.add('visible');
-  staleBannerEl.innerHTML=`This page is <strong>outdated</strong> (shows <strong>${DEPLOY_VER}</strong>). Latest on GitHub: <strong>${v.deployVersion}</strong>. GitHub Pages has not redeployed yet — wait a few minutes or open the <a href="${VERSION_JSON_URL.replace('version.json','index-v2.html')}" target="_blank" rel="noopener">latest file on GitHub</a>.`;
+  staleBannerEl.innerHTML=`This page is <strong>outdated</strong> (shows <strong>${DEPLOY_VER}</strong>). Latest on GitHub: <strong>${v.deployVersion}</strong>. GitHub Pages has not redeployed — use the <a href="${MIRROR_URL}" target="_blank" rel="noopener">jsDelivr mirror (always current)</a> or re-save Pages source in repo Settings.`;
 }).catch(()=>{buildStampEl.textContent=DEPLOY_VER;});
 let cur=0;
 const btnPrev=document.getElementById('btnPrev');

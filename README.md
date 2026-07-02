@@ -29,6 +29,8 @@ Meta `deploy-version`: **20260701-v2-10** (slide 7 Acropolis portico — equal c
 |-------|----------------|
 | Badge **`… · LIVE`** | This URL matches `version.json` on `gh-pages`. |
 | Badge **`… · STALE`** + orange banner | GitHub branch is newer; **Pages has not redeployed** (not your browser). |
-| [raw `index-v2.html` on GitHub](https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html) | Always the latest commit on the branch. |
 
-**One-time (if STALE persists):** Repo **Settings → Pages → Build and deployment → Source: GitHub Actions** (workflow `.github/workflows/deploy-pages.yml` runs on every push to `gh-pages`).
+**Immediate mirror (always follows `gh-pages`, usually within ~1 min):**  
+https://cdn.jsdelivr.net/gh/BartVader-Flow/entry-gate-tms-qa@gh-pages/index-v2.html
+
+**Fix stuck Pages:** Repo **Settings → Pages → Build and deployment** → re-select branch **`gh-pages`** / **`/ (root)`** → **Save** (forces a new build).
