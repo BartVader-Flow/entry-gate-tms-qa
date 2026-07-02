@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-1">
+<meta name="deploy-version" content="20260701-v2-2">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -233,7 +233,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .pillars-hub ul{list-style:none;font-size:10px;line-height:1.38;opacity:.88}
 .pillars-hub li{padding:3px 0 3px 12px;position:relative}
 .pillars-hub li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
-.pillars-map{flex-shrink:0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:4px}
+.pillars-map{flex-shrink:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:4px}
 .pillars-map-item{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:6px;padding:6px 8px;text-align:center;font-size:9px;line-height:1.3}
 .pillars-map-item strong{display:block;font-size:10px;color:var(--rf-dark);margin-bottom:2px}
 
@@ -273,6 +273,34 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .bottleneck-step{text-align:center;font-size:9px;font-weight:700;color:var(--rf-dark);line-height:1.25}
 .bottleneck-step span{display:block;font-size:8px;font-weight:600;color:var(--rf-muted);margin-top:2px}
 .bottleneck-arrow{font-size:14px;font-weight:800;color:var(--rf-coral);text-align:center}
+
+/* ── v2: Tandem capacity plan (slide 10) ── */
+.slide-body.tandem-cap{padding:8px 32px 6px;gap:5px}
+.cap-intro{flex-shrink:0;font-size:10px;line-height:1.35;color:var(--rf-muted);text-align:center}
+.cap-intro strong{color:var(--rf-dark)}
+.cap-legend{flex-shrink:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;font-size:8px;font-weight:700}
+.cap-legend span{padding:3px 8px;border-radius:5px;white-space:nowrap}
+.cap-legend .lg-resp{background:var(--rf-dark);color:#fff}
+.cap-legend .lg-tandem{background:#eef8ea;color:var(--rf-mid);border:1px solid var(--rf-light)}
+.cap-legend .lg-support{background:var(--rf-gray2);color:var(--rf-dark);border:1px solid var(--rf-border)}
+.cap-legend .lg-fte{background:var(--rf-white);color:var(--rf-muted);border:1px dashed var(--rf-border);font-weight:600}
+.cap-leaders{flex-shrink:0;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.lead-chip{background:var(--rf-dark);color:#fff;border-radius:6px;padding:5px 6px;text-align:center;line-height:1.2}
+.lead-chip strong{display:block;font-size:9px;font-weight:800}
+.lead-chip .fte{display:block;font-size:8px;font-weight:600;color:var(--rf-light);margin-top:1px}
+.lead-chip .role{display:block;font-size:7px;font-weight:600;opacity:.82;margin-top:2px;line-height:1.15}
+.cap-tables{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;overflow:hidden}
+.cap-table-wrap{min-height:0;display:flex;flex-direction:column;overflow:hidden;background:var(--rf-white);border:1px solid var(--rf-border);border-radius:7px;padding:5px 6px 4px}
+.cap-table-wrap h4{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-mid);margin-bottom:3px;padding-bottom:2px;border-bottom:1px solid var(--rf-border)}
+table.cap-table{width:100%;border-collapse:collapse;font-size:8px;line-height:1.22}
+table.cap-table th{background:var(--rf-gray);color:var(--rf-dark);text-align:left;padding:3px 4px;font-weight:700;font-size:7px;text-transform:uppercase;letter-spacing:.03em}
+table.cap-table td{padding:2px 4px;border-bottom:1px solid var(--rf-gray2);vertical-align:top}
+table.cap-table tr:last-child td{border-bottom:none}
+table.cap-table tr:nth-child(even) td{background:var(--rf-gray)}
+table.cap-table .fte{font-weight:600;color:var(--rf-muted);font-size:7px}
+.cap-table-scroll{flex:1;min-height:0;overflow:hidden}
+.cap-mini{margin-top:4px;padding-top:3px;border-top:1px dashed var(--rf-border)}
+.cap-foot{flex-shrink:0;font-size:8px;color:var(--rf-muted);text-align:center;line-height:1.3}
 
 /* ── v2: Module onboarding ── */
 .onboard-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
@@ -333,14 +361,15 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       </ul>
     </div>
     <div class="cover-panel">
-      <h3>In this deck (12 slides)</h3>
+      <h3>In this deck (13 slides)</h3>
       <ul>
         <li><strong>1–6</strong> — Lifecycle · RACI · five responsibility comics</li>
         <li><strong>7–8</strong> — Four pillars · transition (no big bang)</li>
         <li><strong>9</strong> — Entry Gate checklist</li>
-        <li><strong>10</strong> — QA workflow · tandem · bottleneck rule</li>
-        <li><strong>11</strong> — Module onboarding (CB · RCG)</li>
-        <li><strong>12</strong> — Quality layers + enforcement</li>
+        <li><strong>10</strong> — Tandem QA capacity plan (all projects + leads)</li>
+        <li><strong>11</strong> — QA workflow · bottleneck rule</li>
+        <li><strong>12</strong> — Module onboarding (CB · RCG)</li>
+        <li><strong>13</strong> — Quality layers + enforcement</li>
       </ul>
     </div>
   </div>
@@ -354,7 +383,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>Lifecycle &amp; who owns what</h2>
-    <span class="snum">1 / 12</span>
+    <span class="snum">1 / 13</span>
   </div>
   <div class="slide-body">
     <div class="eg1-top">
@@ -414,7 +443,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
         </div>
       </div>
     </div>
-    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–6.</strong> Four pillars (7) · transition (8) · module health (12).</div>
+    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–6.</strong> Four pillars (7) · transition (8) · tandem plan (10) · module health (13).</div>
   </div>
   <div class="slide-footer">
     <span>One Entry Gate at handover · ongoing health via quality layers</span>
@@ -429,7 +458,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Story &amp; AC · BA writes · PO accountable</span>
     </div>
-    <span class="snum">2 / 12</span>
+    <span class="snum">2 / 13</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -449,7 +478,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Happy-path cases · BA writes · QA consulted</span>
     </div>
-    <span class="snum">3 / 12</span>
+    <span class="snum">3 / 13</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -469,7 +498,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Unit &amp; API tests · Dev / SA writes</span>
     </div>
-    <span class="snum">4 / 12</span>
+    <span class="snum">4 / 13</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -489,7 +518,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Playwright &amp; manual · QA writes · BA consulted</span>
     </div>
-    <span class="snum">5 / 12</span>
+    <span class="snum">5 / 13</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -509,7 +538,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Golden Data / env · TO / Core provides</span>
     </div>
-    <span class="snum">6 / 12</span>
+    <span class="snum">6 / 13</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -526,7 +555,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>Four pillars of the test strategy</h2>
-    <span class="snum">7 / 12</span>
+    <span class="snum">7 / 13</span>
   </div>
   <div class="slide-body">
     <p class="pillars-intro"><strong>Same story everywhere</strong> — handover (Entry Gate), daily testing (four pillars), engineering discipline (quality layers). One strategy index links all detail docs.</p>
@@ -568,9 +597,10 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       </div>
     </div>
     <div class="pillars-map">
+      <div class="pillars-map-item"><strong>People</strong>Tandem capacity · slide 10</div>
       <div class="pillars-map-item"><strong>Handover</strong>Entry Gate · slide 9</div>
-      <div class="pillars-map-item"><strong>Execution</strong>Four pillars · this slide</div>
-      <div class="pillars-map-item"><strong>Engineering</strong>Quality layers · slide 12</div>
+      <div class="pillars-map-item"><strong>Execution</strong>Four pillars · slide 7</div>
+      <div class="pillars-map-item"><strong>Engineering</strong>Quality layers · slide 13</div>
     </div>
   </div>
   <div class="slide-footer">
@@ -583,7 +613,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>Transition — two tracks in parallel</h2>
-    <span class="snum">8 / 12</span>
+    <span class="snum">8 / 13</span>
   </div>
   <div class="slide-body">
     <p class="transition-intro">We <strong>cannot change the world in one day</strong>. Current release keeps legacy steps; we improve the next cycle incrementally — <strong>no big bang</strong>.</p>
@@ -625,7 +655,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>The Entry Gate</h2>
-    <span class="snum">9 / 12</span>
+    <span class="snum">9 / 13</span>
   </div>
   <div class="slide-body">
     <div class="s3-rule">
@@ -682,52 +712,89 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
 </div>
 
-<!-- Slide 10 — QA workflow (internal) -->
+<!-- Slide 10 — Tandem QA capacity plan -->
+<div class="slide">
+  <div class="slide-header">
+    <h2>Tandem QA — capacity plan 2026</h2>
+    <span class="snum">10 / 13</span>
+  </div>
+  <div class="slide-body tandem-cap">
+    <p class="cap-intro"><strong>Per project:</strong> one <strong>responsible</strong> QA owns delivery · one <strong>tandem</strong> QA (lower FTE) shares context, backup &amp; Core/Squad split · optional <strong>support</strong> QA when planned. FTE = planned capacity share (not calendar %).</p>
+    <div class="cap-legend">
+      <span class="lg-resp">Responsible QA</span>
+      <span class="lg-tandem">Tandem QA</span>
+      <span class="lg-support">Support QA (if planned)</span>
+      <span class="lg-fte">FTE in ( )</span>
+    </div>
+    <div class="cap-leaders">
+      <div class="lead-chip"><strong>James</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
+      <div class="lead-chip"><strong>Jude</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
+      <div class="lead-chip"><strong>Emre</strong><span class="fte">0.9 FTE</span><span class="role">QA Lead · Core</span></div>
+      <div class="lead-chip"><strong>Irem</strong><span class="fte">1 FTE</span><span class="role">QA Lead · Squad</span></div>
+      <div class="lead-chip"><strong>Fadil</strong><span class="fte">0.1 FTE</span><span class="role">Deputy QA Lead</span></div>
+    </div>
+    <div class="cap-tables">
+      <div class="cap-table-wrap">
+        <h4>ITMS · RFMS · RSB · COM</h4>
+        <div class="cap-table-scroll">
+          <table class="cap-table">
+            <thead><tr><th>Project</th><th>Resp.</th><th>Tandem</th><th>Support</th></tr></thead>
+            <tbody>
+            <tr><td>CargoBeamer</td><td>Rhica <span class="fte">(1)</span></td><td>Zyke <span class="fte">(0.5)</span></td><td>Ecem <span class="fte">(0.5)</span></td></tr>
+            <tr><td>Aurizon</td><td>Francis <span class="fte">(0.5)</span></td><td>Zyke <span class="fte">(0.5)</span></td><td>—</td></tr>
+            <tr><td>RIG</td><td>Berkay <span class="fte">(0.5)</span></td><td>Chris <span class="fte">(0.125)</span></td><td>—</td></tr>
+            <tr><td>Lineas</td><td>James <span class="fte">(0.5)</span></td><td>Raemar <span class="fte">(0.25)</span></td><td>—</td></tr>
+            <tr><td>T3M · Open Modal</td><td>Chris <span class="fte">(0.5)</span></td><td>Dale <span class="fte">(0.125)</span></td><td>—</td></tr>
+            <tr><td>ECL / Portshuttle</td><td>Hasan <span class="fte">(0.25)</span></td><td>AJ <span class="fte">(0.1)</span></td><td>—</td></tr>
+            <tr><td>RCO</td><td>Hasan <span class="fte">(0.5)</span></td><td>AJ <span class="fte">(0.1)</span></td><td>—</td></tr>
+            <tr><td>LTG Cargo</td><td>Chris <span class="fte">(0.25)</span></td><td>Dale <span class="fte">(0.125)</span></td><td>—</td></tr>
+            </tbody>
+          </table>
+          <div class="cap-mini">
+            <table class="cap-table">
+              <tbody>
+              <tr><td>Fleet</td><td>Raemar <span class="fte">(0.5)</span></td><td>James <span class="fte">(0.25)</span></td><td>—</td></tr>
+              <tr><td>RSB Overall</td><td>Raemar <span class="fte">(0.25)</span></td><td>—</td><td>—</td></tr>
+              <tr><td>Commercial</td><td>Dale <span class="fte">(0.25)</span></td><td>Emre <span class="fte">(0.1)</span></td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="cap-table-wrap">
+        <h4>RTMS</h4>
+        <div class="cap-table-scroll">
+          <table class="cap-table">
+            <thead><tr><th>Project</th><th>Resp.</th><th>Tandem</th><th>Support</th></tr></thead>
+            <tbody>
+            <tr><td>RCG</td><td>Fadil <span class="fte">(0.75)</span></td><td>Jude <span class="fte">(0.5)</span></td><td>AJ <span class="fte">(0.8)</span> · Hasan <span class="fte">(0.25)</span></td></tr>
+            <tr><td>RIG · BURANDO</td><td>Berkay <span class="fte">(0.5)</span></td><td>Chris <span class="fte">(0.125)</span></td><td>—</td></tr>
+            <tr><td>TrustRail</td><td>Dale <span class="fte">(0.5)</span></td><td>Fadil <span class="fte">(0.15)</span></td><td>—</td></tr>
+            <tr><td>BELog</td><td>Michael <span class="fte">(0.3)</span></td><td>Jude <span class="fte">(0.075)</span></td><td>—</td></tr>
+            <tr><td>EVR</td><td>Michael <span class="fte">(0.3)</span></td><td>Jude <span class="fte">(0.075)</span></td><td>—</td></tr>
+            <tr><td>ESA-Raisu</td><td>Michael <span class="fte">(0.4)</span></td><td>Jude <span class="fte">(0.1)</span></td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="cap-foot" style="margin-top:4px;text-align:left">Source: <em>Split Core – Squad 2026</em> (TMS tab) · REST / PTM products not shown — add when QA capacity assigned</p>
+      </div>
+    </div>
+    <p class="cap-foot">Overarching roles (rows 25–29) are <strong>leadership &amp; deputies</strong> — not project tandems · they orchestrate squads, core QA, and release prep</p>
+  </div>
+  <div class="slide-footer">
+    <span>Named pairs per project · tandem always knows context before handover gaps</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 11 — QA workflow (internal) -->
 <div class="slide">
   <div class="slide-header">
     <h2>QA workflow (internal)</h2>
-    <span class="snum">10 / 12</span>
+    <span class="snum">11 / 13</span>
   </div>
   <div class="slide-body qa-workflow-dense">
-    <p class="workflow-intro"><strong>After QA accepts the story</strong> — Squad or Core QA runs the same phases. <strong>Tandem:</strong> responsible + wingman (one Squad, one Core). Leads: Irem (Squad) · Emre (Core).</p>
-    <div class="tandem-grid">
-      <div class="tandem-card">
-        <strong>CargoBeamer</strong>
-        <div class="tandem-pair">
-          <span class="tandem-chip resp">Ricard · responsible</span>
-          <span class="tandem-chip wing">Chris · wingman</span>
-        </div>
-        <div class="tandem-pair">
-          <span class="tandem-chip squad">Squad</span>
-          <span class="tandem-chip core">Core</span>
-        </div>
-        <p class="why">Second pair always knows context · backup · core/custom split</p>
-      </div>
-      <div class="tandem-card">
-        <strong>Lineas / ITMS slice</strong>
-        <div class="tandem-pair">
-          <span class="tandem-chip resp">James · responsible</span>
-          <span class="tandem-chip wing">Rema · wingman</span>
-        </div>
-        <div class="tandem-pair">
-          <span class="tandem-chip squad">Squad</span>
-          <span class="tandem-chip core">Core</span>
-        </div>
-        <p class="why">Core learns customer flow · Squad learns platform patterns</p>
-      </div>
-      <div class="tandem-card">
-        <strong>RCG · other products</strong>
-        <div class="tandem-pair">
-          <span class="tandem-chip resp">Named lead</span>
-          <span class="tandem-chip wing">Wingman</span>
-        </div>
-        <div class="tandem-pair">
-          <span class="tandem-chip squad">Squad</span>
-          <span class="tandem-chip core">Core</span>
-        </div>
-        <p class="why">Capacity plan defines responsible · wingman at lower %</p>
-      </div>
-    </div>
+    <p class="workflow-intro"><strong>After QA accepts the story</strong> — execution follows the phases below. <strong>Who</strong> runs it: see tandem capacity plan (slide 10). Leads orchestrate: Irem (Squad) · Emre (Core).</p>
 
     <div class="bottleneck-bar">
       <div class="bottleneck-step">1 · Flag<span>Blocker or inefficiency</span></div>
@@ -832,7 +899,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>Module onboarding — CargoBeamer &amp; RCG</h2>
-    <span class="snum">11 / 12</span>
+    <span class="snum">11 / 13</span>
   </div>
   <div class="slide-body">
     <p class="onboard-intro"><strong>Concept deck ≠ rollout plan.</strong> Each hot module gets a <strong>draft playbook</strong> (Confluence) with actions, owners, and commitments — not only slides.</p>
@@ -846,7 +913,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
           <li>Entry Gate pilot · hard reject when ready</li>
           <li>Playwright baseline on shared data · improve later</li>
         </ol>
-        <p class="deliver"><strong>Deliverable:</strong> draft onboarding doc · dev feedback · İrem / Emre lead · tandem Ricard + Chris</p>
+        <p class="deliver"><strong>Deliverable:</strong> draft onboarding doc · dev feedback · İrem / Emre lead · tandem Rhica + Zyke (+ Ecem support)</p>
       </div>
       <div class="onboard-module hot">
         <span class="mod-tag">Priority 2 · customer urgency</span>
@@ -857,7 +924,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
           <li>Dev alignment — same unit-test message as CB</li>
           <li>Incremental rollout · no big bang</li>
         </ol>
-        <p class="deliver"><strong>Deliverable:</strong> draft onboarding doc · dev feedback · Fadıl lead · tandem per capacity plan</p>
+        <p class="deliver"><strong>Deliverable:</strong> draft onboarding doc · dev feedback · Fadıl lead · tandem Jude (+ AJ / Hasan support)</p>
       </div>
       <div class="onboard-shared">
         <div>
@@ -886,7 +953,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>Quality layers &amp; shared ownership</h2>
-    <span class="snum">12 / 12</span>
+    <span class="snum">12 / 13</span>
   </div>
   <div class="slide-body">
     <p class="layers-intro"><strong>Quality is a team responsibility.</strong> Four layers in dev/test — then the pipeline runs the same way on every environment. Layers are <strong>enforced</strong>, not optional guidelines.</p>

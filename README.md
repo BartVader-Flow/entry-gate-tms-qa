@@ -19,8 +19,8 @@ Meta `deploy-version`: **20260701-6** · counter on last slide: **10 / 10** (cov
 
 ### v2 (second foliensatz)
 
-Cover + **12 content slides:** slides **1–6** same as v1 · **7** four pillars & strategy hub · **8** dual-track transition · **9** Entry Gate · **10** QA workflow + tandem + bottleneck rule · **11** module onboarding (CargoBeamer & RCG) · **12** quality layers + enforcement.
+Cover + **13 content slides:** slides **1–6** same as v1 · **7** four pillars & strategy hub · **8** dual-track transition · **9** Entry Gate · **10** tandem QA capacity plan (from Excel) · **11** QA workflow + bottleneck rule · **12** module onboarding (CargoBeamer & RCG) · **13** quality layers + enforcement.
 
-Meta `deploy-version`: **20260701-v2-1** · counter on last slide: **13 / 13** (cover included).
+Meta `deploy-version`: **20260701-v2-2** · counter on last slide: **14 / 14** (cover included).
 
 After updates: wait 2–5 min for GitHub Pages, then hard-refresh (`Cmd+Shift+R`).
