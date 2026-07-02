@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-2">
+<meta name="deploy-version" content="20260701-v2-3">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -275,32 +275,70 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .bottleneck-arrow{font-size:14px;font-weight:800;color:var(--rf-coral);text-align:center}
 
 /* ── v2: Tandem capacity plan (slide 10) ── */
-.slide-body.tandem-cap{padding:8px 32px 6px;gap:5px}
-.cap-intro{flex-shrink:0;font-size:10px;line-height:1.35;color:var(--rf-muted);text-align:center}
+.slide-body.tandem-cap{padding:7px 28px 5px;gap:6px;background:linear-gradient(180deg,var(--rf-bg) 0%,#e8f0e8 100%)}
+.cap-top-band{flex-shrink:0;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start}
+.cap-intro{font-size:10px;line-height:1.35;color:var(--rf-muted);margin:0}
 .cap-intro strong{color:var(--rf-dark)}
-.cap-legend{flex-shrink:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;font-size:8px;font-weight:700}
-.cap-legend span{padding:3px 8px;border-radius:5px;white-space:nowrap}
+.cap-legend{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px;font-size:8px;font-weight:700}
+.cap-legend span{padding:3px 8px;border-radius:999px;white-space:nowrap;box-shadow:0 1px 2px rgba(11,67,36,.08)}
 .cap-legend .lg-resp{background:var(--rf-dark);color:#fff}
 .cap-legend .lg-tandem{background:#eef8ea;color:var(--rf-mid);border:1px solid var(--rf-light)}
-.cap-legend .lg-support{background:var(--rf-gray2);color:var(--rf-dark);border:1px solid var(--rf-border)}
-.cap-legend .lg-fte{background:var(--rf-white);color:var(--rf-muted);border:1px dashed var(--rf-border);font-weight:600}
-.cap-leaders{flex-shrink:0;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
-.lead-chip{background:var(--rf-dark);color:#fff;border-radius:6px;padding:5px 6px;text-align:center;line-height:1.2}
+.cap-legend .lg-support{background:var(--rf-white);color:var(--rf-dark);border:1px solid var(--rf-border)}
+.cap-legend .lg-squad{background:linear-gradient(135deg,#4F883B,#6aa855);color:#fff}
+.cap-legend .lg-core{background:linear-gradient(135deg,#4338ca,#6366f1);color:#fff}
+.cap-leaders{flex-shrink:0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.lead-chip{border-radius:8px;padding:6px 8px;text-align:center;line-height:1.2;box-shadow:0 2px 6px rgba(11,67,36,.1);border:1px solid rgba(255,255,255,.5)}
 .lead-chip strong{display:block;font-size:9px;font-weight:800}
-.lead-chip .fte{display:block;font-size:8px;font-weight:600;color:var(--rf-light);margin-top:1px}
-.lead-chip .role{display:block;font-size:7px;font-weight:600;opacity:.82;margin-top:2px;line-height:1.15}
-.cap-tables{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;overflow:hidden}
-.cap-table-wrap{min-height:0;display:flex;flex-direction:column;overflow:hidden;background:var(--rf-white);border:1px solid var(--rf-border);border-radius:7px;padding:5px 6px 4px}
-.cap-table-wrap h4{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-mid);margin-bottom:3px;padding-bottom:2px;border-bottom:1px solid var(--rf-border)}
-table.cap-table{width:100%;border-collapse:collapse;font-size:8px;line-height:1.22}
-table.cap-table th{background:var(--rf-gray);color:var(--rf-dark);text-align:left;padding:3px 4px;font-weight:700;font-size:7px;text-transform:uppercase;letter-spacing:.03em}
-table.cap-table td{padding:2px 4px;border-bottom:1px solid var(--rf-gray2);vertical-align:top}
-table.cap-table tr:last-child td{border-bottom:none}
-table.cap-table tr:nth-child(even) td{background:var(--rf-gray)}
-table.cap-table .fte{font-weight:600;color:var(--rf-muted);font-size:7px}
+.lead-chip .fte{display:block;font-size:8px;font-weight:600;margin-top:1px;opacity:.9}
+.lead-chip .role{display:block;font-size:7px;font-weight:600;margin-top:2px;line-height:1.15;opacity:.88}
+.lead-chip.lead-squad{background:linear-gradient(145deg,var(--rf-dark),#0d5530);color:#fff}
+.lead-chip.lead-squad .fte{color:var(--rf-light)}
+.lead-chip.lead-core{background:linear-gradient(145deg,#312e81,#4338ca);color:#fff}
+.lead-chip.lead-core .fte{color:#c7d2fe}
+.lead-chip.lead-deputy{background:var(--rf-white);color:var(--rf-dark);border:1px solid var(--rf-border)}
+.lead-chip.lead-deputy .fte{color:var(--rf-mid)}
+.cap-main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 168px;gap:8px;overflow:hidden}
+.cap-table-panel{min-height:0;display:flex;flex-direction:column;overflow:hidden;background:var(--rf-white);border:1px solid var(--rf-border);border-radius:10px;box-shadow:0 4px 14px rgba(11,67,36,.08);padding:0}
+.cap-table-panel .cap-table-head{padding:6px 10px 4px;border-bottom:1px solid var(--rf-border);display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--rf-gray)}
+.cap-table-panel .cap-table-head h4{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-dark);margin:0}
+.cap-table-panel .cap-table-head span{font-size:7px;color:var(--rf-muted);font-weight:600}
 .cap-table-scroll{flex:1;min-height:0;overflow:hidden}
-.cap-mini{margin-top:4px;padding-top:3px;border-top:1px dashed var(--rf-border)}
-.cap-foot{flex-shrink:0;font-size:8px;color:var(--rf-muted);text-align:center;line-height:1.3}
+table.cap-table{width:100%;border-collapse:collapse;font-size:8px;line-height:1.2}
+table.cap-table thead th{position:sticky;top:0;z-index:1;background:var(--rf-dark);color:#fff;text-align:left;padding:4px 6px;font-weight:700;font-size:7px;text-transform:uppercase;letter-spacing:.04em}
+table.cap-table td{padding:3px 6px;border-bottom:1px solid var(--rf-gray2);vertical-align:middle}
+table.cap-table tbody tr:hover td{background:#f5faf4}
+table.cap-table tbody tr:nth-child(even) td{background:var(--rf-gray)}
+table.cap-table tbody tr:nth-child(even):hover td{background:#eef6ec}
+table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
+.prod-tag{display:inline-block;font-size:6px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:1px 5px;border-radius:3px;margin-right:4px;vertical-align:middle}
+.prod-tag.itms{background:#dbeafe;color:#1e40af}
+.prod-tag.rtms{background:#ede9fe;color:#5b21b6}
+.prod-tag.rfms{background:#fce7f3;color:#9d174d}
+.prod-tag.rsb{background:#ffedd5;color:#c2410c}
+.prod-tag.com{background:#d1fae5;color:#047857}
+.proj-name{font-weight:600;color:var(--rf-dark);font-size:8px}
+.qa-person{display:inline-flex;align-items:center;gap:3px;padding:2px 6px 2px 5px;border-radius:5px;background:var(--rf-white);border:1px solid var(--rf-border);margin:1px 2px 1px 0;white-space:nowrap;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.qa-person.tm-squad{border-left:3px solid var(--rf-mid)}
+.qa-person.tm-core{border-left:3px solid #6366f1}
+.qa-person .qa-name{font-weight:700;font-size:8px;color:var(--rf-dark)}
+.qa-person .qa-fte{font-size:7px;font-weight:600;color:var(--rf-muted);background:var(--rf-gray);padding:0 4px;border-radius:3px}
+.qa-person.tm-squad .qa-name{color:#1a4d12}
+.qa-person.tm-core .qa-name{color:#3730a3}
+.cap-roster{display:flex;flex-direction:column;gap:6px;min-height:0}
+.roster-block{flex:1;min-height:0;display:flex;flex-direction:column;border-radius:10px;overflow:hidden;box-shadow:0 3px 10px rgba(11,67,36,.08)}
+.roster-block.squad{border:2px solid var(--rf-light)}
+.roster-block.core{border:2px solid #a5b4fc}
+.roster-head{padding:7px 8px;text-align:center;line-height:1.2}
+.roster-block.squad .roster-head{background:linear-gradient(135deg,var(--rf-dark),var(--rf-mid));color:#fff}
+.roster-block.core .roster-head{background:linear-gradient(135deg,#312e81,#6366f1);color:#fff}
+.roster-head strong{display:block;font-size:9px;font-weight:800}
+.roster-head span{display:block;font-size:7px;font-weight:600;opacity:.88;margin-top:2px}
+.roster-chips{flex:1;min-height:0;padding:6px;display:flex;flex-wrap:wrap;align-content:flex-start;gap:4px;background:var(--rf-white);overflow:hidden}
+.roster-chip{font-size:7px;font-weight:700;padding:3px 6px;border-radius:999px;white-space:nowrap}
+.roster-block.squad .roster-chip{background:#eef8ea;color:var(--rf-mid);border:1px solid var(--rf-light)}
+.roster-block.core .roster-chip{background:#eef2ff;color:#4338ca;border:1px solid #c7d2fe}
+.roster-foot{font-size:6px;color:var(--rf-muted);text-align:center;line-height:1.3;padding:0 4px}
+.cap-foot{flex-shrink:0;font-size:7px;color:var(--rf-muted);text-align:center;line-height:1.3;padding:2px 8px;background:rgba(255,255,255,.6);border-radius:5px}
 
 /* ── v2: Module onboarding ── */
 .onboard-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
@@ -719,70 +757,74 @@ table.cap-table .fte{font-weight:600;color:var(--rf-muted);font-size:7px}
     <span class="snum">10 / 13</span>
   </div>
   <div class="slide-body tandem-cap">
-    <p class="cap-intro"><strong>Per project:</strong> one <strong>responsible</strong> QA owns delivery · one <strong>tandem</strong> QA (lower FTE) shares context, backup &amp; Core/Squad split · optional <strong>support</strong> QA when planned. FTE = planned capacity share (not calendar %).</p>
-    <div class="cap-legend">
-      <span class="lg-resp">Responsible QA</span>
-      <span class="lg-tandem">Tandem QA</span>
-      <span class="lg-support">Support QA (if planned)</span>
-      <span class="lg-fte">FTE in ( )</span>
+    <div class="cap-top-band">
+      <p class="cap-intro"><strong>Tandem per project:</strong> responsible QA owns delivery · tandem QA (lower FTE) shares context &amp; backup · optional support when planned. <strong>Colour on name = home team</strong> (Squad · Irem · green · Core · Emre · indigo).</p>
+      <div class="cap-legend">
+        <span class="lg-resp">Responsible</span>
+        <span class="lg-tandem">Tandem</span>
+        <span class="lg-support">Support</span>
+        <span class="lg-squad">Squad QA</span>
+        <span class="lg-core">Core QA</span>
+      </div>
     </div>
     <div class="cap-leaders">
-      <div class="lead-chip"><strong>James</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
-      <div class="lead-chip"><strong>Jude</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
-      <div class="lead-chip"><strong>Emre</strong><span class="fte">0.9 FTE</span><span class="role">QA Lead · Core</span></div>
-      <div class="lead-chip"><strong>Irem</strong><span class="fte">1 FTE</span><span class="role">QA Lead · Squad</span></div>
-      <div class="lead-chip"><strong>Fadil</strong><span class="fte">0.1 FTE</span><span class="role">Deputy QA Lead</span></div>
+      <div class="lead-chip lead-deputy"><strong>James</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
+      <div class="lead-chip lead-deputy"><strong>Jude</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
+      <div class="lead-chip lead-core"><strong>Emre</strong><span class="fte">0.9 FTE</span><span class="role">QA Lead · Core</span></div>
+      <div class="lead-chip lead-squad"><strong>Irem</strong><span class="fte">1 FTE</span><span class="role">QA Lead · Squad</span></div>
+      <div class="lead-chip lead-deputy"><strong>Fadil</strong><span class="fte">0.1 FTE</span><span class="role">Deputy QA Lead</span></div>
     </div>
-    <div class="cap-tables">
-      <div class="cap-table-wrap">
-        <h4>ITMS · RFMS · RSB · COM</h4>
+    <div class="cap-main">
+      <div class="cap-table-panel">
+        <div class="cap-table-head">
+          <h4>All projects · TMS capacity 2026</h4>
+          <span>ITMS · RTMS · RFMS · RSB · COM in one view</span>
+        </div>
         <div class="cap-table-scroll">
           <table class="cap-table">
-            <thead><tr><th>Project</th><th>Resp.</th><th>Tandem</th><th>Support</th></tr></thead>
+            <thead><tr><th>Product · Project</th><th>Responsible</th><th>Tandem</th><th>Support</th></tr></thead>
             <tbody>
-            <tr><td>CargoBeamer</td><td>Rhica <span class="fte">(1)</span></td><td>Zyke <span class="fte">(0.5)</span></td><td>Ecem <span class="fte">(0.5)</span></td></tr>
-            <tr><td>Aurizon</td><td>Francis <span class="fte">(0.5)</span></td><td>Zyke <span class="fte">(0.5)</span></td><td>—</td></tr>
-            <tr><td>RIG</td><td>Berkay <span class="fte">(0.5)</span></td><td>Chris <span class="fte">(0.125)</span></td><td>—</td></tr>
-            <tr><td>Lineas</td><td>James <span class="fte">(0.5)</span></td><td>Raemar <span class="fte">(0.25)</span></td><td>—</td></tr>
-            <tr><td>T3M · Open Modal</td><td>Chris <span class="fte">(0.5)</span></td><td>Dale <span class="fte">(0.125)</span></td><td>—</td></tr>
-            <tr><td>ECL / Portshuttle</td><td>Hasan <span class="fte">(0.25)</span></td><td>AJ <span class="fte">(0.1)</span></td><td>—</td></tr>
-            <tr><td>RCO</td><td>Hasan <span class="fte">(0.5)</span></td><td>AJ <span class="fte">(0.1)</span></td><td>—</td></tr>
-            <tr><td>LTG Cargo</td><td>Chris <span class="fte">(0.25)</span></td><td>Dale <span class="fte">(0.125)</span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">CargoBeamer</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Rhica</span><span class="qa-fte">1</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Zyke</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Ecem</span><span class="qa-fte">0.5</span></span></td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">Aurizon</span></td><td><span class="qa-person tm-core"><span class="qa-name">Francis</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Zyke</span><span class="qa-fte">0.5</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">RIG</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Berkay</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">Lineas</span></td><td><span class="qa-person tm-squad"><span class="qa-name">James</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Raemar</span><span class="qa-fte">0.25</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">T3M · Open Modal</span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">ECL / Portshuttle</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Hasan</span><span class="qa-fte">0.25</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">AJ</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">RCO</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Hasan</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">AJ</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">LTG Cargo</span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.25</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">RCG</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Fadil</span><span class="qa-fte">0.75</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">AJ</span><span class="qa-fte">0.8</span></span> <span class="qa-person tm-squad"><span class="qa-name">Hasan</span><span class="qa-fte">0.25</span></span></td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">RIG · BURANDO</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Berkay</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">TrustRail</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Fadil</span><span class="qa-fte">0.15</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">BELog</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Michael</span><span class="qa-fte">0.3</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.075</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">EVR</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Michael</span><span class="qa-fte">0.3</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.075</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">ESA-Raisu</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Michael</span><span class="qa-fte">0.4</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rfms">RFMS</span><span class="proj-name">Fleet</span></td><td><span class="qa-person tm-core"><span class="qa-name">Raemar</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">James</span><span class="qa-fte">0.25</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rsb">RSB</span><span class="proj-name">RSB Overall</span></td><td><span class="qa-person tm-core"><span class="qa-name">Raemar</span><span class="qa-fte">0.25</span></span></td><td>—</td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag com">COM</span><span class="proj-name">Commercial</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.25</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Emre</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
             </tbody>
           </table>
-          <div class="cap-mini">
-            <table class="cap-table">
-              <tbody>
-              <tr><td>Fleet</td><td>Raemar <span class="fte">(0.5)</span></td><td>James <span class="fte">(0.25)</span></td><td>—</td></tr>
-              <tr><td>RSB Overall</td><td>Raemar <span class="fte">(0.25)</span></td><td>—</td><td>—</td></tr>
-              <tr><td>Commercial</td><td>Dale <span class="fte">(0.25)</span></td><td>Emre <span class="fte">(0.1)</span></td><td>—</td></tr>
-              </tbody>
-            </table>
+        </div>
+      </div>
+      <div class="cap-roster">
+        <div class="roster-block squad">
+          <div class="roster-head"><strong>Squad QA</strong><span>Team Irem · customer delivery</span></div>
+          <div class="roster-chips">
+            <span class="roster-chip">AJ</span><span class="roster-chip">Berkay</span><span class="roster-chip">Dale</span><span class="roster-chip">Fadil</span><span class="roster-chip">Hasan</span><span class="roster-chip">James</span><span class="roster-chip">Michael</span><span class="roster-chip">Rhica</span><span class="roster-chip">Zyke</span>
           </div>
         </div>
-      </div>
-      <div class="cap-table-wrap">
-        <h4>RTMS</h4>
-        <div class="cap-table-scroll">
-          <table class="cap-table">
-            <thead><tr><th>Project</th><th>Resp.</th><th>Tandem</th><th>Support</th></tr></thead>
-            <tbody>
-            <tr><td>RCG</td><td>Fadil <span class="fte">(0.75)</span></td><td>Jude <span class="fte">(0.5)</span></td><td>AJ <span class="fte">(0.8)</span> · Hasan <span class="fte">(0.25)</span></td></tr>
-            <tr><td>RIG · BURANDO</td><td>Berkay <span class="fte">(0.5)</span></td><td>Chris <span class="fte">(0.125)</span></td><td>—</td></tr>
-            <tr><td>TrustRail</td><td>Dale <span class="fte">(0.5)</span></td><td>Fadil <span class="fte">(0.15)</span></td><td>—</td></tr>
-            <tr><td>BELog</td><td>Michael <span class="fte">(0.3)</span></td><td>Jude <span class="fte">(0.075)</span></td><td>—</td></tr>
-            <tr><td>EVR</td><td>Michael <span class="fte">(0.3)</span></td><td>Jude <span class="fte">(0.075)</span></td><td>—</td></tr>
-            <tr><td>ESA-Raisu</td><td>Michael <span class="fte">(0.4)</span></td><td>Jude <span class="fte">(0.1)</span></td><td>—</td></tr>
-            </tbody>
-          </table>
+        <div class="roster-block core">
+          <div class="roster-head"><strong>Core QA</strong><span>Team Emre · platform &amp; golden data</span></div>
+          <div class="roster-chips">
+            <span class="roster-chip">Chris</span><span class="roster-chip">Ecem</span><span class="roster-chip">Emre</span><span class="roster-chip">Francis</span><span class="roster-chip">Jude</span><span class="roster-chip">Raemar</span>
+          </div>
         </div>
-        <p class="cap-foot" style="margin-top:4px;text-align:left">Source: <em>Split Core – Squad 2026</em> (TMS tab) · REST / PTM products not shown — add when QA capacity assigned</p>
+        <p class="roster-foot">Ideal tandem pairs mix <strong>Squad + Core</strong> on the same project · rows 25–29 = leadership (not project tandems)</p>
       </div>
     </div>
-    <p class="cap-foot">Overarching roles (rows 25–29) are <strong>leadership &amp; deputies</strong> — not project tandems · they orchestrate squads, core QA, and release prep</p>
+    <p class="cap-foot">Source: <em>Split Core – Squad 2026</em> · FTE = planned capacity share · PTM/REST products follow when assigned</p>
   </div>
   <div class="slide-footer">
-    <span>Named pairs per project · tandem always knows context before handover gaps</span>
+    <span>One table · Squad/Core on every name · ideal tandems mix both teams</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
