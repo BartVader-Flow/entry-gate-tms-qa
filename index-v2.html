@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-12">
+<meta name="deploy-version" content="20260701-v2-13">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -237,23 +237,23 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .pediment-entablature::before{left:8px}
 .pediment-entablature::after{right:8px}
 .pediment-entablature span{font-family:'Cinzel',Georgia,serif;font-weight:800;font-size:clamp(11px,1.2vw,15px);letter-spacing:.14em;text-transform:uppercase;color:var(--rf-dark);line-height:1.2;text-shadow:1px 1px 0 #fff,0 2px 0 rgba(139,105,20,.2)}
-.pillars-colonnade{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;align-items:stretch;padding:0 2px;background:linear-gradient(180deg,rgba(235,227,212,.35) 0%,transparent 16px)}
+.pillars-colonnade{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:stretch;padding:0 2px;background:linear-gradient(180deg,rgba(235,227,212,.35) 0%,transparent 16px)}
 .greek-column{display:flex;flex-direction:column;align-items:center;height:100%;min-height:0}
 .greek-column .col-capital{width:88%;flex-shrink:0;height:12px;margin-top:-1px;background:linear-gradient(180deg,#fff9f0,#e8dcc8);border:2px solid #8b6914;border-bottom:1px solid #6b5420;border-radius:2px 2px 0 0;box-shadow:inset 0 -3px 0 #d4c4a8;position:relative;z-index:1}
 .greek-column .col-capital::before,.greek-column .col-capital::after{content:'';position:absolute;top:-2px;width:8px;height:8px;border:2px solid #8b6914;border-radius:50%;background:#faf6ee}
 .greek-column .col-capital::before{left:4px}
 .greek-column .col-capital::after{right:4px}
-.greek-column .col-shaft{flex:1;width:62%;min-height:118px;max-height:118px;background:repeating-linear-gradient(90deg,#ede5d8 0,#ede5d8 7px,#e0d5c5 7px,#e0d5c5 14px),linear-gradient(180deg,#f2ebe0,#d8cbb8);border-left:2px solid #8b6914;border-right:2px solid #8b6914;position:relative;box-shadow:inset 2px 0 3px rgba(255,255,255,.35),inset -2px 0 3px rgba(0,0,0,.05)}
-.greek-column .col-plaque{position:absolute;inset:7px 3px;display:flex;flex-direction:column;gap:3px;background:rgba(255,255,255,.96);border:2px solid #8b6914;border-radius:5px;padding:6px 7px;box-shadow:1px 2px 0 rgba(139,105,20,.18);overflow:hidden}
+.greek-column .col-shaft{flex:1;width:68%;min-height:0;background:repeating-linear-gradient(90deg,#ede5d8 0,#ede5d8 7px,#e0d5c5 7px,#e0d5c5 14px),linear-gradient(180deg,#f2ebe0,#d8cbb8);border-left:2px solid #8b6914;border-right:2px solid #8b6914;position:relative;box-shadow:inset 2px 0 3px rgba(255,255,255,.35),inset -2px 0 3px rgba(0,0,0,.05)}
+.greek-column .col-plaque{position:absolute;inset:12px 7px;display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,.96);border:2px solid #8b6914;border-radius:6px;padding:14px 16px;box-shadow:1px 2px 0 rgba(139,105,20,.18);overflow:hidden}
 .greek-column.col-first .col-capital{border-color:var(--rf-coral);box-shadow:inset 0 -3px 0 rgba(242,107,67,.3)}
 .greek-column.col-first .col-capital::before,.greek-column.col-first .col-capital::after{border-color:var(--rf-coral)}
 .greek-column.col-first .col-plaque{border-color:var(--rf-coral);background:#fffcfb}
-.greek-column .col-num{font-size:7.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-mid);line-height:1.15;flex-shrink:0}
+.greek-column .col-num{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-mid);line-height:1.2;flex-shrink:0}
 .greek-column.col-first .col-num{color:var(--rf-coral)}
-.greek-column .col-title{font-size:10px;font-weight:800;color:var(--rf-dark);line-height:1.12;flex-shrink:0}
-.greek-column.col-first .col-title{color:var(--rf-coral)}
-.greek-column .col-text{font-size:8.5px;line-height:1.34;color:var(--rf-text);flex:1;min-height:0}
-.greek-column .col-owner{font-size:7.5px;color:var(--rf-muted);line-height:1.28;flex-shrink:0;padding-top:3px;border-top:1px dashed var(--rf-border)}
+.greek-column .col-title{font-size:17px;font-weight:800;color:var(--rf-dark);line-height:1.2;flex-shrink:0;padding-bottom:2px;border-bottom:1px solid rgba(139,105,20,.2)}
+.greek-column.col-first .col-title{color:var(--rf-coral);border-bottom-color:rgba(242,107,67,.25)}
+.greek-column .col-text{font-size:12px;line-height:1.6;color:var(--rf-text);flex:1;min-height:0;display:flex;align-items:center}
+.greek-column .col-owner{font-size:10px;color:var(--rf-muted);line-height:1.42;flex-shrink:0;padding-top:9px;border-top:1px dashed var(--rf-border)}
 .greek-column .col-owner strong{color:var(--rf-dark);font-weight:700}
 .greek-column .col-base{width:92%;flex-shrink:0;height:10px;background:linear-gradient(180deg,#e8dcc8,#b8a888);border:2px solid #8b6914;border-radius:0 0 3px 3px;box-shadow:0 2px 0 rgba(139,105,20,.2)}
 .greek-column.col-first .col-base{border-color:var(--rf-coral)}
@@ -465,7 +465,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
   <div class="cover-nav">
     <span>→ Arrow keys · <a href="preview-v2.html" style="color:rgba(255,255,255,.85)">Latest preview</a> · <a href="index.html" style="color:rgba(255,255,255,.75)">Original deck (v1)</a></span>
-    <span>Build 20260701-v2-12 · badge bottom-right = live version</span>
+    <span>Build 20260701-v2-13 · badge bottom-right = live version</span>
     <span>Bart Gilissen · Rail-Flow QA</span>
   </div>
 </div>
