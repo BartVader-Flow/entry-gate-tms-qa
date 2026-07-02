@@ -1,8 +1,8 @@
 {
-  "deployVersion": "20260701-v2-14",
+  "deployVersion": "20260701-v2-15",
   "branch": "gh-pages",
   "repo": "BartVader-Flow/entry-gate-tms-qa",
   "previewUrl": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html",
-  "updatedAt": "2026-07-02T18:30:00Z",
-  "notes": "Slide 7: doubled the Single Entry Point bar height (pillars now sit on a shorter base, rest of the column layout unchanged); bullet points in that bar now render as rounded bubbles; all four pillar headers (Golden data set, Unit testing, API testing, Playwright automation) now share one uniform font size that fits on a single line."
+  "updatedAt": "2026-07-02T18:40:00Z",
+  "notes": "Reordered the deck for a more logical flow: new order is 1 Lifecycle, 2 Four pillars (was 7), 3 Quality layers (was 12), 4-8 the five responsibility-shift comics (was 2-6), 9 Entry Gate (was 8), 10 QA workflow (was 10), 11 Tandem capacity plan (was 9), 12 Module onboarding (was 11). Slide numbering badges, the cover overview list, and the internal cross-reference to the capacity plan slide were all updated to match."
 }

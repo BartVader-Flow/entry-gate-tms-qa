@@ -20,9 +20,9 @@ Meta `deploy-version`: **20260701-6** · counter on last slide: **10 / 10** (cov
 
 ### v2 (second foliensatz)
 
-Cover + **12 content slides:** slides **1–6** same as v1 · **7** four pillars & strategy hub · **8** Entry Gate · **9** tandem QA capacity plan (from Excel) · **10** QA workflow (internal) · **11** module onboarding + dual-track transition (CargoBeamer & RCG) · **12** quality layers + enforcement.
+Cover + **12 content slides**, reordered for a more logical flow: **1** lifecycle & who owns what (RACI overview) · **2** four pillars & strategy hub · **3** quality layers + enforcement · **4–8** the five responsibility-shift comics · **9** Entry Gate · **10** QA workflow (internal) · **11** tandem QA capacity plan (from Excel) · **12** module onboarding + dual-track transition (CargoBeamer & RCG).
 
-Meta `deploy-version`: **20260701-v2-14** · green badge **LIVE** bottom-right; orange **STALE** = Pages CDN behind GitHub.
+Meta `deploy-version`: **20260701-v2-15** · green badge **LIVE** bottom-right; orange **STALE** = Pages CDN behind GitHub.
 
 ### Deploy / “not updated” troubleshooting
 

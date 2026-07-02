@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-14">
+<meta name="deploy-version" content="20260701-v2-15">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -302,7 +302,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .bottleneck-step span{display:block;font-size:8px;font-weight:600;color:var(--rf-muted);margin-top:2px}
 .bottleneck-arrow{font-size:14px;font-weight:800;color:var(--rf-coral);text-align:center}
 
-/* ── v2: Tandem capacity plan (slide 10) ── */
+/* ── v2: Tandem capacity plan (slide 11) ── */
 .slide-body.tandem-cap{padding:7px 28px 5px;gap:6px;background:linear-gradient(180deg,var(--rf-bg) 0%,#e8f0e8 100%)}
 .cap-top-band{flex-shrink:0;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start}
 .cap-intro{font-size:10px;line-height:1.35;color:var(--rf-muted);margin:0}
@@ -452,19 +452,20 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
     <div class="cover-panel">
       <h3>In this deck (12 slides)</h3>
       <ul>
-        <li><strong>1–6</strong> — Lifecycle · RACI · five responsibility comics</li>
-        <li><strong>7</strong> — Four pillars (test strategy)</li>
-        <li><strong>8</strong> — Entry Gate checklist</li>
-        <li><strong>9</strong> — Tandem QA capacity plan (all projects + leads)</li>
+        <li><strong>1</strong> — Lifecycle &amp; who owns what (RACI overview)</li>
+        <li><strong>2</strong> — Four pillars (test strategy)</li>
+        <li><strong>3</strong> — Quality layers + enforcement</li>
+        <li><strong>4–8</strong> — Five responsibility-shift comics (RACI illustrated)</li>
+        <li><strong>9</strong> — Entry Gate checklist</li>
         <li><strong>10</strong> — QA workflow (internal) · bottleneck rule</li>
-        <li><strong>11</strong> — Module onboarding · dual-track transition (CB · RCG)</li>
-        <li><strong>12</strong> — Quality layers + enforcement</li>
+        <li><strong>11</strong> — Tandem QA capacity plan (all projects + leads)</li>
+        <li><strong>12</strong> — Module onboarding · dual-track transition (CB · RCG)</li>
       </ul>
     </div>
   </div>
   <div class="cover-nav">
     <span>→ Arrow keys · <a href="preview-v2.html" style="color:rgba(255,255,255,.85)">Latest preview</a> · <a href="index.html" style="color:rgba(255,255,255,.75)">Original deck (v1)</a></span>
-    <span>Build 20260701-v2-14 · badge bottom-right = live version</span>
+    <span>Build 20260701-v2-15 · badge bottom-right = live version</span>
     <span>Bart Gilissen · Rail-Flow QA</span>
   </div>
 </div>
@@ -541,111 +542,11 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
 </div>
 
-<!-- Slide 2 — Responsibility shift: Story & AC -->
-<div class="slide">
-  <div class="slide-header shift-header">
-    <div class="head-block">
-      <h2>Responsibility shift</h2>
-      <span class="shift-topic">Story &amp; AC · BA writes · PO accountable</span>
-    </div>
-    <span class="snum">2 / 12</span>
-  </div>
-  <div class="slide-body shift">
-    <div class="shift-frame">
-      <img src="assets/comic-01-story-ac.png?v=20260701-6" alt="Story and AC: BA and PO deliver testable acceptance criteria; QA validates at Entry Gate">
-    </div>
-  </div>
-  <div class="slide-footer">
-    <span>RACI row 1 · Illustrated 1 of 5</span>
-    <span>Rail-Flow · QA</span>
-  </div>
-</div>
-
-<!-- Slide 3 — Responsibility shift: Happy-path -->
-<div class="slide">
-  <div class="slide-header shift-header">
-    <div class="head-block">
-      <h2>Responsibility shift</h2>
-      <span class="shift-topic">Happy-path cases · BA writes · QA consulted</span>
-    </div>
-    <span class="snum">3 / 12</span>
-  </div>
-  <div class="slide-body shift">
-    <div class="shift-frame">
-      <img src="assets/comic-02-happy-path.png?v=20260701-6" alt="Happy-path cases: BA delivers full path; QA consults; Entry Gate validates — target state only">
-    </div>
-  </div>
-  <div class="slide-footer">
-    <span>RACI row 2 · Illustrated 2 of 5</span>
-    <span>Rail-Flow · QA</span>
-  </div>
-</div>
-
-<!-- Slide 4 — Responsibility shift: Unit & API -->
-<div class="slide">
-  <div class="slide-header shift-header">
-    <div class="head-block">
-      <h2>Responsibility shift</h2>
-      <span class="shift-topic">Unit &amp; API tests · Dev / SA writes</span>
-    </div>
-    <span class="snum">4 / 12</span>
-  </div>
-  <div class="slide-body shift">
-    <div class="shift-frame">
-      <img src="assets/comic-03-unit-api.png?v=20260701-6" alt="Unit and API tests: Dev and SA deliver tests with the change; QA verifies coverage at Entry Gate">
-    </div>
-  </div>
-  <div class="slide-footer">
-    <span>RACI row 3 · Illustrated 3 of 5</span>
-    <span>Rail-Flow · QA</span>
-  </div>
-</div>
-
-<!-- Slide 5 — Responsibility shift: Playwright & manual -->
-<div class="slide">
-  <div class="slide-header shift-header">
-    <div class="head-block">
-      <h2>Responsibility shift</h2>
-      <span class="shift-topic">Playwright &amp; manual · QA writes · BA consulted</span>
-    </div>
-    <span class="snum">5 / 12</span>
-  </div>
-  <div class="slide-body shift">
-    <div class="shift-frame">
-      <img src="assets/comic-04-playwright.png?v=20260701-6" alt="Playwright and manual: QA owns execution; BA consulted; PO and SA informed">
-    </div>
-  </div>
-  <div class="slide-footer">
-    <span>RACI row 4 · Illustrated 4 of 5</span>
-    <span>Rail-Flow · QA</span>
-  </div>
-</div>
-
-<!-- Slide 6 — Responsibility shift: Golden Data -->
-<div class="slide">
-  <div class="slide-header shift-header">
-    <div class="head-block">
-      <h2>Responsibility shift</h2>
-      <span class="shift-topic">Golden Data / env · TO / Core provides</span>
-    </div>
-    <span class="snum">6 / 12</span>
-  </div>
-  <div class="slide-body shift">
-    <div class="shift-frame">
-      <img src="assets/comic-05-golden-data.png?v=20260701-6" alt="Golden Data and environment: TO and Core maintain data; story references it; QA validates at Entry Gate">
-    </div>
-  </div>
-  <div class="slide-footer">
-    <span>RACI row 5 · Illustrated 5 of 5</span>
-    <span>Rail-Flow · QA</span>
-  </div>
-</div>
-
-<!-- Slide 7 — Four pillars (Topic 1) -->
+<!-- Slide 2 — Four pillars (Topic 1) -->
 <div class="slide">
   <div class="slide-header">
     <h2>Four pillars of the test strategy</h2>
-    <span class="snum">7 / 12</span>
+    <span class="snum">2 / 12</span>
   </div>
   <div class="slide-body slide-body-pillars">
     <p class="pillars-intro">Golden data first — then unit, API, and Playwright on the same base. Detail pages link from the Confluence strategy hub.</p>
@@ -727,11 +628,205 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
 </div>
 
-<!-- Slide 8 — Entry Gate (all roles) -->
+<!-- Slide 3 — Quality layers -->
+<div class="slide">
+  <div class="slide-header">
+    <h2>Quality layers &amp; shared ownership</h2>
+    <span class="snum">3 / 12</span>
+  </div>
+  <div class="slide-body">
+    <p class="layers-intro"><strong>Quality is a team responsibility.</strong> Four layers in dev/test — then the pipeline runs the same way on every environment. Layers are <strong>enforced</strong>, not optional guidelines.</p>
+
+    <div class="enforce-box"><strong>Process enforcement (Topic 2):</strong> Developer deploy rights on <strong>dev · test · acceptance</strong> are revoked — changes go through <strong>pull request only</strong> (100% compliance). No direct hotfixes on ACP; test-first path. Impacts current release prep but is required to stop mismatch and firefighting.</div>
+
+    <div class="layers-main">
+      <div class="layers-stack">
+        <h3>Four quality layers</h3>
+        <div class="layer-row">
+          <div class="layer-num">Layer 1<br>Dev loop</div>
+          <div class="layer-body">
+            <strong>Developer loop</strong>
+            Unit tests · local Docker · partial dataset · <span class="owner-tag">Owner: <strong>Dev</strong></span>
+          </div>
+        </div>
+        <div class="layer-arrow">↓</div>
+        <div class="layer-row l-pr">
+          <div class="layer-num">Layer 2<br>PR loop</div>
+          <div class="layer-body">
+            <strong>Pull request — enforced</strong>
+            GitHub checks · Tech Guardian · code review · <strong>no direct env deploy</strong> · technical guidelines · <span class="owner-tag">Owner: <strong>Dev</strong></span>
+          </div>
+        </div>
+        <div class="layer-arrow">↓</div>
+        <div class="layer-row">
+          <div class="layer-num">Layer 3<br>Merge</div>
+          <div class="layer-body">
+            <strong>Merge to main — system architect</strong>
+            SonarQube · company guidelines · merge to main · <span class="owner-tag">Owner: <strong>SA</strong></span>
+          </div>
+        </div>
+        <div class="layer-arrow">↓</div>
+        <div class="layer-row">
+          <div class="layer-num">Layer 4<br>Pipeline</div>
+          <div class="layer-body">
+            <strong>CI/CD pipeline</strong>
+            Unit + API + Playwright + Golden Data · <span class="owner-tag">Owner: <strong>Dev · TO · Squad QA · Core QA</strong></span>
+          </div>
+        </div>
+        <div class="layer-arrow">↓</div>
+        <div class="layer-row l-env">
+          <div class="layer-num">After L4</div>
+          <div class="layer-body">
+            <strong>Repeat on all environments</strong>
+            Pipeline environment-independent · re-run on acceptance, staging, production
+          </div>
+        </div>
+        <div class="layer-arrow">↓</div>
+        <div class="layer-row l-outcome">
+          <div class="layer-num">Outcome</div>
+          <div class="layer-body">
+            <strong>Module health</strong>
+            e.g. “Module X is 90% / 100% healthy” — PO defines expected behaviour · <span class="owner-tag">Accountable: <strong>PO</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="escalation-panel">
+        <h3>When standard QA is not enough</h3>
+        <p class="sub">After story-level QA — who acts next</p>
+        <div class="escalation-list">
+          <div class="esc-item">
+            <div><strong>Recurring test / pipeline failures</strong><span>Core QA drives root-cause · Dev / SA fix at source layer</span></div>
+          </div>
+          <div class="esc-item coral">
+            <div><strong>High-impact defects</strong><span>QA escalates with severity &amp; business impact</span></div>
+          </div>
+          <div class="esc-item">
+            <div><strong>Unclear “healthy” module behaviour</strong><span>PO defines normal behaviour · BA / spec updated</span></div>
+          </div>
+          <div class="esc-item">
+            <div><strong>Data / environment gaps</strong><span>TO + Core QA on Golden Data · Dev on deploy / config</span></div>
+          </div>
+          <div class="esc-item">
+            <div><strong>Business logic at scale</strong><span>Prefer unit &amp; API tests over repeated Playwright runs</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="layers-foot"><strong>Layer 2:</strong> PR-only deploy · <strong>Layer 3:</strong> company guidelines · <strong>Layer 4:</strong> unit + API + Playwright + golden data · <strong>Feasibility:</strong> visibility test → acceptance → prod (release tooling). QA governs quality gates at handover; layers govern engineering.</p>
+  </div>
+  <div class="slide-footer">
+    <span>Shared quality · enforced layers · aligns with Entry Gate &amp; four pillars</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 4 — Responsibility shift: Story & AC -->
+<div class="slide">
+  <div class="slide-header shift-header">
+    <div class="head-block">
+      <h2>Responsibility shift</h2>
+      <span class="shift-topic">Story &amp; AC · BA writes · PO accountable</span>
+    </div>
+    <span class="snum">4 / 12</span>
+  </div>
+  <div class="slide-body shift">
+    <div class="shift-frame">
+      <img src="assets/comic-01-story-ac.png?v=20260701-6" alt="Story and AC: BA and PO deliver testable acceptance criteria; QA validates at Entry Gate">
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>RACI row 1 · Illustrated 1 of 5</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 5 — Responsibility shift: Happy-path -->
+<div class="slide">
+  <div class="slide-header shift-header">
+    <div class="head-block">
+      <h2>Responsibility shift</h2>
+      <span class="shift-topic">Happy-path cases · BA writes · QA consulted</span>
+    </div>
+    <span class="snum">5 / 12</span>
+  </div>
+  <div class="slide-body shift">
+    <div class="shift-frame">
+      <img src="assets/comic-02-happy-path.png?v=20260701-6" alt="Happy-path cases: BA delivers full path; QA consults; Entry Gate validates — target state only">
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>RACI row 2 · Illustrated 2 of 5</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 6 — Responsibility shift: Unit & API -->
+<div class="slide">
+  <div class="slide-header shift-header">
+    <div class="head-block">
+      <h2>Responsibility shift</h2>
+      <span class="shift-topic">Unit &amp; API tests · Dev / SA writes</span>
+    </div>
+    <span class="snum">6 / 12</span>
+  </div>
+  <div class="slide-body shift">
+    <div class="shift-frame">
+      <img src="assets/comic-03-unit-api.png?v=20260701-6" alt="Unit and API tests: Dev and SA deliver tests with the change; QA verifies coverage at Entry Gate">
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>RACI row 3 · Illustrated 3 of 5</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 7 — Responsibility shift: Playwright & manual -->
+<div class="slide">
+  <div class="slide-header shift-header">
+    <div class="head-block">
+      <h2>Responsibility shift</h2>
+      <span class="shift-topic">Playwright &amp; manual · QA writes · BA consulted</span>
+    </div>
+    <span class="snum">7 / 12</span>
+  </div>
+  <div class="slide-body shift">
+    <div class="shift-frame">
+      <img src="assets/comic-04-playwright.png?v=20260701-6" alt="Playwright and manual: QA owns execution; BA consulted; PO and SA informed">
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>RACI row 4 · Illustrated 4 of 5</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 8 — Responsibility shift: Golden Data -->
+<div class="slide">
+  <div class="slide-header shift-header">
+    <div class="head-block">
+      <h2>Responsibility shift</h2>
+      <span class="shift-topic">Golden Data / env · TO / Core provides</span>
+    </div>
+    <span class="snum">8 / 12</span>
+  </div>
+  <div class="slide-body shift">
+    <div class="shift-frame">
+      <img src="assets/comic-05-golden-data.png?v=20260701-6" alt="Golden Data and environment: TO and Core maintain data; story references it; QA validates at Entry Gate">
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>RACI row 5 · Illustrated 5 of 5</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 9 — Entry Gate (all roles) -->
 <div class="slide">
   <div class="slide-header">
     <h2>The Entry Gate</h2>
-    <span class="snum">8 / 12</span>
+    <span class="snum">9 / 12</span>
   </div>
   <div class="slide-body">
     <div class="s3-rule">
@@ -788,86 +883,6 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
 </div>
 
-<!-- Slide 9 — Tandem QA capacity plan -->
-<div class="slide">
-  <div class="slide-header">
-    <h2>Tandem QA — capacity plan 2026</h2>
-    <span class="snum">9 / 12</span>
-  </div>
-  <div class="slide-body tandem-cap">
-    <div class="cap-top-band">
-      <p class="cap-intro"><strong>Tandem per project:</strong> responsible QA owns delivery · tandem QA (lower FTE) shares context &amp; backup · optional support when planned. <strong>Colour on name = home team</strong> (Squad · Irem · green · Core · Emre · indigo).</p>
-      <div class="cap-legend">
-        <span class="lg-resp">Responsible</span>
-        <span class="lg-tandem">Tandem</span>
-        <span class="lg-support">Support</span>
-        <span class="lg-squad">Squad QA</span>
-        <span class="lg-core">Core QA</span>
-      </div>
-    </div>
-    <div class="cap-leaders">
-      <div class="lead-chip lead-squad"><strong>Irem</strong><span class="fte">1 FTE</span><span class="role">QA Lead · Squad</span></div>
-      <div class="lead-chip lead-core"><strong>Emre</strong><span class="fte">0.9 FTE</span><span class="role">QA Lead · Core</span></div>
-      <div class="lead-chip lead-senior"><strong>Ronnel</strong><span class="fte">1 FTE</span><span class="role">Senior QA</span></div>
-      <div class="lead-chip lead-deputy"><strong>James</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
-      <div class="lead-chip lead-deputy"><strong>Jude</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
-      <div class="lead-chip lead-deputy"><strong>Fadil</strong><span class="fte">0.1 FTE</span><span class="role">Deputy QA Lead</span></div>
-    </div>
-    <div class="cap-main">
-      <div class="cap-table-panel">
-        <div class="cap-table-head">
-          <h4>All projects · TMS capacity 2026</h4>
-          <span>ITMS · RTMS · RFMS · RSB · COM in one view</span>
-        </div>
-        <div class="cap-table-scroll">
-          <table class="cap-table">
-            <thead><tr><th>Product · Project</th><th>Responsible</th><th>Tandem</th><th>Support</th></tr></thead>
-            <tbody>
-            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">CargoBeamer</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Rhica</span><span class="qa-fte">1</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Zyke</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Ecem</span><span class="qa-fte">0.5</span></span></td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">Aurizon</span></td><td><span class="qa-person tm-core"><span class="qa-name">Francis</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Zyke</span><span class="qa-fte">0.5</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">RIG</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Berkay</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">Lineas</span></td><td><span class="qa-person tm-squad"><span class="qa-name">James</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Raemar</span><span class="qa-fte">0.25</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">T3M · Open Modal</span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">ECL / Portshuttle</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Hasan</span><span class="qa-fte">0.25</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">AJ</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">RCO</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Hasan</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">AJ</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">LTG Cargo</span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.25</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">RCG</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Fadil</span><span class="qa-fte">0.75</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">AJ</span><span class="qa-fte">0.8</span></span> <span class="qa-person tm-squad"><span class="qa-name">Hasan</span><span class="qa-fte">0.25</span></span></td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">RIG · BURANDO</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Berkay</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">TrustRail</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Fadil</span><span class="qa-fte">0.15</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">BELog</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Michael</span><span class="qa-fte">0.3</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.075</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">EVR</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Michael</span><span class="qa-fte">0.3</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.075</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">ESA-Raisu</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Michael</span><span class="qa-fte">0.4</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag rfms">RFMS</span><span class="proj-name">Fleet</span></td><td><span class="qa-person tm-core"><span class="qa-name">Raemar</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">James</span><span class="qa-fte">0.25</span></span></td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag rsb">RSB</span><span class="proj-name">RSB Overall</span></td><td><span class="qa-person tm-core"><span class="qa-name">Raemar</span><span class="qa-fte">0.25</span></span></td><td>—</td><td>—</td></tr>
-            <tr><td class="proj-cell"><span class="prod-tag com">COM</span><span class="proj-name">Commercial</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.25</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Emre</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="cap-roster">
-        <div class="roster-block squad">
-          <div class="roster-head"><strong>Squad QA</strong><span>Team Irem · customer delivery</span></div>
-          <div class="roster-chips">
-            <span class="roster-chip">AJ</span><span class="roster-chip">Berkay</span><span class="roster-chip">Dale</span><span class="roster-chip">Fadil</span><span class="roster-chip">Hasan</span><span class="roster-chip">Irem</span><span class="roster-chip">James</span><span class="roster-chip">Michael</span><span class="roster-chip">Rhica</span><span class="roster-chip">Zyke</span>
-          </div>
-        </div>
-        <div class="roster-block core">
-          <div class="roster-head"><strong>Core QA</strong><span>Team Emre · platform &amp; golden data</span></div>
-          <div class="roster-chips">
-            <span class="roster-chip">Chris</span><span class="roster-chip">Ecem</span><span class="roster-chip">Emre</span><span class="roster-chip">Francis</span><span class="roster-chip">Jude</span><span class="roster-chip">Raemar</span>
-          </div>
-        </div>
-        <p class="roster-foot">Ideal tandem pairs mix <strong>Squad + Core</strong> on the same project · leadership band above = orchestration (not project tandems)</p>
-      </div>
-    </div>
-    <p class="cap-foot">Source: <em>Split Core – Squad 2026</em> · FTE = planned capacity share · PTM/REST products follow when assigned</p>
-  </div>
-  <div class="slide-footer">
-    <span>One table · Squad/Core on every name · ideal tandems mix both teams</span>
-    <span>Rail-Flow · QA</span>
-  </div>
-</div>
-
 <!-- Slide 10 — QA workflow (internal) -->
 <div class="slide">
   <div class="slide-header">
@@ -875,7 +890,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
     <span class="snum">10 / 12</span>
   </div>
   <div class="slide-body">
-    <p class="workflow-intro"><strong>After QA accepts the story</strong> — execution follows the phases below. <strong>Who</strong> runs it: see tandem capacity plan (slide 9). Leads orchestrate: Irem (Squad) · Emre (Core).</p>
+    <p class="workflow-intro"><strong>After QA accepts the story</strong> — execution follows the phases below. <strong>Who</strong> runs it: see tandem capacity plan (slide 11). Leads orchestrate: Irem (Squad) · Emre (Core).</p>
 
     <div class="bottleneck-bar">
       <div class="bottleneck-step">1 · Flag<span>Blocker or inefficiency</span></div>
@@ -976,11 +991,91 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
 </div>
 
-<!-- Slide 11 — Module onboarding + dual-track transition (Topic 8) -->
+<!-- Slide 11 — Tandem QA capacity plan -->
+<div class="slide">
+  <div class="slide-header">
+    <h2>Tandem QA — capacity plan 2026</h2>
+    <span class="snum">11 / 12</span>
+  </div>
+  <div class="slide-body tandem-cap">
+    <div class="cap-top-band">
+      <p class="cap-intro"><strong>Tandem per project:</strong> responsible QA owns delivery · tandem QA (lower FTE) shares context &amp; backup · optional support when planned. <strong>Colour on name = home team</strong> (Squad · Irem · green · Core · Emre · indigo).</p>
+      <div class="cap-legend">
+        <span class="lg-resp">Responsible</span>
+        <span class="lg-tandem">Tandem</span>
+        <span class="lg-support">Support</span>
+        <span class="lg-squad">Squad QA</span>
+        <span class="lg-core">Core QA</span>
+      </div>
+    </div>
+    <div class="cap-leaders">
+      <div class="lead-chip lead-squad"><strong>Irem</strong><span class="fte">1 FTE</span><span class="role">QA Lead · Squad</span></div>
+      <div class="lead-chip lead-core"><strong>Emre</strong><span class="fte">0.9 FTE</span><span class="role">QA Lead · Core</span></div>
+      <div class="lead-chip lead-senior"><strong>Ronnel</strong><span class="fte">1 FTE</span><span class="role">Senior QA</span></div>
+      <div class="lead-chip lead-deputy"><strong>James</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
+      <div class="lead-chip lead-deputy"><strong>Jude</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
+      <div class="lead-chip lead-deputy"><strong>Fadil</strong><span class="fte">0.1 FTE</span><span class="role">Deputy QA Lead</span></div>
+    </div>
+    <div class="cap-main">
+      <div class="cap-table-panel">
+        <div class="cap-table-head">
+          <h4>All projects · TMS capacity 2026</h4>
+          <span>ITMS · RTMS · RFMS · RSB · COM in one view</span>
+        </div>
+        <div class="cap-table-scroll">
+          <table class="cap-table">
+            <thead><tr><th>Product · Project</th><th>Responsible</th><th>Tandem</th><th>Support</th></tr></thead>
+            <tbody>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">CargoBeamer</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Rhica</span><span class="qa-fte">1</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Zyke</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Ecem</span><span class="qa-fte">0.5</span></span></td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">Aurizon</span></td><td><span class="qa-person tm-core"><span class="qa-name">Francis</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Zyke</span><span class="qa-fte">0.5</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">RIG</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Berkay</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">Lineas</span></td><td><span class="qa-person tm-squad"><span class="qa-name">James</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Raemar</span><span class="qa-fte">0.25</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">T3M · Open Modal</span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">ECL / Portshuttle</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Hasan</span><span class="qa-fte">0.25</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">AJ</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">RCO</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Hasan</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">AJ</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag itms">ITMS</span><span class="proj-name">LTG Cargo</span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.25</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">RCG</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Fadil</span><span class="qa-fte">0.75</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">AJ</span><span class="qa-fte">0.8</span></span> <span class="qa-person tm-squad"><span class="qa-name">Hasan</span><span class="qa-fte">0.25</span></span></td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">RIG · BURANDO</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Berkay</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Chris</span><span class="qa-fte">0.125</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">TrustRail</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">Fadil</span><span class="qa-fte">0.15</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">BELog</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Michael</span><span class="qa-fte">0.3</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.075</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">EVR</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Michael</span><span class="qa-fte">0.3</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.075</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rtms">RTMS</span><span class="proj-name">ESA-Raisu</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Michael</span><span class="qa-fte">0.4</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Jude</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rfms">RFMS</span><span class="proj-name">Fleet</span></td><td><span class="qa-person tm-core"><span class="qa-name">Raemar</span><span class="qa-fte">0.5</span></span></td><td><span class="qa-person tm-squad"><span class="qa-name">James</span><span class="qa-fte">0.25</span></span></td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag rsb">RSB</span><span class="proj-name">RSB Overall</span></td><td><span class="qa-person tm-core"><span class="qa-name">Raemar</span><span class="qa-fte">0.25</span></span></td><td>—</td><td>—</td></tr>
+            <tr><td class="proj-cell"><span class="prod-tag com">COM</span><span class="proj-name">Commercial</span></td><td><span class="qa-person tm-squad"><span class="qa-name">Dale</span><span class="qa-fte">0.25</span></span></td><td><span class="qa-person tm-core"><span class="qa-name">Emre</span><span class="qa-fte">0.1</span></span></td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="cap-roster">
+        <div class="roster-block squad">
+          <div class="roster-head"><strong>Squad QA</strong><span>Team Irem · customer delivery</span></div>
+          <div class="roster-chips">
+            <span class="roster-chip">AJ</span><span class="roster-chip">Berkay</span><span class="roster-chip">Dale</span><span class="roster-chip">Fadil</span><span class="roster-chip">Hasan</span><span class="roster-chip">Irem</span><span class="roster-chip">James</span><span class="roster-chip">Michael</span><span class="roster-chip">Rhica</span><span class="roster-chip">Zyke</span>
+          </div>
+        </div>
+        <div class="roster-block core">
+          <div class="roster-head"><strong>Core QA</strong><span>Team Emre · platform &amp; golden data</span></div>
+          <div class="roster-chips">
+            <span class="roster-chip">Chris</span><span class="roster-chip">Ecem</span><span class="roster-chip">Emre</span><span class="roster-chip">Francis</span><span class="roster-chip">Jude</span><span class="roster-chip">Raemar</span>
+          </div>
+        </div>
+        <p class="roster-foot">Ideal tandem pairs mix <strong>Squad + Core</strong> on the same project · leadership band above = orchestration (not project tandems)</p>
+      </div>
+    </div>
+    <p class="cap-foot">Source: <em>Split Core – Squad 2026</em> · FTE = planned capacity share · PTM/REST products follow when assigned</p>
+  </div>
+  <div class="slide-footer">
+    <span>One table · Squad/Core on every name · ideal tandems mix both teams</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 12 — Module onboarding + dual-track transition (Topic 8) -->
 <div class="slide">
   <div class="slide-header">
     <h2>Module onboarding — CargoBeamer &amp; RCG</h2>
-    <span class="snum">11 / 12</span>
+    <span class="snum">12 / 12</span>
   </div>
   <div class="slide-body slide-body-onboard">
     <p class="onboard-intro"><strong>Concept deck ≠ rollout plan.</strong> Each hot module gets a <strong>draft playbook</strong> (Confluence) with actions, owners, and commitments — not only slides.</p>
@@ -1056,100 +1151,6 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
   <div class="slide-footer">
     <span>Dual track while onboarding hot modules · separate Confluence playbooks · this slide is the map</span>
-    <span>Rail-Flow · QA</span>
-  </div>
-</div>
-
-<!-- Slide 12 — Quality layers -->
-<div class="slide">
-  <div class="slide-header">
-    <h2>Quality layers &amp; shared ownership</h2>
-    <span class="snum">12 / 12</span>
-  </div>
-  <div class="slide-body">
-    <p class="layers-intro"><strong>Quality is a team responsibility.</strong> Four layers in dev/test — then the pipeline runs the same way on every environment. Layers are <strong>enforced</strong>, not optional guidelines.</p>
-
-    <div class="enforce-box"><strong>Process enforcement (Topic 2):</strong> Developer deploy rights on <strong>dev · test · acceptance</strong> are revoked — changes go through <strong>pull request only</strong> (100% compliance). No direct hotfixes on ACP; test-first path. Impacts current release prep but is required to stop mismatch and firefighting.</div>
-
-    <div class="layers-main">
-      <div class="layers-stack">
-        <h3>Four quality layers</h3>
-        <div class="layer-row">
-          <div class="layer-num">Layer 1<br>Dev loop</div>
-          <div class="layer-body">
-            <strong>Developer loop</strong>
-            Unit tests · local Docker · partial dataset · <span class="owner-tag">Owner: <strong>Dev</strong></span>
-          </div>
-        </div>
-        <div class="layer-arrow">↓</div>
-        <div class="layer-row l-pr">
-          <div class="layer-num">Layer 2<br>PR loop</div>
-          <div class="layer-body">
-            <strong>Pull request — enforced</strong>
-            GitHub checks · Tech Guardian · code review · <strong>no direct env deploy</strong> · technical guidelines · <span class="owner-tag">Owner: <strong>Dev</strong></span>
-          </div>
-        </div>
-        <div class="layer-arrow">↓</div>
-        <div class="layer-row">
-          <div class="layer-num">Layer 3<br>Merge</div>
-          <div class="layer-body">
-            <strong>Merge to main — system architect</strong>
-            SonarQube · company guidelines · merge to main · <span class="owner-tag">Owner: <strong>SA</strong></span>
-          </div>
-        </div>
-        <div class="layer-arrow">↓</div>
-        <div class="layer-row">
-          <div class="layer-num">Layer 4<br>Pipeline</div>
-          <div class="layer-body">
-            <strong>CI/CD pipeline</strong>
-            Unit + API + Playwright + Golden Data · <span class="owner-tag">Owner: <strong>Dev · TO · Squad QA · Core QA</strong></span>
-          </div>
-        </div>
-        <div class="layer-arrow">↓</div>
-        <div class="layer-row l-env">
-          <div class="layer-num">After L4</div>
-          <div class="layer-body">
-            <strong>Repeat on all environments</strong>
-            Pipeline environment-independent · re-run on acceptance, staging, production
-          </div>
-        </div>
-        <div class="layer-arrow">↓</div>
-        <div class="layer-row l-outcome">
-          <div class="layer-num">Outcome</div>
-          <div class="layer-body">
-            <strong>Module health</strong>
-            e.g. “Module X is 90% / 100% healthy” — PO defines expected behaviour · <span class="owner-tag">Accountable: <strong>PO</strong></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="escalation-panel">
-        <h3>When standard QA is not enough</h3>
-        <p class="sub">After story-level QA — who acts next</p>
-        <div class="escalation-list">
-          <div class="esc-item">
-            <div><strong>Recurring test / pipeline failures</strong><span>Core QA drives root-cause · Dev / SA fix at source layer</span></div>
-          </div>
-          <div class="esc-item coral">
-            <div><strong>High-impact defects</strong><span>QA escalates with severity &amp; business impact</span></div>
-          </div>
-          <div class="esc-item">
-            <div><strong>Unclear “healthy” module behaviour</strong><span>PO defines normal behaviour · BA / spec updated</span></div>
-          </div>
-          <div class="esc-item">
-            <div><strong>Data / environment gaps</strong><span>TO + Core QA on Golden Data · Dev on deploy / config</span></div>
-          </div>
-          <div class="esc-item">
-            <div><strong>Business logic at scale</strong><span>Prefer unit &amp; API tests over repeated Playwright runs</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <p class="layers-foot"><strong>Layer 2:</strong> PR-only deploy · <strong>Layer 3:</strong> company guidelines · <strong>Layer 4:</strong> unit + API + Playwright + golden data · <strong>Feasibility:</strong> visibility test → acceptance → prod (release tooling). QA governs quality gates at handover; layers govern engineering.</p>
-  </div>
-  <div class="slide-footer">
-    <span>Shared quality · enforced layers · aligns with Entry Gate &amp; four pillars</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
