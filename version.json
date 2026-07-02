@@ -1,6 +1,7 @@
 {
-  "deployVersion": "20260701-v2-10",
+  "deployVersion": "20260701-v2-11",
   "branch": "gh-pages",
   "repo": "BartVader-Flow/entry-gate-tms-qa",
-  "updatedAt": "2026-07-02T15:25:00Z"
+  "previewUrl": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html",
+  "updatedAt": "2026-07-02T15:30:00Z"
 }

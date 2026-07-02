@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-10">
+<meta name="deploy-version" content="20260701-v2-11">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -175,6 +175,16 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .slide-body.qa-workflow-dense .qa-phases{gap:6px}
 .slide-body.qa-workflow-dense .qa-transition{padding:6px 10px;font-size:9px}
 .slide-body.qa-workflow-dense .qa-leads-foot{font-size:9px;color:var(--rf-muted);text-align:center;line-height:1.35}
+.slide-body.qa-workflow-dense .transition-intro{font-size:9px;line-height:1.3;margin:0;padding:0 4px}
+.slide-body.qa-workflow-dense .transition-main{flex-shrink:0;gap:6px;min-height:0}
+.slide-body.qa-workflow-dense .transition-track{padding:7px 9px;gap:3px}
+.slide-body.qa-workflow-dense .transition-track h3{font-size:11px}
+.slide-body.qa-workflow-dense .transition-track ul{font-size:8.5px;line-height:1.28}
+.slide-body.qa-workflow-dense .transition-track li{padding:1px 0 1px 10px}
+.slide-body.qa-workflow-dense .transition-bridge{min-width:52px}
+.slide-body.qa-workflow-dense .transition-bridge .tb-icon{font-size:16px}
+.slide-body.qa-workflow-dense .transition-bridge .tb-label{font-size:7px}
+.slide-body.qa-workflow-dense .transition-note{font-size:8px;line-height:1.3;padding:5px 10px;margin:0}
 .qa-lead-card{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:7px;padding:8px 10px;display:flex;flex-direction:column;gap:3px;min-height:0}
 .qa-lead-card.squad-lead{border-left:4px solid var(--rf-mid)}
 .qa-lead-card.core-lead{border-left:4px solid var(--rf-dark)}
@@ -425,21 +435,21 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
       </ul>
     </div>
     <div class="cover-panel">
-      <h3>In this deck (13 slides)</h3>
+      <h3>In this deck (12 slides)</h3>
       <ul>
         <li><strong>1–6</strong> — Lifecycle · RACI · five responsibility comics</li>
-        <li><strong>7–8</strong> — Four pillars · transition (no big bang)</li>
-        <li><strong>9</strong> — Entry Gate checklist</li>
-        <li><strong>10</strong> — Tandem QA capacity plan (all projects + leads)</li>
-        <li><strong>11</strong> — QA workflow · bottleneck rule</li>
-        <li><strong>12</strong> — Module onboarding (CB · RCG)</li>
-        <li><strong>13</strong> — Quality layers + enforcement</li>
+        <li><strong>7</strong> — Four pillars (test strategy)</li>
+        <li><strong>8</strong> — Entry Gate checklist</li>
+        <li><strong>9</strong> — Tandem QA capacity plan (all projects + leads)</li>
+        <li><strong>10</strong> — QA workflow · dual-track transition · bottleneck rule</li>
+        <li><strong>11</strong> — Module onboarding (CB · RCG)</li>
+        <li><strong>12</strong> — Quality layers + enforcement</li>
       </ul>
     </div>
   </div>
   <div class="cover-nav">
-    <span>→ Arrow keys · <a href="index.html" style="color:rgba(255,255,255,.75)">Original deck (v1)</a></span>
-    <span>Build 20260701-v2-10 · badge bottom-right = live version</span>
+    <span>→ Arrow keys · <a href="preview-v2.html" style="color:rgba(255,255,255,.85)">Latest preview</a> · <a href="index.html" style="color:rgba(255,255,255,.75)">Original deck (v1)</a></span>
+    <span>Build 20260701-v2-11 · badge bottom-right = live version</span>
     <span>Bart Gilissen · Rail-Flow QA</span>
   </div>
 </div>
@@ -448,7 +458,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header">
     <h2>Lifecycle &amp; who owns what</h2>
-    <span class="snum">1 / 13</span>
+    <span class="snum">1 / 12</span>
   </div>
   <div class="slide-body">
     <div class="eg1-top">
@@ -508,7 +518,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
         </div>
       </div>
     </div>
-    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–6.</strong> Test strategy (7) · transition (8) · tandem plan (10).</div>
+    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–6.</strong> Test strategy (7) · tandem plan (9) · workflow + transition (10).</div>
   </div>
   <div class="slide-footer">
     <span>One Entry Gate at handover · ongoing health via quality layers</span>
@@ -523,7 +533,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Story &amp; AC · BA writes · PO accountable</span>
     </div>
-    <span class="snum">2 / 13</span>
+    <span class="snum">2 / 12</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -543,7 +553,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Happy-path cases · BA writes · QA consulted</span>
     </div>
-    <span class="snum">3 / 13</span>
+    <span class="snum">3 / 12</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -563,7 +573,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Unit &amp; API tests · Dev / SA writes</span>
     </div>
-    <span class="snum">4 / 13</span>
+    <span class="snum">4 / 12</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -583,7 +593,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Playwright &amp; manual · QA writes · BA consulted</span>
     </div>
-    <span class="snum">5 / 13</span>
+    <span class="snum">5 / 12</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -603,7 +613,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Golden Data / env · TO / Core provides</span>
     </div>
-    <span class="snum">6 / 13</span>
+    <span class="snum">6 / 12</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -620,7 +630,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header">
     <h2>Four pillars of the test strategy</h2>
-    <span class="snum">7 / 13</span>
+    <span class="snum">7 / 12</span>
   </div>
   <div class="slide-body slide-body-pillars">
     <p class="pillars-intro">Golden data first — then unit, API, and Playwright on the same base. Detail pages link from the Confluence strategy hub.</p>
@@ -702,53 +712,11 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
 </div>
 
-<!-- Slide 8 — Transition dual track (Topic 3) -->
-<div class="slide">
-  <div class="slide-header">
-    <h2>Transition — two tracks in parallel</h2>
-    <span class="snum">8 / 13</span>
-  </div>
-  <div class="slide-body">
-    <p class="transition-intro">We <strong>cannot change the world in one day</strong>. Current release keeps legacy steps; we improve the next cycle incrementally — <strong>no big bang</strong>.</p>
-    <div class="transition-main">
-      <div class="transition-track now">
-        <span class="track-label">Track A · now</span>
-        <h3>Current release cycle</h3>
-        <ul>
-          <li>Follow <strong>existing</strong> release &amp; feasibility process (e.g. upcoming July release)</li>
-          <li>SaaS / legacy paths where still required</li>
-          <li>Prepare environments as today — expect friction during cutover</li>
-          <li>QA still applies Entry Gate where team is ready</li>
-        </ul>
-      </div>
-      <div class="transition-bridge">
-        <span class="tb-icon">⇄</span>
-        <span class="tb-label">Parallel<br>not either/or</span>
-      </div>
-      <div class="transition-track next">
-        <span class="track-label">Track B · next cycles</span>
-        <h3>New framework (incremental)</h3>
-        <ul>
-          <li>Golden data first · then Playwright on same base</li>
-          <li>Dev alignment meetings · unit tests before handover</li>
-          <li>Entry Gate + hard reject becomes normal practice</li>
-          <li>Early wins on <strong>CargoBeamer</strong> &amp; <strong>RCG</strong> — reuse on other modules</li>
-        </ul>
-      </div>
-    </div>
-    <div class="transition-note"><strong>Priority modules:</strong> CargoBeamer &amp; RCG first — <em>seeing is believing</em> for stakeholders. Even partial framework use in Track A can save ~30% effort this cycle.</div>
-  </div>
-  <div class="slide-footer">
-    <span>Buy time on old process · build strength on new process · same sprint</span>
-    <span>Rail-Flow · QA</span>
-  </div>
-</div>
-
-<!-- Slide 9 — Entry Gate (all roles) -->
+<!-- Slide 8 — Entry Gate (all roles) -->
 <div class="slide">
   <div class="slide-header">
     <h2>The Entry Gate</h2>
-    <span class="snum">9 / 13</span>
+    <span class="snum">8 / 12</span>
   </div>
   <div class="slide-body">
     <div class="s3-rule">
@@ -805,11 +773,11 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
 </div>
 
-<!-- Slide 10 — Tandem QA capacity plan -->
+<!-- Slide 9 — Tandem QA capacity plan -->
 <div class="slide">
   <div class="slide-header">
     <h2>Tandem QA — capacity plan 2026</h2>
-    <span class="snum">10 / 13</span>
+    <span class="snum">9 / 12</span>
   </div>
   <div class="slide-body tandem-cap">
     <div class="cap-top-band">
@@ -885,14 +853,41 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
 </div>
 
-<!-- Slide 11 — QA workflow (internal) -->
+<!-- Slide 10 — QA workflow + transition (internal) -->
 <div class="slide">
   <div class="slide-header">
-    <h2>QA workflow (internal)</h2>
-    <span class="snum">11 / 13</span>
+    <h2>QA workflow &amp; dual-track transition</h2>
+    <span class="snum">10 / 12</span>
   </div>
   <div class="slide-body qa-workflow-dense">
-    <p class="workflow-intro"><strong>After QA accepts the story</strong> — execution follows the phases below. <strong>Who</strong> runs it: see tandem capacity plan (slide 10). Leads orchestrate: Irem (Squad) · Emre (Core).</p>
+    <p class="workflow-intro"><strong>After QA accepts the story</strong> — execution follows the phases below. <strong>Who</strong> runs it: tandem capacity plan (slide 9). Leads: Irem (Squad) · Emre (Core).</p>
+
+    <p class="transition-intro">We <strong>cannot change the world in one day</strong> — <strong>two tracks in parallel</strong>, not either/or: current release keeps legacy steps; next cycles improve incrementally (<strong>no big bang</strong>).</p>
+    <div class="transition-main">
+      <div class="transition-track now">
+        <span class="track-label">Track A · now</span>
+        <h3>Current release cycle</h3>
+        <ul>
+          <li>Follow <strong>existing</strong> release &amp; feasibility process</li>
+          <li>SaaS / legacy paths where still required</li>
+          <li>QA applies Entry Gate where team is ready</li>
+        </ul>
+      </div>
+      <div class="transition-bridge">
+        <span class="tb-icon">⇄</span>
+        <span class="tb-label">Parallel</span>
+      </div>
+      <div class="transition-track next">
+        <span class="track-label">Track B · next cycles</span>
+        <h3>New framework (incremental)</h3>
+        <ul>
+          <li>Golden data first · Playwright on same base</li>
+          <li>Dev alignment · unit tests before handover</li>
+          <li>Entry Gate + hard reject becomes normal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="transition-note"><strong>Priority modules:</strong> CargoBeamer &amp; RCG first — partial framework in Track A can still save ~30% this cycle.</div>
 
     <div class="bottleneck-bar">
       <div class="bottleneck-step">1 · Flag<span>Blocker or inefficiency</span></div>
@@ -988,7 +983,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
     </div>
   </div>
   <div class="slide-footer">
-    <span>Gatekeeper at Entry Gate · tandem in delivery · flag before firefighting</span>
+    <span>Dual track while executing workflow · flag before firefighting · no big bang</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
@@ -997,7 +992,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header">
     <h2>Module onboarding — CargoBeamer &amp; RCG</h2>
-    <span class="snum">11 / 13</span>
+    <span class="snum">11 / 12</span>
   </div>
   <div class="slide-body">
     <p class="onboard-intro"><strong>Concept deck ≠ rollout plan.</strong> Each hot module gets a <strong>draft playbook</strong> (Confluence) with actions, owners, and commitments — not only slides.</p>
@@ -1051,7 +1046,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header">
     <h2>Quality layers &amp; shared ownership</h2>
-    <span class="snum">12 / 13</span>
+    <span class="snum">12 / 12</span>
   </div>
   <div class="slide-body">
     <p class="layers-intro"><strong>Quality is a team responsibility.</strong> Four layers in dev/test — then the pipeline runs the same way on every environment. Layers are <strong>enforced</strong>, not optional guidelines.</p>
@@ -1157,7 +1152,7 @@ const DEPLOY_VER=document.querySelector('meta[name="deploy-version"]')?.content|
 const buildStampEl=document.getElementById('buildStamp');
 const staleBannerEl=document.getElementById('deployStaleBanner');
 const VERSION_JSON_URL='https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/version.json';
-const MIRROR_URL='https://cdn.jsdelivr.net/gh/BartVader-Flow/entry-gate-tms-qa@gh-pages/index-v2.html';
+const PREVIEW_URL='https://htmlpreview.github.io/?https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html';
 buildStampEl.textContent=DEPLOY_VER+' · checking…';
 document.title=`QA Entry Gate — Rollout v2 (${DEPLOY_VER})`;
 fetch(`${VERSION_JSON_URL}?t=${Date.now()}`,{cache:'no-store'}).then(r=>r.ok?r.json():null).then(v=>{
@@ -1170,7 +1165,7 @@ fetch(`${VERSION_JSON_URL}?t=${Date.now()}`,{cache:'no-store'}).then(r=>r.ok?r.j
   buildStampEl.textContent=DEPLOY_VER+' · STALE';
   buildStampEl.classList.add('stale');
   staleBannerEl.classList.add('visible');
-  staleBannerEl.innerHTML=`This page is <strong>outdated</strong> (shows <strong>${DEPLOY_VER}</strong>). Latest on GitHub: <strong>${v.deployVersion}</strong>. GitHub Pages has not redeployed — use the <a href="${MIRROR_URL}" target="_blank" rel="noopener">jsDelivr mirror (always current)</a> or re-save Pages source in repo Settings.`;
+  staleBannerEl.innerHTML=`This page is <strong>outdated</strong> (shows <strong>${DEPLOY_VER}</strong>). Latest on GitHub: <strong>${v.deployVersion}</strong>. GitHub Pages has not redeployed — open the <a href="${PREVIEW_URL}" target="_blank" rel="noopener">HTML preview (always current)</a> or re-save Pages source in repo Settings.`;
 }).catch(()=>{buildStampEl.textContent=DEPLOY_VER;});
 let cur=0;
 const btnPrev=document.getElementById('btnPrev');
