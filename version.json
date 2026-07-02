@@ -1,8 +1,8 @@
 {
-  "deployVersion": "20260701-v2-13",
+  "deployVersion": "20260701-v2-14",
   "branch": "gh-pages",
   "repo": "BartVader-Flow/entry-gate-tms-qa",
   "previewUrl": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html",
-  "updatedAt": "2026-07-02T18:15:00Z",
-  "notes": "Slide 7 fixed: removed fixed 118px cap on column shafts so pillars fill the full temple height (no more dead gap above hub bar); enlarged plaque typography to match the extra room."
+  "updatedAt": "2026-07-02T18:30:00Z",
+  "notes": "Slide 7: doubled the Single Entry Point bar height (pillars now sit on a shorter base, rest of the column layout unchanged); bullet points in that bar now render as rounded bubbles; all four pillar headers (Golden data set, Unit testing, API testing, Playwright automation) now share one uniform font size that fits on a single line."
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-13">
+<meta name="deploy-version" content="20260701-v2-14">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -250,7 +250,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .greek-column.col-first .col-plaque{border-color:var(--rf-coral);background:#fffcfb}
 .greek-column .col-num{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-mid);line-height:1.2;flex-shrink:0}
 .greek-column.col-first .col-num{color:var(--rf-coral)}
-.greek-column .col-title{font-size:17px;font-weight:800;color:var(--rf-dark);line-height:1.2;flex-shrink:0;padding-bottom:2px;border-bottom:1px solid rgba(139,105,20,.2)}
+.greek-column .col-title{font-size:11px;font-weight:800;color:var(--rf-dark);line-height:1.2;flex-shrink:0;padding-bottom:2px;border-bottom:1px solid rgba(139,105,20,.2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .greek-column.col-first .col-title{color:var(--rf-coral);border-bottom-color:rgba(242,107,67,.25)}
 .greek-column .col-text{font-size:12px;line-height:1.6;color:var(--rf-text);flex:1;min-height:0;display:flex;align-items:center}
 .greek-column .col-owner{font-size:10px;color:var(--rf-muted);line-height:1.42;flex-shrink:0;padding-top:9px;border-top:1px dashed var(--rf-border)}
@@ -258,13 +258,12 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .greek-column .col-base{width:92%;flex-shrink:0;height:10px;background:linear-gradient(180deg,#e8dcc8,#b8a888);border:2px solid #8b6914;border-radius:0 0 3px 3px;box-shadow:0 2px 0 rgba(139,105,20,.2)}
 .greek-column.col-first .col-base{border-color:var(--rf-coral)}
 .temple-stylobate{flex-shrink:0;height:7px;margin:0 2px;background:linear-gradient(180deg,#d4c4a8,#b8a888);border:2px solid #8b6914;border-top:1px solid #6b5420;border-radius:0 0 4px 4px}
-.pillars-hub-wide{flex:0 0 auto;min-height:54px;max-height:62px;background:var(--rf-dark);color:#fff;border-radius:6px;padding:9px 14px;display:grid;grid-template-columns:118px 1fr;gap:12px;align-items:center}
-.pillars-hub-wide h3{font-family:'Cinzel',Georgia,serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rf-light);line-height:1.25;padding-right:6px;border-right:1px solid rgba(255,255,255,.12)}
-.pillars-hub-wide .hub-copy{display:flex;flex-direction:column;gap:3px;min-width:0;overflow:hidden}
-.pillars-hub-wide .hub-copy p{font-size:9.5px;line-height:1.32;opacity:.92}
-.pillars-hub-wide .hub-copy ul{list-style:none;display:flex;flex-wrap:wrap;gap:2px 12px;font-size:8.5px;line-height:1.28;opacity:.85}
-.pillars-hub-wide .hub-copy li{padding-left:9px;position:relative}
-.pillars-hub-wide .hub-copy li::before{content:'';position:absolute;left:0;top:6px;width:4px;height:4px;border-radius:50%;background:var(--rf-light)}
+.pillars-hub-wide{flex:0 0 auto;min-height:108px;max-height:124px;background:var(--rf-dark);color:#fff;border-radius:8px;padding:14px 20px;display:grid;grid-template-columns:130px 1fr;gap:18px;align-items:center}
+.pillars-hub-wide h3{font-family:'Cinzel',Georgia,serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rf-light);line-height:1.35;padding-right:10px;border-right:1px solid rgba(255,255,255,.14)}
+.pillars-hub-wide .hub-copy{display:flex;flex-direction:column;gap:9px;min-width:0;overflow:hidden}
+.pillars-hub-wide .hub-copy p{font-size:11.5px;line-height:1.45;opacity:.94}
+.pillars-hub-wide .hub-copy ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+.pillars-hub-wide .hub-copy li{font-size:9.5px;font-weight:600;line-height:1.3;color:#fff;white-space:nowrap;padding:6px 13px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.24)}
 
 /* ── v2: Transition ── */
 .transition-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
@@ -465,7 +464,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
   <div class="cover-nav">
     <span>→ Arrow keys · <a href="preview-v2.html" style="color:rgba(255,255,255,.85)">Latest preview</a> · <a href="index.html" style="color:rgba(255,255,255,.75)">Original deck (v1)</a></span>
-    <span>Build 20260701-v2-13 · badge bottom-right = live version</span>
+    <span>Build 20260701-v2-14 · badge bottom-right = live version</span>
     <span>Bart Gilissen · Rail-Flow QA</span>
   </div>
 </div>
