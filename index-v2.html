@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-3">
+<meta name="deploy-version" content="20260701-v2-4">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -286,7 +286,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .cap-legend .lg-support{background:var(--rf-white);color:var(--rf-dark);border:1px solid var(--rf-border)}
 .cap-legend .lg-squad{background:linear-gradient(135deg,#4F883B,#6aa855);color:#fff}
 .cap-legend .lg-core{background:linear-gradient(135deg,#4338ca,#6366f1);color:#fff}
-.cap-leaders{flex-shrink:0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.cap-leaders{flex-shrink:0;display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
 .lead-chip{border-radius:8px;padding:6px 8px;text-align:center;line-height:1.2;box-shadow:0 2px 6px rgba(11,67,36,.1);border:1px solid rgba(255,255,255,.5)}
 .lead-chip strong{display:block;font-size:9px;font-weight:800}
 .lead-chip .fte{display:block;font-size:8px;font-weight:600;margin-top:1px;opacity:.9}
@@ -297,6 +297,8 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .lead-chip.lead-core .fte{color:#c7d2fe}
 .lead-chip.lead-deputy{background:var(--rf-white);color:var(--rf-dark);border:1px solid var(--rf-border)}
 .lead-chip.lead-deputy .fte{color:var(--rf-mid)}
+.lead-chip.lead-senior{background:linear-gradient(145deg,#78350f,#b45309);color:#fff}
+.lead-chip.lead-senior .fte{color:#fde68a}
 .cap-main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 168px;gap:8px;overflow:hidden}
 .cap-table-panel{min-height:0;display:flex;flex-direction:column;overflow:hidden;background:var(--rf-white);border:1px solid var(--rf-border);border-radius:10px;box-shadow:0 4px 14px rgba(11,67,36,.08);padding:0}
 .cap-table-panel .cap-table-head{padding:6px 10px 4px;border-bottom:1px solid var(--rf-border);display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--rf-gray)}
@@ -768,10 +770,11 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
       </div>
     </div>
     <div class="cap-leaders">
+      <div class="lead-chip lead-squad"><strong>Irem</strong><span class="fte">1 FTE</span><span class="role">QA Lead · Squad</span></div>
+      <div class="lead-chip lead-core"><strong>Emre</strong><span class="fte">0.9 FTE</span><span class="role">QA Lead · Core</span></div>
+      <div class="lead-chip lead-senior"><strong>Ronnel</strong><span class="fte">1 FTE</span><span class="role">Senior QA</span></div>
       <div class="lead-chip lead-deputy"><strong>James</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
       <div class="lead-chip lead-deputy"><strong>Jude</strong><span class="fte">0.25 FTE</span><span class="role">Senior Deputy</span></div>
-      <div class="lead-chip lead-core"><strong>Emre</strong><span class="fte">0.9 FTE</span><span class="role">QA Lead · Core</span></div>
-      <div class="lead-chip lead-squad"><strong>Irem</strong><span class="fte">1 FTE</span><span class="role">QA Lead · Squad</span></div>
       <div class="lead-chip lead-deputy"><strong>Fadil</strong><span class="fte">0.1 FTE</span><span class="role">Deputy QA Lead</span></div>
     </div>
     <div class="cap-main">
@@ -818,7 +821,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
             <span class="roster-chip">Chris</span><span class="roster-chip">Ecem</span><span class="roster-chip">Emre</span><span class="roster-chip">Francis</span><span class="roster-chip">Jude</span><span class="roster-chip">Raemar</span>
           </div>
         </div>
-        <p class="roster-foot">Ideal tandem pairs mix <strong>Squad + Core</strong> on the same project · rows 25–29 = leadership (not project tandems)</p>
+        <p class="roster-foot">Ideal tandem pairs mix <strong>Squad + Core</strong> on the same project · leadership band above = orchestration (not project tandems)</p>
       </div>
     </div>
     <p class="cap-foot">Source: <em>Split Core – Squad 2026</em> · FTE = planned capacity share · PTM/REST products follow when assigned</p>
