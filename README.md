@@ -21,4 +21,14 @@ Meta `deploy-version`: **20260701-6** · counter on last slide: **10 / 10** (cov
 
 Cover + **13 content slides:** slides **1–6** same as v1 · **7** four pillars & strategy hub · **8** dual-track transition · **9** Entry Gate · **10** tandem QA capacity plan (from Excel) · **11** QA workflow + bottleneck rule · **12** module onboarding (CargoBeamer & RCG) · **13** quality layers + enforcement.
 
-Meta `deploy-version`: **20260701-v2-9** (slide 7 Acropolis portico — equal columns, hub ~2×) · check green badge bottom-right.
+Meta `deploy-version`: **20260701-v2-10** (slide 7 Acropolis portico — equal columns, hub ~2×) · green badge **LIVE** bottom-right; orange **STALE** = Pages CDN behind GitHub.
+
+### Deploy / “not updated” troubleshooting
+
+| Check | What it means |
+|-------|----------------|
+| Badge **`… · LIVE`** | This URL matches `version.json` on `gh-pages`. |
+| Badge **`… · STALE`** + orange banner | GitHub branch is newer; **Pages has not redeployed** (not your browser). |
+| [raw `index-v2.html` on GitHub](https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html) | Always the latest commit on the branch. |
+
+**One-time (if STALE persists):** Repo **Settings → Pages → Build and deployment → Source: GitHub Actions** (workflow `.github/workflows/deploy-pages.yml` runs on every push to `gh-pages`).
