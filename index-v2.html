@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-4">
+<meta name="deploy-version" content="20260701-v2-5">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -233,9 +233,8 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .pillars-hub ul{list-style:none;font-size:10px;line-height:1.38;opacity:.88}
 .pillars-hub li{padding:3px 0 3px 12px;position:relative}
 .pillars-hub li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
-.pillars-map{flex-shrink:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:4px}
-.pillars-map-item{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:6px;padding:6px 8px;text-align:center;font-size:9px;line-height:1.3}
-.pillars-map-item strong{display:block;font-size:10px;color:var(--rf-dark);margin-bottom:2px}
+.pillars-hub-xref{margin-top:auto;padding-top:8px;border-top:1px solid rgba(255,255,255,.2);font-size:9px;line-height:1.4;opacity:.88}
+.pillars-hub-xref strong{color:var(--rf-light)}
 
 /* ── v2: Transition ── */
 .transition-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
@@ -483,7 +482,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
         </div>
       </div>
     </div>
-    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–6.</strong> Four pillars (7) · transition (8) · tandem plan (10) · module health (13).</div>
+    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–6.</strong> Test strategy (7) · transition (8) · tandem plan (10).</div>
   </div>
   <div class="slide-footer">
     <span>One Entry Gate at handover · ongoing health via quality layers</span>
@@ -598,29 +597,29 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
     <span class="snum">7 / 13</span>
   </div>
   <div class="slide-body">
-    <p class="pillars-intro"><strong>Same story everywhere</strong> — handover (Entry Gate), daily testing (four pillars), engineering discipline (quality layers). One strategy index links all detail docs.</p>
+    <p class="pillars-intro"><strong>Four pillars = how we test</strong> (this slide). Golden data first — then unit, API, and Playwright on the same base. The Confluence strategy hub links all detail pages.</p>
     <div class="pillars-main">
       <div class="pillars-grid">
         <div class="pillar-card foundation">
-          <span class="pillar-num">Foundation · start here</span>
+          <span class="pillar-num">Pillar 1 · build first</span>
           <strong>Golden data set</strong>
           <p>Repeatable provisioner-agnostic data across environments. Dev unit tests and QA Playwright share the same base.</p>
           <span class="owner">Owner: <strong>TO · Core QA · SA</strong> · QA validates at Entry Gate</span>
         </div>
         <div class="pillar-card">
-          <span class="pillar-num">Pillar 1</span>
+          <span class="pillar-num">Pillar 2</span>
           <strong>Unit testing</strong>
           <p>Developer loop · SA top volatile packages · root-cause fixes before handover.</p>
           <span class="owner">Owner: <strong>Dev · SA</strong> · QA verifies at Entry Gate</span>
         </div>
         <div class="pillar-card">
-          <span class="pillar-num">Pillar 2</span>
+          <span class="pillar-num">Pillar 3</span>
           <strong>API testing</strong>
           <p>Business logic at scale — prefer API over repeated Playwright where possible.</p>
           <span class="owner">Owner: <strong>Dev · SA</strong> · QA consults on risk hotspots</span>
         </div>
         <div class="pillar-card">
-          <span class="pillar-num">Pillar 3</span>
+          <span class="pillar-num">Pillar 4</span>
           <strong>Playwright automation</strong>
           <p>Built on golden data · input/output like a procedure · improve in cycles after baseline.</p>
           <span class="owner">Owner: <strong>QA</strong> · BA consulted · Squad or Core executes</span>
@@ -634,17 +633,12 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
           <li>QA leads maintain links when sub-docs change</li>
           <li>Flag gaps to Bart / Pablo if story diverges</li>
         </ul>
+        <p class="pillars-hub-xref"><strong>Not on this slide:</strong> Entry Gate handover → slide 9 · Who tests (tandem plan) → slide 10 · Engineering layers (PR, CI) → slide 13</p>
       </div>
-    </div>
-    <div class="pillars-map">
-      <div class="pillars-map-item"><strong>People</strong>Tandem capacity · slide 10</div>
-      <div class="pillars-map-item"><strong>Handover</strong>Entry Gate · slide 9</div>
-      <div class="pillars-map-item"><strong>Execution</strong>Four pillars · slide 7</div>
-      <div class="pillars-map-item"><strong>Engineering</strong>Quality layers · slide 13</div>
     </div>
   </div>
   <div class="slide-footer">
-    <span>Deterministic = repeatable feedback loop · not one-off firefighting</span>
+    <span>Four test pillars only — handover, people &amp; pipeline live on other slides</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
