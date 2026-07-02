@@ -1,7 +1,8 @@
 {
-  "deployVersion": "20260701-v2-11",
+  "deployVersion": "20260701-v2-12",
   "branch": "gh-pages",
   "repo": "BartVader-Flow/entry-gate-tms-qa",
   "previewUrl": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html",
-  "updatedAt": "2026-07-02T15:30:00Z"
+  "updatedAt": "2026-07-02T16:00:00Z",
+  "notes": "Slide 8 transition on module onboarding (11); QA workflow (10) restored"
 }

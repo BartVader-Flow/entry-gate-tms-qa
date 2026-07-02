@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-11">
+<meta name="deploy-version" content="20260701-v2-12">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -390,6 +390,22 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 .onboard-shared ul{list-style:none;font-size:10px;line-height:1.35;opacity:.88}
 .onboard-shared li{padding:2px 0 2px 12px;position:relative}
 .onboard-shared li::before{content:'✓';position:absolute;left:0;font-size:9px;color:var(--rf-light)}
+.slide-body-onboard{gap:6px;padding:8px 40px 6px}
+.slide-body-onboard .onboard-transition{flex-shrink:0;display:flex;flex-direction:column;gap:4px}
+.slide-body-onboard .transition-intro{font-size:10px;line-height:1.32;margin:0;padding:0 6px}
+.slide-body-onboard .transition-main{flex-shrink:0;gap:6px;min-height:0}
+.slide-body-onboard .transition-track{padding:8px 10px;gap:4px}
+.slide-body-onboard .transition-track h3{font-size:12px}
+.slide-body-onboard .transition-track ul{font-size:9px;line-height:1.3}
+.slide-body-onboard .transition-track li{padding:2px 0 2px 10px}
+.slide-body-onboard .transition-bridge{min-width:56px}
+.slide-body-onboard .transition-bridge .tb-icon{font-size:18px}
+.slide-body-onboard .transition-note{font-size:9px;line-height:1.32;padding:6px 10px;margin:0}
+.slide-body-onboard .onboard-main{flex:1;min-height:0;gap:8px}
+.slide-body-onboard .onboard-module{padding:10px 12px;gap:5px}
+.slide-body-onboard .onboard-module ol{font-size:9px;line-height:1.32}
+.slide-body-onboard .onboard-module .deliver{font-size:8px;padding-top:4px}
+.slide-body-onboard .onboard-shared{padding:10px 12px;gap:10px}
 
 /* ── v2: Enforcement on layers ── */
 .enforce-box{flex-shrink:0;background:#fff3f0;border:2px solid var(--rf-coral);border-radius:6px;padding:8px 12px;font-size:10px;line-height:1.4}
@@ -441,15 +457,15 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
         <li><strong>7</strong> — Four pillars (test strategy)</li>
         <li><strong>8</strong> — Entry Gate checklist</li>
         <li><strong>9</strong> — Tandem QA capacity plan (all projects + leads)</li>
-        <li><strong>10</strong> — QA workflow · dual-track transition · bottleneck rule</li>
-        <li><strong>11</strong> — Module onboarding (CB · RCG)</li>
+        <li><strong>10</strong> — QA workflow (internal) · bottleneck rule</li>
+        <li><strong>11</strong> — Module onboarding · dual-track transition (CB · RCG)</li>
         <li><strong>12</strong> — Quality layers + enforcement</li>
       </ul>
     </div>
   </div>
   <div class="cover-nav">
     <span>→ Arrow keys · <a href="preview-v2.html" style="color:rgba(255,255,255,.85)">Latest preview</a> · <a href="index.html" style="color:rgba(255,255,255,.75)">Original deck (v1)</a></span>
-    <span>Build 20260701-v2-11 · badge bottom-right = live version</span>
+    <span>Build 20260701-v2-12 · badge bottom-right = live version</span>
     <span>Bart Gilissen · Rail-Flow QA</span>
   </div>
 </div>
@@ -518,7 +534,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
         </div>
       </div>
     </div>
-    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–6.</strong> Test strategy (7) · tandem plan (9) · workflow + transition (10).</div>
+    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–6.</strong> Test strategy (7) · tandem plan (9) · workflow (10) · onboarding + transition (11).</div>
   </div>
   <div class="slide-footer">
     <span>One Entry Gate at handover · ongoing health via quality layers</span>
@@ -853,41 +869,14 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
 </div>
 
-<!-- Slide 10 — QA workflow + transition (internal) -->
+<!-- Slide 10 — QA workflow (internal) -->
 <div class="slide">
   <div class="slide-header">
-    <h2>QA workflow &amp; dual-track transition</h2>
+    <h2>QA workflow (internal)</h2>
     <span class="snum">10 / 12</span>
   </div>
-  <div class="slide-body qa-workflow-dense">
-    <p class="workflow-intro"><strong>After QA accepts the story</strong> — execution follows the phases below. <strong>Who</strong> runs it: tandem capacity plan (slide 9). Leads: Irem (Squad) · Emre (Core).</p>
-
-    <p class="transition-intro">We <strong>cannot change the world in one day</strong> — <strong>two tracks in parallel</strong>, not either/or: current release keeps legacy steps; next cycles improve incrementally (<strong>no big bang</strong>).</p>
-    <div class="transition-main">
-      <div class="transition-track now">
-        <span class="track-label">Track A · now</span>
-        <h3>Current release cycle</h3>
-        <ul>
-          <li>Follow <strong>existing</strong> release &amp; feasibility process</li>
-          <li>SaaS / legacy paths where still required</li>
-          <li>QA applies Entry Gate where team is ready</li>
-        </ul>
-      </div>
-      <div class="transition-bridge">
-        <span class="tb-icon">⇄</span>
-        <span class="tb-label">Parallel</span>
-      </div>
-      <div class="transition-track next">
-        <span class="track-label">Track B · next cycles</span>
-        <h3>New framework (incremental)</h3>
-        <ul>
-          <li>Golden data first · Playwright on same base</li>
-          <li>Dev alignment · unit tests before handover</li>
-          <li>Entry Gate + hard reject becomes normal</li>
-        </ul>
-      </div>
-    </div>
-    <div class="transition-note"><strong>Priority modules:</strong> CargoBeamer &amp; RCG first — partial framework in Track A can still save ~30% this cycle.</div>
+  <div class="slide-body">
+    <p class="workflow-intro"><strong>After QA accepts the story</strong> — execution follows the phases below. <strong>Who</strong> runs it: see tandem capacity plan (slide 9). Leads orchestrate: Irem (Squad) · Emre (Core).</p>
 
     <div class="bottleneck-bar">
       <div class="bottleneck-step">1 · Flag<span>Blocker or inefficiency</span></div>
@@ -983,19 +972,49 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
     </div>
   </div>
   <div class="slide-footer">
-    <span>Dual track while executing workflow · flag before firefighting · no big bang</span>
+    <span>Gatekeeper at Entry Gate · tandem in delivery · flag before firefighting</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
 
-<!-- Slide 11 — Module onboarding (Topic 8) -->
+<!-- Slide 11 — Module onboarding + dual-track transition (Topic 8) -->
 <div class="slide">
   <div class="slide-header">
     <h2>Module onboarding — CargoBeamer &amp; RCG</h2>
     <span class="snum">11 / 12</span>
   </div>
-  <div class="slide-body">
+  <div class="slide-body slide-body-onboard">
     <p class="onboard-intro"><strong>Concept deck ≠ rollout plan.</strong> Each hot module gets a <strong>draft playbook</strong> (Confluence) with actions, owners, and commitments — not only slides.</p>
+
+    <div class="onboard-transition">
+      <p class="transition-intro">We <strong>cannot change the world in one day</strong> — <strong>two tracks in parallel</strong>, not either/or: current release keeps legacy steps; next cycles improve incrementally (<strong>no big bang</strong>).</p>
+      <div class="transition-main">
+        <div class="transition-track now">
+          <span class="track-label">Track A · now</span>
+          <h3>Current release cycle</h3>
+          <ul>
+            <li>Follow <strong>existing</strong> release &amp; feasibility process</li>
+            <li>SaaS / legacy paths where still required</li>
+            <li>QA applies Entry Gate where team is ready</li>
+          </ul>
+        </div>
+        <div class="transition-bridge">
+          <span class="tb-icon">⇄</span>
+          <span class="tb-label">Parallel</span>
+        </div>
+        <div class="transition-track next">
+          <span class="track-label">Track B · next cycles</span>
+          <h3>New framework (incremental)</h3>
+          <ul>
+            <li>Golden data first · Playwright on same base</li>
+            <li>Dev alignment · unit tests before handover</li>
+            <li>Entry Gate + hard reject becomes normal</li>
+          </ul>
+        </div>
+      </div>
+      <div class="transition-note"><strong>Priority modules:</strong> CargoBeamer &amp; RCG first — partial framework in Track A can still save ~30% this cycle.</div>
+    </div>
+
     <div class="onboard-main">
       <div class="onboard-module hot">
         <span class="mod-tag">Priority 1 · hottest pain</span>
@@ -1037,7 +1056,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
     </div>
   </div>
   <div class="slide-footer">
-    <span>Separate Confluence playbooks · this slide is the map only</span>
+    <span>Dual track while onboarding hot modules · separate Confluence playbooks · this slide is the map</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
