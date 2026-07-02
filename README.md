@@ -4,25 +4,23 @@ Static slide decks on branch **`gh-pages`**.
 
 ## Decks
 
-| Version | File | Live URL |
-|---------|------|----------|
-| **v1** — target-state concept | [`index.html`](index.html) | https://bartvader-flow.github.io/entry-gate-tms-qa/ |
-| **v2** — rollout + QA leads session | [`index-v2.html`](index-v2.html) | https://bartvader-flow.github.io/entry-gate-tms-qa/index-v2.html |
-| **v2 preview** (always latest from branch) | [`preview-v2.html`](preview-v2.html) | https://bartvader-flow.github.io/entry-gate-tms-qa/preview-v2.html |
+The primary URL (`index.html`) and the versioned URL (`index-v2.html`) now serve the **same, current deck** — the old v1 target-state-only deck has been retired and overwritten. Both files are kept in sync so existing bookmarks/links keep working.
+
+| File | Live URL |
+|------|----------|
+| [`index.html`](index.html) — primary URL | https://bartvader-flow.github.io/entry-gate-tms-qa/ |
+| [`index-v2.html`](index-v2.html) — versioned URL, identical content | https://bartvader-flow.github.io/entry-gate-tms-qa/index-v2.html |
+| [`preview-v2.html`](preview-v2.html) — always latest from branch | https://bartvader-flow.github.io/entry-gate-tms-qa/preview-v2.html |
 
 Navigate with arrow keys (← →).
 
-### v1 (unchanged)
+### Current deck
 
-Cover + **9 content slides:** lifecycle · responsibility shift (5 comics) · Entry Gate · QA workflow · quality layers.
-
-Meta `deploy-version`: **20260701-6** · counter on last slide: **10 / 10** (cover included).
-
-### v2 (second foliensatz)
-
-Cover + **12 content slides**, reordered for a more logical flow: **1** lifecycle & who owns what (RACI overview) · **2** four pillars & strategy hub · **3** quality layers + enforcement · **4–8** the five responsibility-shift comics · **9** Entry Gate · **10** QA workflow (internal) · **11** tandem QA capacity plan (from Excel) · **12** module onboarding + dual-track transition (CargoBeamer & RCG).
+Cover + **12 content slides**, in this order: **1** lifecycle & who owns what (RACI overview) · **2** four pillars & strategy hub · **3** quality layers + enforcement · **4–8** the five responsibility-shift comics · **9** Entry Gate · **10** QA workflow (internal) · **11** tandem QA capacity plan (from Excel) · **12** module onboarding + dual-track transition (CargoBeamer & RCG).
 
 Meta `deploy-version`: **20260701-v2-15** · green badge **LIVE** bottom-right; orange **STALE** = Pages CDN behind GitHub.
+
+> The retired v1 deck (9 content slides, `deploy-version 20260701-6`) is no longer published, but remains fully recoverable from the `gh-pages` git history if ever needed.
 
 ### Deploy / “not updated” troubleshooting
 
