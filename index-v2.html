@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-5">
+<meta name="deploy-version" content="20260701-v2-6">
 <title>QA Entry Gate Concept — Rollout v2</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -213,28 +213,36 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .layers-foot{flex-shrink:0;font-size:9px;color:var(--rf-muted);text-align:center;line-height:1.35;padding:0 8px}
 .layers-foot strong{color:var(--rf-dark)}
 
-/* ── v2: Four pillars ── */
-.pillars-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
-.pillars-intro strong{color:var(--rf-dark)}
-.pillars-main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pillars-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-height:0}
-.pillar-card{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;box-shadow:0 1px 3px rgba(11,67,36,.06)}
-.pillar-card.foundation{border-color:var(--rf-coral);border-left:4px solid var(--rf-coral);background:#fffcfb}
-.pillar-card strong{font-size:12px;font-weight:800;color:var(--rf-dark);line-height:1.2}
-.pillar-card.foundation strong{color:var(--rf-coral)}
-.pillar-card .pillar-num{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-mid)}
-.pillar-card.foundation .pillar-num{color:var(--rf-coral)}
-.pillar-card p{font-size:10px;line-height:1.35;color:var(--rf-text)}
-.pillar-card .owner{font-size:9px;color:var(--rf-muted);margin-top:auto}
-.pillar-card .owner strong{color:var(--rf-dark)}
-.pillars-hub{background:var(--rf-dark);color:#fff;border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-height:0}
-.pillars-hub h3{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-light)}
-.pillars-hub p{font-size:10px;line-height:1.4;opacity:.92}
-.pillars-hub ul{list-style:none;font-size:10px;line-height:1.38;opacity:.88}
-.pillars-hub li{padding:3px 0 3px 12px;position:relative}
-.pillars-hub li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
-.pillars-hub-xref{margin-top:auto;padding-top:8px;border-top:1px solid rgba(255,255,255,.2);font-size:9px;line-height:1.4;opacity:.88}
-.pillars-hub-xref strong{color:var(--rf-light)}
+/* ── v2: Four pillars (classical temple) ── */
+.slide-body.slide-body-pillars{gap:6px;padding-bottom:6px}
+.pillars-intro{flex-shrink:0;font-size:10px;color:var(--rf-muted);line-height:1.35;text-align:center;padding:0 12px}
+.pillars-temple{flex:1;min-height:0;display:flex;flex-direction:column;align-items:stretch;overflow:hidden}
+.pillars-pediment{flex-shrink:0;display:flex;flex-direction:column;align-items:center;padding:0 8px}
+.pediment-roof{width:min(520px,72%);height:0;border-left:42px solid transparent;border-right:42px solid transparent;border-bottom:18px solid #d9cdb8;filter:drop-shadow(0 1px 0 #b8a888)}
+.pediment-entablature{width:100%;background:linear-gradient(180deg,#faf6ee 0%,#ebe3d4 100%);border:2px solid #c4b595;border-top:none;border-radius:0 0 4px 4px;padding:7px 14px 8px;text-align:center;box-shadow:0 2px 0 rgba(180,160,120,.35),inset 0 1px 0 rgba(255,255,255,.65)}
+.pediment-entablature span{font-family:'Cinzel',Georgia,serif;font-weight:800;font-size:clamp(11px,1.15vw,15px);letter-spacing:.14em;text-transform:uppercase;color:var(--rf-dark);line-height:1.25;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+.pillars-colonnade{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:end;padding:6px 4px 2px;background:linear-gradient(180deg,rgba(235,227,212,.55) 0%,transparent 28px)}
+.greek-column{display:flex;flex-direction:column;align-items:center;min-height:0;height:100%;max-width:100%}
+.greek-column .col-capital{width:72%;flex-shrink:0;height:11px;background:linear-gradient(180deg,#fff9f0,#e8dcc8);border:2px solid #c4b595;border-bottom:1px solid #b8a888;border-radius:3px 3px 0 0;box-shadow:inset 0 -3px 0 #d4c4a8}
+.greek-column .col-shaft{flex:1;width:52%;min-height:0;background:repeating-linear-gradient(90deg,#f2ebe0 0,#f2ebe0 7px,#e8dfd2 7px,#e8dfd2 14px),linear-gradient(180deg,#f5efe6,#ddd0bc);border-left:2px solid #c4b595;border-right:2px solid #c4b595;position:relative;box-shadow:inset 2px 0 4px rgba(255,255,255,.35),inset -2px 0 4px rgba(0,0,0,.04)}
+.greek-column .col-plaque{position:absolute;inset:6px 3px 6px;display:flex;flex-direction:column;gap:3px;background:rgba(255,255,255,.94);border:1px solid var(--rf-border);border-radius:5px;padding:6px 7px;box-shadow:0 1px 4px rgba(11,67,36,.08);overflow:hidden}
+.greek-column.col-first .col-capital,.greek-column.col-first .col-base{border-color:var(--rf-coral);box-shadow:inset 0 -3px 0 rgba(242,107,67,.25)}
+.greek-column.col-first .col-plaque{border-color:#f5c4b8;background:#fffcfb}
+.greek-column .col-num{font-size:7px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-mid);line-height:1.2}
+.greek-column.col-first .col-num{color:var(--rf-coral)}
+.greek-column .col-title{font-size:10px;font-weight:800;color:var(--rf-dark);line-height:1.15}
+.greek-column.col-first .col-title{color:var(--rf-coral)}
+.greek-column .col-text{font-size:8.5px;line-height:1.32;color:var(--rf-text);flex:1;min-height:0;overflow:hidden}
+.greek-column .col-owner{font-size:7.5px;color:var(--rf-muted);line-height:1.28;margin-top:auto;padding-top:2px;border-top:1px dashed var(--rf-border)}
+.greek-column .col-owner strong{color:var(--rf-dark);font-weight:700}
+.greek-column .col-base{width:80%;flex-shrink:0;height:9px;background:linear-gradient(180deg,#e8dcc8,#cfc0a8);border:2px solid #c4b595;border-top:1px solid #b8a888;border-radius:0 0 3px 3px}
+.pillars-hub-wide{flex-shrink:0;background:var(--rf-dark);color:#fff;border-radius:8px;padding:10px 16px;display:grid;grid-template-columns:130px 1fr;gap:14px;align-items:start}
+.pillars-hub-wide h3{font-family:'Cinzel',Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rf-light);line-height:1.3;padding-top:2px}
+.pillars-hub-wide .hub-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
+.pillars-hub-wide .hub-copy p{font-size:10px;line-height:1.4;opacity:.93}
+.pillars-hub-wide .hub-copy ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:9px;line-height:1.35;opacity:.88}
+.pillars-hub-wide .hub-copy li{padding-left:10px;position:relative}
+.pillars-hub-wide .hub-copy li::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--rf-light)}
 
 /* ── v2: Transition ── */
 .transition-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
@@ -596,49 +604,78 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
     <h2>Four pillars of the test strategy</h2>
     <span class="snum">7 / 13</span>
   </div>
-  <div class="slide-body">
-    <p class="pillars-intro"><strong>Four pillars = how we test</strong> (this slide). Golden data first — then unit, API, and Playwright on the same base. The Confluence strategy hub links all detail pages.</p>
-    <div class="pillars-main">
-      <div class="pillars-grid">
-        <div class="pillar-card foundation">
-          <span class="pillar-num">Pillar 1 · build first</span>
-          <strong>Golden data set</strong>
-          <p>Repeatable provisioner-agnostic data across environments. Dev unit tests and QA Playwright share the same base.</p>
-          <span class="owner">Owner: <strong>TO · Core QA · SA</strong> · QA validates at Entry Gate</span>
+  <div class="slide-body slide-body-pillars">
+    <p class="pillars-intro">Golden data first — then unit, API, and Playwright on the same base. Detail pages link from the Confluence strategy hub.</p>
+    <div class="pillars-temple">
+      <div class="pillars-pediment">
+        <div class="pediment-roof" aria-hidden="true"></div>
+        <div class="pediment-entablature"><span>Four pillars = how we test</span></div>
+      </div>
+      <div class="pillars-colonnade">
+        <div class="greek-column col-first">
+          <div class="col-capital" aria-hidden="true"></div>
+          <div class="col-shaft">
+            <div class="col-plaque">
+              <span class="col-num">Pillar 1 · build first</span>
+              <strong class="col-title">Golden data set</strong>
+              <p class="col-text">Repeatable provisioner-agnostic data across environments. Dev unit tests and QA Playwright share the same base.</p>
+              <span class="col-owner">Owner: <strong>TO · Core QA · SA</strong> · QA validates at Entry Gate</span>
+            </div>
+          </div>
+          <div class="col-base" aria-hidden="true"></div>
         </div>
-        <div class="pillar-card">
-          <span class="pillar-num">Pillar 2</span>
-          <strong>Unit testing</strong>
-          <p>Developer loop · SA top volatile packages · root-cause fixes before handover.</p>
-          <span class="owner">Owner: <strong>Dev · SA</strong> · QA verifies at Entry Gate</span>
+        <div class="greek-column">
+          <div class="col-capital" aria-hidden="true"></div>
+          <div class="col-shaft">
+            <div class="col-plaque">
+              <span class="col-num">Pillar 2</span>
+              <strong class="col-title">Unit testing</strong>
+              <p class="col-text">Developer loop · SA top volatile packages · root-cause fixes before handover.</p>
+              <span class="col-owner">Owner: <strong>Dev · SA</strong> · QA verifies at Entry Gate</span>
+            </div>
+          </div>
+          <div class="col-base" aria-hidden="true"></div>
         </div>
-        <div class="pillar-card">
-          <span class="pillar-num">Pillar 3</span>
-          <strong>API testing</strong>
-          <p>Business logic at scale — prefer API over repeated Playwright where possible.</p>
-          <span class="owner">Owner: <strong>Dev · SA</strong> · QA consults on risk hotspots</span>
+        <div class="greek-column">
+          <div class="col-capital" aria-hidden="true"></div>
+          <div class="col-shaft">
+            <div class="col-plaque">
+              <span class="col-num">Pillar 3</span>
+              <strong class="col-title">API testing</strong>
+              <p class="col-text">Business logic at scale — prefer API over repeated Playwright where possible.</p>
+              <span class="col-owner">Owner: <strong>Dev · SA</strong> · QA consults on risk hotspots</span>
+            </div>
+          </div>
+          <div class="col-base" aria-hidden="true"></div>
         </div>
-        <div class="pillar-card">
-          <span class="pillar-num">Pillar 4</span>
-          <strong>Playwright automation</strong>
-          <p>Built on golden data · input/output like a procedure · improve in cycles after baseline.</p>
-          <span class="owner">Owner: <strong>QA</strong> · BA consulted · Squad or Core executes</span>
+        <div class="greek-column">
+          <div class="col-capital" aria-hidden="true"></div>
+          <div class="col-shaft">
+            <div class="col-plaque">
+              <span class="col-num">Pillar 4</span>
+              <strong class="col-title">Playwright automation</strong>
+              <p class="col-text">Built on golden data · input/output like a procedure · improve in cycles after baseline.</p>
+              <span class="col-owner">Owner: <strong>QA</strong> · BA consulted · Squad or Core executes</span>
+            </div>
+          </div>
+          <div class="col-base" aria-hidden="true"></div>
         </div>
       </div>
-      <div class="pillars-hub">
-        <h3>Single entry point</h3>
+    </div>
+    <div class="pillars-hub-wide">
+      <h3>Single entry point</h3>
+      <div class="hub-copy">
         <p>Strategy hub (Confluence) — links deployment, sprint cadence, Entry Gate checklist, Playwright methodology, golden data pages. <strong>One place to start</strong> when information is scattered.</p>
         <ul>
           <li>Q3–Q4 stepping stone — updated as process matures</li>
           <li>QA leads maintain links when sub-docs change</li>
           <li>Flag gaps to Bart / Pablo if story diverges</li>
         </ul>
-        <p class="pillars-hub-xref"><strong>Not on this slide:</strong> Entry Gate handover → slide 9 · Who tests (tandem plan) → slide 10 · Engineering layers (PR, CI) → slide 13</p>
       </div>
     </div>
   </div>
   <div class="slide-footer">
-    <span>Four test pillars only — handover, people &amp; pipeline live on other slides</span>
+    <span>Deterministic = repeatable feedback loop · not one-off firefighting</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
