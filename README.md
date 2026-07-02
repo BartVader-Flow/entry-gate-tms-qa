@@ -1,9 +1,26 @@
 # QA Entry Gate Concept
 
-Static slide deck — branch **`gh-pages`**, file **`index.html`**.
+Static slide decks on branch **`gh-pages`**.
 
-**Live URL:** https://bartvader-flow.github.io/entry-gate-tms-qa/
+## Decks
 
-Navigate with arrow keys (← →). **Cover + 9 content slides:** lifecycle · responsibility shift (5 illustrated, slides 2–6) · Entry Gate · QA workflow · quality layers.
+| Version | File | Live URL |
+|---------|------|----------|
+| **v1** — target-state concept | [`index.html`](index.html) | https://bartvader-flow.github.io/entry-gate-tms-qa/ |
+| **v2** — rollout + QA leads session | [`index-v2.html`](index-v2.html) | https://bartvader-flow.github.io/entry-gate-tms-qa/index-v2.html |
 
-After updates: wait 2–5 min for GitHub Pages, then hard-refresh (`Cmd+Shift+R`). Counter on last slide should read **10 / 10** (cover included). HTML meta `deploy-version` should be **20260701-4**.
+Navigate with arrow keys (← →).
+
+### v1 (unchanged)
+
+Cover + **9 content slides:** lifecycle · responsibility shift (5 comics) · Entry Gate · QA workflow · quality layers.
+
+Meta `deploy-version`: **20260701-6** · counter on last slide: **10 / 10** (cover included).
+
+### v2 (second foliensatz)
+
+Cover + **12 content slides:** slides **1–6** same as v1 · **7** four pillars & strategy hub · **8** dual-track transition · **9** Entry Gate · **10** QA workflow + tandem + bottleneck rule · **11** module onboarding (CargoBeamer & RCG) · **12** quality layers + enforcement.
+
+Meta `deploy-version`: **20260701-v2-1** · counter on last slide: **13 / 13** (cover included).
+
+After updates: wait 2–5 min for GitHub Pages, then hard-refresh (`Cmd+Shift+R`).

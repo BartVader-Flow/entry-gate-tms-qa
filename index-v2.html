@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-6">
-<title>QA Entry Gate Concept</title>
+<meta name="deploy-version" content="20260701-v2-1">
+<title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -165,6 +165,16 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .qa-transition .msg{font-size:11px;line-height:1.4;color:var(--rf-text);border-left:3px solid var(--rf-coral);padding-left:12px}
 .qa-transition .msg strong{color:var(--rf-dark)}
 .qa-leads-row{flex-shrink:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.slide-body.qa-workflow-dense{gap:5px;padding:8px 40px 6px}
+.slide-body.qa-workflow-dense .workflow-intro,.slide-body.qa-workflow-dense .tandem-intro{font-size:10px;line-height:1.32;margin:0}
+.slide-body.qa-workflow-dense .tandem-grid{gap:6px}
+.slide-body.qa-workflow-dense .tandem-card{padding:6px 8px}
+.slide-body.qa-workflow-dense .qa-team-card ul{font-size:9px;line-height:1.28}
+.slide-body.qa-workflow-dense .qa-team-card li{padding:1px 0 1px 11px}
+.slide-body.qa-workflow-dense .qa-workflow-main{gap:4px;flex:1;min-height:0;overflow:hidden}
+.slide-body.qa-workflow-dense .qa-phases{gap:6px}
+.slide-body.qa-workflow-dense .qa-transition{padding:6px 10px;font-size:9px}
+.slide-body.qa-workflow-dense .qa-leads-foot{font-size:9px;color:var(--rf-muted);text-align:center;line-height:1.35}
 .qa-lead-card{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:7px;padding:8px 10px;display:flex;flex-direction:column;gap:3px;min-height:0}
 .qa-lead-card.squad-lead{border-left:4px solid var(--rf-mid)}
 .qa-lead-card.core-lead{border-left:4px solid var(--rf-dark)}
@@ -203,6 +213,93 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 .layers-foot{flex-shrink:0;font-size:9px;color:var(--rf-muted);text-align:center;line-height:1.35;padding:0 8px}
 .layers-foot strong{color:var(--rf-dark)}
 
+/* ── v2: Four pillars ── */
+.pillars-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
+.pillars-intro strong{color:var(--rf-dark)}
+.pillars-main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pillars-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-height:0}
+.pillar-card{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;box-shadow:0 1px 3px rgba(11,67,36,.06)}
+.pillar-card.foundation{border-color:var(--rf-coral);border-left:4px solid var(--rf-coral);background:#fffcfb}
+.pillar-card strong{font-size:12px;font-weight:800;color:var(--rf-dark);line-height:1.2}
+.pillar-card.foundation strong{color:var(--rf-coral)}
+.pillar-card .pillar-num{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-mid)}
+.pillar-card.foundation .pillar-num{color:var(--rf-coral)}
+.pillar-card p{font-size:10px;line-height:1.35;color:var(--rf-text)}
+.pillar-card .owner{font-size:9px;color:var(--rf-muted);margin-top:auto}
+.pillar-card .owner strong{color:var(--rf-dark)}
+.pillars-hub{background:var(--rf-dark);color:#fff;border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-height:0}
+.pillars-hub h3{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-light)}
+.pillars-hub p{font-size:10px;line-height:1.4;opacity:.92}
+.pillars-hub ul{list-style:none;font-size:10px;line-height:1.38;opacity:.88}
+.pillars-hub li{padding:3px 0 3px 12px;position:relative}
+.pillars-hub li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
+.pillars-map{flex-shrink:0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:4px}
+.pillars-map-item{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:6px;padding:6px 8px;text-align:center;font-size:9px;line-height:1.3}
+.pillars-map-item strong{display:block;font-size:10px;color:var(--rf-dark);margin-bottom:2px}
+
+/* ── v2: Transition ── */
+.transition-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
+.transition-intro strong{color:var(--rf-dark)}
+.transition-main{flex:1;min-height:0;display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch}
+.transition-track{background:var(--rf-white);border:2px solid var(--rf-border);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-height:0;box-shadow:0 1px 3px rgba(11,67,36,.06)}
+.transition-track.now{border-color:var(--rf-muted);background:var(--rf-gray)}
+.transition-track.next{border-color:var(--rf-mid);border-left:4px solid var(--rf-mid)}
+.transition-track .track-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rf-muted)}
+.transition-track.next .track-label{color:var(--rf-mid)}
+.transition-track h3{font-size:14px;font-weight:800;color:var(--rf-dark);line-height:1.15}
+.transition-track ul{list-style:none;font-size:10px;line-height:1.35;color:var(--rf-text);flex:1}
+.transition-track li{padding:3px 0 3px 12px;position:relative}
+.transition-track li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--rf-mid)}
+.transition-track.now li::before{color:var(--rf-muted)}
+.transition-bridge{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 4px;min-width:72px}
+.transition-bridge .tb-label{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--rf-coral);text-align:center;line-height:1.25}
+.transition-bridge .tb-icon{font-size:20px;font-weight:800;color:var(--rf-coral);line-height:1}
+.transition-note{flex-shrink:0;background:var(--rf-white);border:2px solid var(--rf-coral);border-radius:6px;padding:8px 12px;font-size:10px;line-height:1.4;text-align:center}
+.transition-note strong{color:var(--rf-dark)}
+
+/* ── v2: Tandem QA ── */
+.tandem-intro{flex-shrink:0;font-size:10px;color:var(--rf-muted);line-height:1.35;text-align:center;padding:0 6px}
+.tandem-grid{flex-shrink:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tandem-card{background:var(--rf-white);border:1px solid var(--rf-border);border-radius:7px;padding:8px 10px;font-size:9px;line-height:1.3}
+.tandem-card strong{display:block;font-size:10px;font-weight:800;color:var(--rf-dark);margin-bottom:4px}
+.tandem-pair{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:4px}
+.tandem-chip{font-size:8px;font-weight:700;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.tandem-chip.resp{background:var(--rf-dark);color:#fff}
+.tandem-chip.wing{background:#eef8ea;color:var(--rf-mid);border:1px solid var(--rf-light)}
+.tandem-chip.squad{background:rgba(79,136,59,.12);color:var(--rf-mid)}
+.tandem-chip.core{background:var(--rf-gray2);color:var(--rf-dark);border:1px solid var(--rf-border)}
+.tandem-card .why{font-size:8px;color:var(--rf-muted);line-height:1.28;margin-top:2px}
+.bottleneck-bar{flex-shrink:0;background:linear-gradient(90deg,#fff3f0 0%,#eef8ea 100%);border:2px solid var(--rf-coral);border-radius:8px;padding:9px 14px;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:6px;align-items:center}
+.bottleneck-step{text-align:center;font-size:9px;font-weight:700;color:var(--rf-dark);line-height:1.25}
+.bottleneck-step span{display:block;font-size:8px;font-weight:600;color:var(--rf-muted);margin-top:2px}
+.bottleneck-arrow{font-size:14px;font-weight:800;color:var(--rf-coral);text-align:center}
+
+/* ── v2: Module onboarding ── */
+.onboard-intro{flex-shrink:0;font-size:11px;color:var(--rf-muted);line-height:1.4;text-align:center;padding:0 10px}
+.onboard-intro strong{color:var(--rf-dark)}
+.onboard-main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.onboard-module{background:var(--rf-white);border:2px solid var(--rf-border);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-height:0;box-shadow:0 1px 3px rgba(11,67,36,.06)}
+.onboard-module.hot{border-color:var(--rf-coral);background:#fffcfb}
+.onboard-module h3{font-size:15px;font-weight:800;color:var(--rf-dark)}
+.onboard-module.hot h3{color:var(--rf-coral)}
+.onboard-module .mod-tag{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--rf-coral)}
+.onboard-module ol{margin:0;padding-left:18px;font-size:10px;line-height:1.38;color:var(--rf-text)}
+.onboard-module li{margin:3px 0}
+.onboard-module .deliver{font-size:9px;color:var(--rf-muted);margin-top:auto;padding-top:6px;border-top:1px solid var(--rf-border);line-height:1.35}
+.onboard-module .deliver strong{color:var(--rf-dark)}
+.onboard-shared{background:var(--rf-dark);color:#fff;border-radius:8px;padding:12px 14px;grid-column:1/-1;display:grid;grid-template-columns:1.1fr .9fr;gap:12px;align-items:start}
+.onboard-shared h3{font-size:11px;font-weight:800;color:var(--rf-light);margin-bottom:4px}
+.onboard-shared p{font-size:10px;line-height:1.4;opacity:.9}
+.onboard-shared ul{list-style:none;font-size:10px;line-height:1.35;opacity:.88}
+.onboard-shared li{padding:2px 0 2px 12px;position:relative}
+.onboard-shared li::before{content:'✓';position:absolute;left:0;font-size:9px;color:var(--rf-light)}
+
+/* ── v2: Enforcement on layers ── */
+.enforce-box{flex-shrink:0;background:#fff3f0;border:2px solid var(--rf-coral);border-radius:6px;padding:8px 12px;font-size:10px;line-height:1.4}
+.enforce-box strong{color:var(--rf-dark)}
+.layer-row.l-pr{border-color:#6366f1;background:#f5f3ff;border-left:4px solid #6366f1}
+.layer-row.l-pr .layer-num{color:#4338ca}
+
 .nav-btn{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;z-index:20}
 .nav-btn:hover{background:rgba(255,255,255,.22)}
 .nav-btn:disabled{opacity:.25;cursor:default}
@@ -220,36 +317,35 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 
 <!-- COVER -->
 <div class="slide active cover">
-  <div class="tag">QA Concept</div>
+  <div class="tag">QA Concept · Rollout v2</div>
   <h1>QA Entry Gate Concept</h1>
-  <p class="subtitle">Who owns what, and when testing may start</p>
+  <p class="subtitle">Target state, transition, and how QA leads roll it out</p>
   <div class="cover-grid">
     <div class="cover-panel">
-      <h3>Why we need this</h3>
+      <h3>What v2 adds (QA leads session)</h3>
       <ul>
-        <li>Incomplete stories often land on QA too early</li>
-        <li>Ownership for specs vs testing is unclear</li>
-        <li>Squad QA and Core QA need the same rules</li>
-        <li>BA, PO, Dev, and SA push full test ownership to QA</li>
-        <li>QA spends capacity chasing missing specs and acceptance criteria</li>
-        <li>Manual regression grows when work enters testing unfinished</li>
-        <li>No shared definition of when a story is ready for QA</li>
-        <li>Hard reject is needed but not yet normal in daily practice</li>
+        <li><strong>Four pillars</strong> — unit · API · Playwright · golden data</li>
+        <li><strong>Dual track</strong> — current release vs parallel improvement</li>
+        <li><strong>Tandem QA</strong> — responsible + wingman (Squad + Core)</li>
+        <li><strong>Flag bottlenecks</strong> — align before executing workarounds</li>
+        <li><strong>Module onboarding</strong> — CargoBeamer &amp; RCG first (playbooks)</li>
+        <li><strong>Enforced layers</strong> — PR-only deploy · no direct env access</li>
       </ul>
     </div>
     <div class="cover-panel">
-      <h3>In this deck (9 slides)</h3>
+      <h3>In this deck (12 slides)</h3>
       <ul>
-        <li><strong>Lifecycle &amp; ownership</strong> — RACI table · handover · hard reject</li>
-        <li><strong>Responsibility shift</strong> — five illustrated RACI rows (slides 2–6)</li>
-        <li><strong>The Entry Gate</strong> — checklist for BA, PO, Dev &amp; QA</li>
-        <li><strong>QA workflow</strong> — Squad &amp; Core QA + QA leads</li>
-        <li><strong>Quality layers</strong> — four layers · shared ownership</li>
+        <li><strong>1–6</strong> — Lifecycle · RACI · five responsibility comics</li>
+        <li><strong>7–8</strong> — Four pillars · transition (no big bang)</li>
+        <li><strong>9</strong> — Entry Gate checklist</li>
+        <li><strong>10</strong> — QA workflow · tandem · bottleneck rule</li>
+        <li><strong>11</strong> — Module onboarding (CB · RCG)</li>
+        <li><strong>12</strong> — Quality layers + enforcement</li>
       </ul>
     </div>
   </div>
   <div class="cover-nav">
-    <span>→ Use arrow keys to navigate · <a href="index-v2.html" style="color:rgba(255,255,255,.75)">Rollout deck (v2)</a></span>
+    <span>→ Arrow keys · <a href="index.html" style="color:rgba(255,255,255,.75)">Original deck (v1)</a></span>
     <span>Bart Gilissen · Rail-Flow QA</span>
   </div>
 </div>
@@ -258,7 +354,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
 <div class="slide">
   <div class="slide-header">
     <h2>Lifecycle &amp; who owns what</h2>
-    <span class="snum">1 / 9</span>
+    <span class="snum">1 / 12</span>
   </div>
   <div class="slide-body">
     <div class="eg1-top">
@@ -318,7 +414,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
         </div>
       </div>
     </div>
-    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–6.</strong> Module health via quality layers (slide 9).</div>
+    <div class="takeaway-bar"><strong>Takeaway:</strong> QA is <span class="hl-r">Responsible</span> for <em>how</em> we test a ready story — not for making an unready story testable. <strong>Visual shift per RACI row → slides 2–6.</strong> Four pillars (7) · transition (8) · module health (12).</div>
   </div>
   <div class="slide-footer">
     <span>One Entry Gate at handover · ongoing health via quality layers</span>
@@ -333,7 +429,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Story &amp; AC · BA writes · PO accountable</span>
     </div>
-    <span class="snum">2 / 9</span>
+    <span class="snum">2 / 12</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -353,7 +449,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Happy-path cases · BA writes · QA consulted</span>
     </div>
-    <span class="snum">3 / 9</span>
+    <span class="snum">3 / 12</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -373,7 +469,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Unit &amp; API tests · Dev / SA writes</span>
     </div>
-    <span class="snum">4 / 9</span>
+    <span class="snum">4 / 12</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -393,7 +489,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Playwright &amp; manual · QA writes · BA consulted</span>
     </div>
-    <span class="snum">5 / 9</span>
+    <span class="snum">5 / 12</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -413,7 +509,7 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       <h2>Responsibility shift</h2>
       <span class="shift-topic">Golden Data / env · TO / Core provides</span>
     </div>
-    <span class="snum">6 / 9</span>
+    <span class="snum">6 / 12</span>
   </div>
   <div class="slide-body shift">
     <div class="shift-frame">
@@ -426,11 +522,110 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
 </div>
 
-<!-- Slide 7 — Entry Gate (all roles) -->
+<!-- Slide 7 — Four pillars (Topic 1) -->
+<div class="slide">
+  <div class="slide-header">
+    <h2>Four pillars of the test strategy</h2>
+    <span class="snum">7 / 12</span>
+  </div>
+  <div class="slide-body">
+    <p class="pillars-intro"><strong>Same story everywhere</strong> — handover (Entry Gate), daily testing (four pillars), engineering discipline (quality layers). One strategy index links all detail docs.</p>
+    <div class="pillars-main">
+      <div class="pillars-grid">
+        <div class="pillar-card foundation">
+          <span class="pillar-num">Foundation · start here</span>
+          <strong>Golden data set</strong>
+          <p>Repeatable provisioner-agnostic data across environments. Dev unit tests and QA Playwright share the same base.</p>
+          <span class="owner">Owner: <strong>TO · Core QA · SA</strong> · QA validates at Entry Gate</span>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">Pillar 1</span>
+          <strong>Unit testing</strong>
+          <p>Developer loop · SA top volatile packages · root-cause fixes before handover.</p>
+          <span class="owner">Owner: <strong>Dev · SA</strong> · QA verifies at Entry Gate</span>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">Pillar 2</span>
+          <strong>API testing</strong>
+          <p>Business logic at scale — prefer API over repeated Playwright where possible.</p>
+          <span class="owner">Owner: <strong>Dev · SA</strong> · QA consults on risk hotspots</span>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">Pillar 3</span>
+          <strong>Playwright automation</strong>
+          <p>Built on golden data · input/output like a procedure · improve in cycles after baseline.</p>
+          <span class="owner">Owner: <strong>QA</strong> · BA consulted · Squad or Core executes</span>
+        </div>
+      </div>
+      <div class="pillars-hub">
+        <h3>Single entry point</h3>
+        <p>Strategy hub (Confluence) — links deployment, sprint cadence, Entry Gate checklist, Playwright methodology, golden data pages. <strong>One place to start</strong> when information is scattered.</p>
+        <ul>
+          <li>Q3–Q4 stepping stone — updated as process matures</li>
+          <li>QA leads maintain links when sub-docs change</li>
+          <li>Flag gaps to Bart / Pablo if story diverges</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pillars-map">
+      <div class="pillars-map-item"><strong>Handover</strong>Entry Gate · slide 9</div>
+      <div class="pillars-map-item"><strong>Execution</strong>Four pillars · this slide</div>
+      <div class="pillars-map-item"><strong>Engineering</strong>Quality layers · slide 12</div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Deterministic = repeatable feedback loop · not one-off firefighting</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 8 — Transition dual track (Topic 3) -->
+<div class="slide">
+  <div class="slide-header">
+    <h2>Transition — two tracks in parallel</h2>
+    <span class="snum">8 / 12</span>
+  </div>
+  <div class="slide-body">
+    <p class="transition-intro">We <strong>cannot change the world in one day</strong>. Current release keeps legacy steps; we improve the next cycle incrementally — <strong>no big bang</strong>.</p>
+    <div class="transition-main">
+      <div class="transition-track now">
+        <span class="track-label">Track A · now</span>
+        <h3>Current release cycle</h3>
+        <ul>
+          <li>Follow <strong>existing</strong> release &amp; feasibility process (e.g. upcoming July release)</li>
+          <li>SaaS / legacy paths where still required</li>
+          <li>Prepare environments as today — expect friction during cutover</li>
+          <li>QA still applies Entry Gate where team is ready</li>
+        </ul>
+      </div>
+      <div class="transition-bridge">
+        <span class="tb-icon">⇄</span>
+        <span class="tb-label">Parallel<br>not either/or</span>
+      </div>
+      <div class="transition-track next">
+        <span class="track-label">Track B · next cycles</span>
+        <h3>New framework (incremental)</h3>
+        <ul>
+          <li>Golden data first · then Playwright on same base</li>
+          <li>Dev alignment meetings · unit tests before handover</li>
+          <li>Entry Gate + hard reject becomes normal practice</li>
+          <li>Early wins on <strong>CargoBeamer</strong> &amp; <strong>RCG</strong> — reuse on other modules</li>
+        </ul>
+      </div>
+    </div>
+    <div class="transition-note"><strong>Priority modules:</strong> CargoBeamer &amp; RCG first — <em>seeing is believing</em> for stakeholders. Even partial framework use in Track A can save ~30% effort this cycle.</div>
+  </div>
+  <div class="slide-footer">
+    <span>Buy time on old process · build strength on new process · same sprint</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 9 — Entry Gate (all roles) -->
 <div class="slide">
   <div class="slide-header">
     <h2>The Entry Gate</h2>
-    <span class="snum">7 / 9</span>
+    <span class="snum">9 / 12</span>
   </div>
   <div class="slide-body">
     <div class="s3-rule">
@@ -487,64 +682,84 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
   </div>
 </div>
 
-<!-- Slide 4 — QA workflow (internal) -->
+<!-- Slide 10 — QA workflow (internal) -->
 <div class="slide">
   <div class="slide-header">
     <h2>QA workflow (internal)</h2>
-    <span class="snum">8 / 9</span>
+    <span class="snum">10 / 12</span>
   </div>
-  <div class="slide-body">
-    <p class="workflow-intro"><strong>After QA accepts the story</strong> — not separate entry gates. Work sits in <strong>Squad QA</strong> or <strong>Core QA</strong>; steps may overlap; one colleague may cover several phases.</p>
+  <div class="slide-body qa-workflow-dense">
+    <p class="workflow-intro"><strong>After QA accepts the story</strong> — Squad or Core QA runs the same phases. <strong>Tandem:</strong> responsible + wingman (one Squad, one Core). Leads: Irem (Squad) · Emre (Core).</p>
+    <div class="tandem-grid">
+      <div class="tandem-card">
+        <strong>CargoBeamer</strong>
+        <div class="tandem-pair">
+          <span class="tandem-chip resp">Ricard · responsible</span>
+          <span class="tandem-chip wing">Chris · wingman</span>
+        </div>
+        <div class="tandem-pair">
+          <span class="tandem-chip squad">Squad</span>
+          <span class="tandem-chip core">Core</span>
+        </div>
+        <p class="why">Second pair always knows context · backup · core/custom split</p>
+      </div>
+      <div class="tandem-card">
+        <strong>Lineas / ITMS slice</strong>
+        <div class="tandem-pair">
+          <span class="tandem-chip resp">James · responsible</span>
+          <span class="tandem-chip wing">Rema · wingman</span>
+        </div>
+        <div class="tandem-pair">
+          <span class="tandem-chip squad">Squad</span>
+          <span class="tandem-chip core">Core</span>
+        </div>
+        <p class="why">Core learns customer flow · Squad learns platform patterns</p>
+      </div>
+      <div class="tandem-card">
+        <strong>RCG · other products</strong>
+        <div class="tandem-pair">
+          <span class="tandem-chip resp">Named lead</span>
+          <span class="tandem-chip wing">Wingman</span>
+        </div>
+        <div class="tandem-pair">
+          <span class="tandem-chip squad">Squad</span>
+          <span class="tandem-chip core">Core</span>
+        </div>
+        <p class="why">Capacity plan defines responsible · wingman at lower %</p>
+      </div>
+    </div>
+
+    <div class="bottleneck-bar">
+      <div class="bottleneck-step">1 · Flag<span>Blocker or inefficiency</span></div>
+      <div class="bottleneck-arrow">→</div>
+      <div class="bottleneck-step">2 · Align<span>BA · Dev · SA · TO</span></div>
+      <div class="bottleneck-arrow">→</div>
+      <div class="bottleneck-step">3 · Execute<span>Shared decision · no solo workaround</span></div>
+    </div>
+    <p class="tandem-intro"><strong>Do not</strong> default to Playwright patches for data/env gaps — flag → align → fix at source (procedure / golden data).</p>
 
     <div class="qa-workflow-main">
       <div class="qa-team-row">
         <div class="qa-team-card squad">
           <strong>Squad QA</strong>
-          <span>Feature delivery — squad &amp; customer-specific scope</span>
+          <span>Customer-specific delivery</span>
           <ul>
-            <li>Create &amp; maintain customer-specific test cases</li>
-            <li>Manual testing where automation is not yet in place</li>
-            <li>Primary focus: new implementations in the squad</li>
-            <li>Extend regression coverage (Playwright) for squad scope</li>
-            <li>Entry Gate: validate story handover · accept or reject</li>
-            <li>Signal Core QA when scope goes multi-customer</li>
+            <li>Entry Gate · accept or hard reject</li>
+            <li>Manual + Playwright for squad scope</li>
+            <li>Signal Core when multi-customer</li>
           </ul>
         </div>
         <div class="qa-team-bridge">
-          <span class="br-label">Either team runs<br>the same steps</span>
+          <span class="br-label">Same<br>phases</span>
           <span class="br-arrows">⇄</span>
         </div>
         <div class="qa-team-card core">
           <strong>Core QA</strong>
-          <span>Platform ownership — not only Playwright maintenance</span>
+          <span>Platform &amp; golden data</span>
           <ul>
-            <li>Golden Data with TO (provisioner-agnostic)</li>
-            <li>Suite architecture &amp; logical test flows</li>
-            <li>CI/CD segmentation · which tests run when</li>
-            <li>Root-cause on recurring failures (with Dev / SA)</li>
-            <li>Unit &amp; API support for business logic</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="qa-leads-row">
-        <div class="qa-lead-card squad-lead">
-          <span class="lead-role">Squad QA Lead</span>
-          <span class="lead-name">Irem</span>
-          <ul>
-            <li>Orchestrate squad QAs · named entry point per squad (+ backup)</li>
-            <li>Ensure squads are heard · requirements flow into QA</li>
-            <li>Customer / project-specific cases &amp; release prep (with Emre)</li>
-          </ul>
-        </div>
-        <div class="qa-lead-card core-lead">
-          <span class="lead-role">Core QA Lead</span>
-          <span class="lead-name">Emre</span>
-          <ul>
-            <li>Orchestrate core QA · module-level validations &amp; automation</li>
-            <li>Translate squad input into repeatable core coverage</li>
-            <li>Golden Data &amp; standard-process demos (with TO / SA)</li>
-            <li>Release prep with Irem · sales / onboarding support (standard vs custom)</li>
+            <li>Golden Data with TO · suite architecture</li>
+            <li>CI/CD segmentation · root-cause with Dev / SA</li>
+            <li>Cross-provisioner regression</li>
           </ul>
         </div>
       </div>
@@ -608,19 +823,75 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
     </div>
   </div>
   <div class="slide-footer">
-    <span>Core QA: platform + handover · Squad: feature delivery · QA team only</span>
+    <span>Gatekeeper at Entry Gate · tandem in delivery · flag before firefighting</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
 
-<!-- Slide 5 — Quality layers -->
+<!-- Slide 11 — Module onboarding (Topic 8) -->
+<div class="slide">
+  <div class="slide-header">
+    <h2>Module onboarding — CargoBeamer &amp; RCG</h2>
+    <span class="snum">11 / 12</span>
+  </div>
+  <div class="slide-body">
+    <p class="onboard-intro"><strong>Concept deck ≠ rollout plan.</strong> Each hot module gets a <strong>draft playbook</strong> (Confluence) with actions, owners, and commitments — not only slides.</p>
+    <div class="onboard-main">
+      <div class="onboard-module hot">
+        <span class="mod-tag">Priority 1 · hottest pain</span>
+        <h3>CargoBeamer</h3>
+        <ol>
+          <li>Golden data scope · TO + SA + Core QA alignment</li>
+          <li>Dev alignment meeting — unit tests before handover</li>
+          <li>Entry Gate pilot · hard reject when ready</li>
+          <li>Playwright baseline on shared data · improve later</li>
+        </ol>
+        <p class="deliver"><strong>Deliverable:</strong> draft onboarding doc · dev feedback · İrem / Emre lead · tandem Ricard + Chris</p>
+      </div>
+      <div class="onboard-module hot">
+        <span class="mod-tag">Priority 2 · customer urgency</span>
+        <h3>RCG</h3>
+        <ol>
+          <li>Reuse ITMS lessons (Burundo · AVR on ST)</li>
+          <li>Golden data + provisioner with Jannik / Dominik track</li>
+          <li>Dev alignment — same unit-test message as CB</li>
+          <li>Incremental rollout · no big bang</li>
+        </ol>
+        <p class="deliver"><strong>Deliverable:</strong> draft onboarding doc · dev feedback · Fadıl lead · tandem per capacity plan</p>
+      </div>
+      <div class="onboard-shared">
+        <div>
+          <h3>Every playbook includes</h3>
+          <ul>
+            <li>What we need · who we need · what we already know</li>
+            <li>Expected result &amp; what QA commits to</li>
+            <li>Support requested from Dev · SA · TO</li>
+            <li>Link to four pillars &amp; Entry Gate checklist</li>
+          </ul>
+        </div>
+        <div>
+          <h3>After alignment meetings</h3>
+          <p>Document action points and <strong>confirmed developer commitments</strong> — monitor delivery, then QA takes its parts. Practical tone · shared goal · not “straight line” confrontation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Separate Confluence playbooks · this slide is the map only</span>
+    <span>Rail-Flow · QA</span>
+  </div>
+</div>
+
+<!-- Slide 12 — Quality layers -->
 <div class="slide">
   <div class="slide-header">
     <h2>Quality layers &amp; shared ownership</h2>
-    <span class="snum">9 / 9</span>
+    <span class="snum">12 / 12</span>
   </div>
   <div class="slide-body">
-    <p class="layers-intro"><strong>Quality is a team responsibility.</strong> Four layers in dev/test — then the pipeline runs the same way on every environment. No single role carries quality alone.</p>
+    <p class="layers-intro"><strong>Quality is a team responsibility.</strong> Four layers in dev/test — then the pipeline runs the same way on every environment. Layers are <strong>enforced</strong>, not optional guidelines.</p>
+
+    <div class="enforce-box"><strong>Process enforcement (Topic 2):</strong> Developer deploy rights on <strong>dev · test · acceptance</strong> are revoked — changes go through <strong>pull request only</strong> (100% compliance). No direct hotfixes on ACP; test-first path. Impacts current release prep but is required to stop mismatch and firefighting.</div>
 
     <div class="layers-main">
       <div class="layers-stack">
@@ -633,11 +904,11 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
           </div>
         </div>
         <div class="layer-arrow">↓</div>
-        <div class="layer-row">
+        <div class="layer-row l-pr">
           <div class="layer-num">Layer 2<br>PR loop</div>
           <div class="layer-body">
-            <strong>Pull request — developer</strong>
-            GitHub checks · Tech Guardian · code review · technical guidelines · <span class="owner-tag">Owner: <strong>Dev</strong></span>
+            <strong>Pull request — enforced</strong>
+            GitHub checks · Tech Guardian · code review · <strong>no direct env deploy</strong> · technical guidelines · <span class="owner-tag">Owner: <strong>Dev</strong></span>
           </div>
         </div>
         <div class="layer-arrow">↓</div>
@@ -697,10 +968,10 @@ table.raci tr:nth-child(even) td{background:var(--rf-gray)}
       </div>
     </div>
 
-    <p class="layers-foot"><strong>Layer 2:</strong> technical guidelines · <strong>Layer 3:</strong> company guidelines · <strong>Layer 4:</strong> integrated pipeline — same run on every environment.</p>
+    <p class="layers-foot"><strong>Layer 2:</strong> PR-only deploy · <strong>Layer 3:</strong> company guidelines · <strong>Layer 4:</strong> unit + API + Playwright + golden data · <strong>Feasibility:</strong> visibility test → acceptance → prod (release tooling). QA governs quality gates at handover; layers govern engineering.</p>
   </div>
   <div class="slide-footer">
-    <span>Shared quality · not QA-only · aligns with Entry Gate &amp; QA workflow</span>
+    <span>Shared quality · enforced layers · aligns with Entry Gate &amp; four pillars</span>
     <span>Rail-Flow · QA</span>
   </div>
 </div>
