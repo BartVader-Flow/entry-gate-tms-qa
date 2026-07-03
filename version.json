@@ -1,8 +1,8 @@
 {
-  "deployVersion": "20260701-v2-15",
+  "deployVersion": "20260701-v2-16",
   "branch": "gh-pages",
   "repo": "BartVader-Flow/entry-gate-tms-qa",
   "previewUrl": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html",
-  "updatedAt": "2026-07-02T18:40:00Z",
-  "notes": "Reordered the deck for a more logical flow: new order is 1 Lifecycle, 2 Four pillars (was 7), 3 Quality layers (was 12), 4-8 the five responsibility-shift comics (was 2-6), 9 Entry Gate (was 8), 10 QA workflow (was 10), 11 Tandem capacity plan (was 9), 12 Module onboarding (was 11). Slide numbering badges, the cover overview list, and the internal cross-reference to the capacity plan slide were all updated to match."
+  "updatedAt": "2026-07-03T09:10:00Z",
+  "notes": "Visual re-skin to match Pablo's Rail-Flow test-framework Confluence deck: light mint background, thin color-coded top border per slide category (green = process/strategy, blue = enforcement/QA-workflow, coral = responsibility-shift/entry-gate), Rail-Flow wordmark + mini rail logo in every header, pill-style kicker + section-tag labels, redesigned cover with large logo and R·F watermark. Purely additive CSS/HTML changes — no slide content, order, or copy was altered."
 }

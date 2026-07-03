@@ -18,7 +18,11 @@ Navigate with arrow keys (← →).
 
 Cover + **12 content slides**, in this order: **1** lifecycle & who owns what (RACI overview) · **2** four pillars & strategy hub · **3** quality layers + enforcement · **4–8** the five responsibility-shift comics · **9** Entry Gate · **10** QA workflow (internal) · **11** tandem QA capacity plan (from Excel) · **12** module onboarding + dual-track transition (CargoBeamer & RCG).
 
-Meta `deploy-version`: **20260701-v2-15** · green badge **LIVE** bottom-right; orange **STALE** = Pages CDN behind GitHub.
+Meta `deploy-version`: **20260701-v2-16** · green badge **LIVE** bottom-right; orange **STALE** = Pages CDN behind GitHub.
+
+### Visual design (v2-16)
+
+The deck now follows the visual language of Pablo's "Testing Framework" Confluence deck (QIT space): light mint background, a Rail-Flow wordmark + mini rail-track logo in every slide header, and a thin color-coded top border per slide category — green for process/strategy slides, blue for enforcement & QA-workflow slides, coral for responsibility-shift comics & the Entry Gate. The cover slide carries a larger logo and a translucent "R·F" watermark. This was a purely additive CSS/HTML re-skin — no slide content, order, or copy was changed.
 
 > The retired v1 deck (9 content slides, `deploy-version 20260701-6`) is no longer published, but remains fully recoverable from the `gh-pages` git history if ever needed.
 
