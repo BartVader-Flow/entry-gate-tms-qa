@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="20260701-v2-18">
+<meta name="deploy-version" content="20260701-v2-19">
 <title>QA Entry Gate Concept — Rollout v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -39,20 +39,20 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a1e1a;font-family:
 .slide-footer span:last-child{text-transform:uppercase;font-weight:700;font-size:8.5px;letter-spacing:.05em;color:var(--rf-dark);opacity:.7}
 
 /* ── COVER ── */
-.cover{justify-content:center;padding:44px 56px;background:linear-gradient(135deg,var(--rf-dark) 0%,#0d5530 55%,var(--rf-mid) 100%);color:#fff;position:relative}
-.cover-watermark{position:absolute;right:-30px;bottom:-24px;width:420px;height:auto;color:rgba(255,255,255,.055);pointer-events:none;z-index:0;user-select:none}
+.cover{justify-content:center;padding:26px 50px 18px;background:linear-gradient(135deg,var(--rf-dark) 0%,#0d5530 55%,var(--rf-mid) 100%);color:#fff;position:relative;gap:0}
 .cover>*{position:relative;z-index:1}
-.rf-logo{position:absolute;top:26px;left:56px;height:34px;width:auto;color:#fff;z-index:2}
-.cover .tag{display:inline-block;background:rgba(255,255,255,.18);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:4px;margin-bottom:14px;width:fit-content}
-.cover h1{font-size:clamp(30px,3.6vw,40px);font-weight:800;line-height:1.05;margin-bottom:8px}
-.cover .subtitle{font-size:clamp(15px,1.5vw,18px);opacity:.9;font-weight:500;margin-bottom:22px}
-.cover-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;max-width:820px}
-.cover-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:14px 16px}
-.cover-panel h3{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.7;margin-bottom:8px}
-.cover-panel ul{list-style:none;font-size:12px;line-height:1.38}
-.cover-panel li{padding:3px 0 3px 14px;position:relative;opacity:.92}
-.cover-panel li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
-.cover-nav{margin-top:20px;font-size:11px;opacity:.55;display:flex;gap:20px;flex-wrap:wrap}
+.cover-watermark{position:absolute!important;top:22px;right:34px;width:220px;height:auto;color:rgba(255,255,255,.16);pointer-events:none;z-index:0;user-select:none}
+.rf-logo{position:absolute!important;top:22px;left:50px;height:30px;width:auto;color:#fff;z-index:2}
+.cover .tag{display:inline-block;background:rgba(255,255,255,.18);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-top:30px;margin-bottom:10px;width:fit-content}
+.cover h1{font-size:clamp(26px,3.2vw,36px);font-weight:800;line-height:1.05;margin-bottom:6px}
+.cover .subtitle{font-size:clamp(13px,1.4vw,16px);opacity:.9;font-weight:500;margin-bottom:16px}
+.cover-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1040px;width:100%}
+.cover-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:11px 15px}
+.cover-panel h3{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.7;margin-bottom:6px}
+.cover-panel ul{list-style:none;font-size:11.5px;line-height:1.32}
+.cover-panel li{padding:2.5px 0 2.5px 14px;position:relative;opacity:.92;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cover-panel li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--rf-light)}
+.cover-nav{margin-top:12px;font-size:10px;opacity:.55;display:flex;gap:20px;flex-wrap:wrap}
 
 /* ── Responsibility shift (illustrated) ── */
 .slide-body.shift{padding:0 6px;gap:0}
@@ -446,35 +446,25 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 
 <!-- COVER -->
 <div class="slide active cover">
-  <svg class="cover-watermark" viewBox="0 0 400 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <text x="4" y="112" font-family="Georgia,'Times New Roman',serif" font-weight="800" font-style="italic" font-size="128" fill="currentColor">R&#183;F</text>
-    <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="18" y1="128" x2="18" y2="156"/>
-      <line x1="34" y1="128" x2="34" y2="156"/>
-      <line x1="34" y1="128" x2="300" y2="128"/>
-      <line x1="300" y1="128" x2="352" y2="168"/>
-      <line x1="352" y1="150" x2="352" y2="168"/>
-    </g>
+  <svg class="cover-watermark" viewBox="0 0 300 145" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <text x="4" y="80" font-family="Georgia,'Times New Roman',serif" font-weight="800" font-style="italic" font-size="90" fill="currentColor">R&#183;F</text>
     <g fill="currentColor">
-      <circle cx="128" cy="172" r="15"/>
-      <circle cx="248" cy="172" r="15"/>
+      <rect x="10" y="95" width="9" height="28" rx="1"/>
+      <rect x="25" y="95" width="9" height="28" rx="1"/>
+      <path d="M42,90 L200,90 L240,124 L42,124 Z"/>
+      <circle cx="95" cy="124" r="15"/>
+      <circle cx="175" cy="124" r="15"/>
     </g>
-    <line x1="128" y1="172" x2="248" y2="172" stroke="currentColor" stroke-width="7"/>
   </svg>
-  <svg class="rf-logo" viewBox="0 0 172 62" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <text x="2" y="24" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="23" fill="currentColor">Rail-Flow</text>
-    <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="6" y1="32" x2="6" y2="46"/>
-      <line x1="13" y1="32" x2="13" y2="46"/>
-      <line x1="13" y1="32" x2="128" y2="32"/>
-      <line x1="128" y1="32" x2="150" y2="49"/>
-      <line x1="150" y1="43" x2="150" y2="49"/>
-    </g>
+  <svg class="rf-logo" viewBox="0 0 160 58" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <text x="2" y="22" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="22" fill="currentColor">Rail-Flow</text>
     <g fill="currentColor">
-      <circle cx="52" cy="53" r="5"/>
-      <circle cx="104" cy="53" r="5"/>
+      <rect x="4" y="28" width="5" height="18" rx="0.8"/>
+      <rect x="13" y="28" width="5" height="18" rx="0.8"/>
+      <path d="M22,26 L104,26 L124,46 L22,46 Z"/>
+      <circle cx="49" cy="46" r="8"/>
+      <circle cx="89" cy="46" r="8"/>
     </g>
-    <line x1="52" y1="53" x2="104" y2="53" stroke="currentColor" stroke-width="2.4"/>
   </svg>
   <div class="tag">QA Concept · Rollout v2</div>
   <h1>QA Entry Gate Concept</h1>
@@ -507,7 +497,6 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
   </div>
   <div class="cover-nav">
     <span>→ Arrow keys · <a href="preview-v2.html" style="color:rgba(255,255,255,.85)">Latest preview</a> · <a href="index.html" style="color:rgba(255,255,255,.75)">Same deck at primary URL</a></span>
-    <span>Build 20260701-v2-17 · badge bottom-right = live version</span>
     <span>Bart Gilissen · Rail-Flow QA</span>
   </div>
 </div>
@@ -516,7 +505,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <span class="kicker">PROCESS OVERVIEW</span>
       <h2>Lifecycle &amp; who owns what</h2>
     </div>
@@ -595,7 +584,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <span class="kicker">TEST STRATEGY</span>
       <h2>Four pillars of the test strategy</h2>
     </div>
@@ -688,7 +677,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header hdr-blue">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <span class="kicker k-blue">ENFORCEMENT &amp; GATES</span>
       <h2>Quality layers &amp; shared ownership</h2>
     </div>
@@ -789,7 +778,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header shift-header hdr-coral">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <div class="head-block">
         <h2>Responsibility shift</h2>
         <span class="shift-topic">Story &amp; AC · BA writes · PO accountable</span>
@@ -815,7 +804,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header shift-header hdr-coral">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <div class="head-block">
         <h2>Responsibility shift</h2>
         <span class="shift-topic">Happy-path cases · BA writes · QA consulted</span>
@@ -841,7 +830,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header shift-header hdr-coral">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <div class="head-block">
         <h2>Responsibility shift</h2>
         <span class="shift-topic">Unit &amp; API tests · Dev / SA writes</span>
@@ -867,7 +856,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header shift-header hdr-coral">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <div class="head-block">
         <h2>Responsibility shift</h2>
         <span class="shift-topic">Playwright &amp; manual · QA writes · BA consulted</span>
@@ -893,7 +882,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header shift-header hdr-coral">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <div class="head-block">
         <h2>Responsibility shift</h2>
         <span class="shift-topic">Golden Data / env · TO / Core provides</span>
@@ -919,7 +908,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header hdr-coral">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <span class="kicker k-coral">QUALITY GATE</span>
       <h2>The Entry Gate</h2>
     </div>
@@ -987,7 +976,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header hdr-blue">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <span class="kicker k-blue">INTERNAL PROCESS</span>
       <h2>QA workflow (internal)</h2>
     </div>
@@ -1102,7 +1091,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <span class="kicker">CAPACITY PLANNING</span>
       <h2>Tandem QA — capacity plan 2026</h2>
     </div>
@@ -1189,7 +1178,7 @@ table.cap-table td.proj-cell{white-space:nowrap;max-width:0;width:28%}
 <div class="slide">
   <div class="slide-header">
     <div class="head-left">
-      <svg class="rf-logo-mini" viewBox="0 0 132 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="1" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="16" fill="currentColor">Rail-Flow</text><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="23" x2="4" y2="34"/><line x1="9" y1="23" x2="9" y2="34"/><line x1="9" y1="23" x2="96" y2="23"/><line x1="96" y1="23" x2="113" y2="37"/><line x1="113" y1="32" x2="113" y2="37"/></g><g fill="currentColor"><circle cx="39" cy="40" r="3.6"/><circle cx="78" cy="40" r="3.6"/></g><line x1="39" y1="40" x2="78" y2="40" stroke="currentColor" stroke-width="1.7"/></svg>
+      <svg class="rf-logo-mini" viewBox="0 0 124 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><text x="2" y="17" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-style="italic" font-size="17" fill="currentColor">Rail-Flow</text><g fill="currentColor"><rect x="3" y="22" width="4" height="14" rx="0.5"/><rect x="10" y="22" width="4" height="14" rx="0.5"/><path d="M17,20 L80,20 L96,36 L17,36 Z"/><circle cx="38" cy="36" r="6.2"/><circle cx="68" cy="36" r="6.2"/></g></svg>
       <span class="kicker">MODULE ROLLOUT</span>
       <h2>Module onboarding — CargoBeamer &amp; RCG</h2>
     </div>

@@ -1,8 +1,8 @@
 {
-  "deployVersion": "20260701-v2-18",
+  "deployVersion": "20260701-v2-19",
   "branch": "gh-pages",
   "repo": "BartVader-Flow/entry-gate-tms-qa",
   "previewUrl": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html",
-  "updatedAt": "2026-07-03T13:20:00Z",
-  "notes": "Logo correction: replaced the hand-invented wordmark+rail-tie-line logo with an accurate recreation of the real Rail-Flow logo (bold italic 'Rail-Flow' wordmark over a flatbed-wagon pictogram — corner post, sloped headboard end, two wheels on an axle), based on the user's reference screenshots. Applied to the cover corner logo and all 12 slide mini-headers. The cover watermark now uses the matching 'R·F' + wagon-pictogram lockup (very low opacity) instead of plain text. No slide content, order, or layout structure changed."
+  "updatedAt": "2026-07-03T14:35:00Z",
+  "notes": "Cover fixes: (1) fixed a CSS cascade bug where '.cover>*{position:relative}' was overriding the watermark's absolute positioning, causing it to render inline and overlap the tag/title; (2) rebuilt the wagon pictogram as a solid filled silhouette (flatbed with sloped right end, two coupler posts, two wheels) matching the real Rail-Flow logo reference — applied to the cover corner logo and all 12 slide mini-headers, replacing the earlier thin-outline version; (3) moved the large R·F mark to the cover's top-right corner as a visible branded accent (was previously a near-invisible bottom-right watermark); (4) tightened cover vertical spacing (padding, margins, list line-height) so the full content block (title, subtitle, both panels, nav row) reliably fits inside the slide even at reduced browser-window heights, fixing the bottom-row clipping the user reported; (5) widened the cover-grid to full width and switched to equal two-column layout so every 'In this deck' and 'What v2 adds' list entry fits on a single line without wrapping; (6) removed a stale hardcoded 'Build 20260701-v2-17' string from the cover footer row. No slide content, order, or layout structure changed."
 }
