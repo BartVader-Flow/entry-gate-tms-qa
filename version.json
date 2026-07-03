@@ -1,8 +1,8 @@
 {
-  "deployVersion": "20260701-v2-16",
+  "deployVersion": "20260701-v2-17",
   "branch": "gh-pages",
   "repo": "BartVader-Flow/entry-gate-tms-qa",
   "previewUrl": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html",
-  "updatedAt": "2026-07-03T09:10:00Z",
-  "notes": "Visual re-skin to match Pablo's Rail-Flow test-framework Confluence deck: light mint background, thin color-coded top border per slide category (green = process/strategy, blue = enforcement/QA-workflow, coral = responsibility-shift/entry-gate), Rail-Flow wordmark + mini rail logo in every header, pill-style kicker + section-tag labels, redesigned cover with large logo and R·F watermark. Purely additive CSS/HTML changes — no slide content, order, or copy was altered."
+  "updatedAt": "2026-07-03T10:20:00Z",
+  "notes": "Hotfix for v2-16 cover regression: the Rail-Flow logo on the cover slide was inline in the centered flex stack (with margin-bottom), which pushed the already content-dense cover (title, subtitle, 2-column grid, nav) taller than the fixed slide height and clipped the bottom cards. Logo is now absolutely positioned in the top-left corner (zero flow impact, cover layout back to its original spacing). Also removed an inaccurate train-car icon from the Rail-Flow logo (cover + all 12 mini headers) — logo is now wordmark + rail-tie line only, matching Pablo's reference. Watermark shrunk and moved to bottom-right corner so it never overlaps text."
 }
