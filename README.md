@@ -18,7 +18,7 @@ Navigate with arrow keys (← →).
 
 Cover + **12 content slides**, in this order: **1** lifecycle & who owns what (RACI overview) · **2** four pillars & strategy hub · **3** quality layers + enforcement · **4–8** the five responsibility-shift comics · **9** Entry Gate · **10** QA workflow (internal) · **11** tandem QA capacity plan (from Excel) · **12** module onboarding + dual-track transition (CargoBeamer & RCG).
 
-Meta `deploy-version`: **20260701-v2-19** · green badge **LIVE** bottom-right; orange **STALE** = Pages CDN behind GitHub.
+Meta `deploy-version`: **20260701-v2-20** · green badge **LIVE** bottom-right; orange **STALE** = Pages CDN behind GitHub.
 
 ### Visual design (v2-19)
 
@@ -35,6 +35,12 @@ The deck follows the visual language of Pablo's "Testing Framework" Confluence d
 - **Fixed cover content clipping at reduced window heights** — the slide container scales with `min(675px, 96vh)`, so on shorter browser windows the fixed-height cover content (title, subtitle, both list panels, nav row) could exceed the available height and get clipped by `overflow:hidden`. Tightened vertical padding/margins/line-heights across the cover so the full stack now comfortably fits even down to ~600px-tall windows.
 - **Widened the two cover list panels to full width** (equal 2-column grid instead of a narrower capped-width grid) and reduced list font-size slightly so every entry — including the longer ones like "Tandem QA capacity plan (all projects + leads)" — fits on a single line instead of wrapping.
 - Removed a stale hardcoded "Build 20260701-v2-17" string from the cover footer row (was redundant with the live version badge and had gone out of date).
+
+**v2-20 fixes (real logo asset + cover fill, per direct user instruction):**
+- **Real logo image used everywhere** — every previously rebuilt/inline-SVG Rail-Flow logo was replaced with the actual supplied logo file (`assets/rail-flow-logo.png`), embedded directly as an `<img>` on the cover and in all 12 slide-header mini badges. No logo is recreated as SVG anymore.
+- **R·F watermark removed** from the cover entirely (deleted the `.cover-watermark` SVG and its CSS).
+- **Cover now fills the full slide** — root cause of the "half-empty" cover was `.cover{position:relative}` overriding `.slide{position:absolute;inset:0}`, which collapsed the cover to its content height. Removing that override lets the cover fill the full 16:9 stage while the `flex:1` cover-grid stretches the panels.
+- **`index.html` (primary URL) synced** — it was stale with the old cover/logo markup, so it is now identical to `index-v2.html`.
 
 No slide content, order, or layout structure changed in any of these fixes.
 
