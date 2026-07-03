@@ -18,13 +18,15 @@ Navigate with arrow keys (← →).
 
 Cover + **12 content slides**, in this order: **1** lifecycle & who owns what (RACI overview) · **2** four pillars & strategy hub · **3** quality layers + enforcement · **4–8** the five responsibility-shift comics · **9** Entry Gate · **10** QA workflow (internal) · **11** tandem QA capacity plan (from Excel) · **12** module onboarding + dual-track transition (CargoBeamer & RCG).
 
-Meta `deploy-version`: **20260701-v2-17** · green badge **LIVE** bottom-right; orange **STALE** = Pages CDN behind GitHub.
+Meta `deploy-version`: **20260701-v2-18** · green badge **LIVE** bottom-right; orange **STALE** = Pages CDN behind GitHub.
 
-### Visual design (v2-17)
+### Visual design (v2-18)
 
-The deck follows the visual language of Pablo's "Testing Framework" Confluence deck (QIT space): light mint background, a Rail-Flow wordmark + mini rail-track logo in every slide header, and a thin color-coded top border per slide category — green for process/strategy slides, blue for enforcement & QA-workflow slides, coral for responsibility-shift comics & the Entry Gate. The cover slide carries a corner logo and a subtle "R·F" watermark. This was a purely additive CSS/HTML re-skin — no slide content, order, or copy was changed.
+The deck follows the visual language of Pablo's "Testing Framework" Confluence deck (QIT space): light mint background, a Rail-Flow logo in every slide header, and a thin color-coded top border per slide category — green for process/strategy slides, blue for enforcement & QA-workflow slides, coral for responsibility-shift comics & the Entry Gate. The cover slide carries a corner logo and a subtle "R·F" watermark. This was a purely additive CSS/HTML re-skin — no slide content, order, or copy was changed.
 
-**v2-17 hotfix:** v2-16 had a regression on the cover slide — the logo was placed inline at the top of the centered content stack (with `margin-bottom`), which made the already content-dense cover (title, subtitle, 2-column grid, nav) taller than the fixed slide height, clipping the bottom cards. Fixed by making the logo `position:absolute` in the top-left corner so it no longer affects the flex layout at all — cover spacing is back to its original, pre-redesign values. Also corrected the logo artwork itself (removed an inaccurate train-car icon; it's now wordmark + rail-tie line only, matching Pablo's reference) on the cover and all 12 mini headers.
+**v2-17 hotfix:** v2-16 had a regression on the cover slide — the logo was placed inline at the top of the centered content stack (with `margin-bottom`), which made the already content-dense cover (title, subtitle, 2-column grid, nav) taller than the fixed slide height, clipping the bottom cards. Fixed by making the logo `position:absolute` in the top-left corner so it no longer affects the flex layout at all — cover spacing is back to its original, pre-redesign values.
+
+**v2-18 logo correction:** the v2-17 logo (wordmark + plain rail-tie line) was still a self-invented placeholder, not the real Rail-Flow logo. Replaced it everywhere (cover corner logo, cover watermark, all 12 slide mini-headers) with an accurate recreation of the actual logo based on reference screenshots: the bold italic "Rail-Flow" wordmark (or "R·F" for the watermark) over a flatbed-wagon pictogram — corner post, sloped headboard end, two wheels on an axle. No slide content, order, or layout structure changed.
 
 > The retired v1 deck (9 content slides, `deploy-version 20260701-6`) is no longer published, but remains fully recoverable from the `gh-pages` git history if ever needed.
 

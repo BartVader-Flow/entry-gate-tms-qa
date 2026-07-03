@@ -1,8 +1,8 @@
 {
-  "deployVersion": "20260701-v2-17",
+  "deployVersion": "20260701-v2-18",
   "branch": "gh-pages",
   "repo": "BartVader-Flow/entry-gate-tms-qa",
   "previewUrl": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/BartVader-Flow/entry-gate-tms-qa/gh-pages/index-v2.html",
-  "updatedAt": "2026-07-03T10:20:00Z",
-  "notes": "Hotfix for v2-16 cover regression: the Rail-Flow logo on the cover slide was inline in the centered flex stack (with margin-bottom), which pushed the already content-dense cover (title, subtitle, 2-column grid, nav) taller than the fixed slide height and clipped the bottom cards. Logo is now absolutely positioned in the top-left corner (zero flow impact, cover layout back to its original spacing). Also removed an inaccurate train-car icon from the Rail-Flow logo (cover + all 12 mini headers) — logo is now wordmark + rail-tie line only, matching Pablo's reference. Watermark shrunk and moved to bottom-right corner so it never overlaps text."
+  "updatedAt": "2026-07-03T13:20:00Z",
+  "notes": "Logo correction: replaced the hand-invented wordmark+rail-tie-line logo with an accurate recreation of the real Rail-Flow logo (bold italic 'Rail-Flow' wordmark over a flatbed-wagon pictogram — corner post, sloped headboard end, two wheels on an axle), based on the user's reference screenshots. Applied to the cover corner logo and all 12 slide mini-headers. The cover watermark now uses the matching 'R·F' + wagon-pictogram lockup (very low opacity) instead of plain text. No slide content, order, or layout structure changed."
 }
